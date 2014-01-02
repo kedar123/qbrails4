@@ -1,0 +1,36 @@
+<%= form_for(@erp) do |f| %>
+  <% if @erp.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@erp.errors.count, "error") %> prohibited this erp from being saved:</h2>
+
+      <ul>
+      <% @erp.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="lable">Database Name :</div>
+  <div> <%= f.text_field :database %></div>
+  
+  <div class="lable">User Name:</div>
+  <div><%= f.text_field :username %></div>
+ 
+  <div class="lable">Password :</div>
+  <div><%= f.password_field :password %></div>
+  <div class="lable" style="width:240px;">Url : (just an domain name without http)</div> 
+  <div><%= f.text_field :url %></div>
+    <div class="lable">Port :</div> 
+  <div><%= f.text_field :port %></div>
+  
+  <div class="lable">
+    <%= f.hidden_field :user_id,:value=>current_user.id.to_s %> 
+  </div>
+
+  <div class="actions">
+    <div >
+    <%= f.submit "Done",:class=>"button_done" %>
+     </div> 
+  </div>
+<% end %>

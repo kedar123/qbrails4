@@ -1,0 +1,6 @@
+<h1>WELCOME TO QUICKBOOK HOME  </h1>
+<h4>ENTER FOLLOWING DETAILS TO MIGRATE DATABASE</h4>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', imports_path %>

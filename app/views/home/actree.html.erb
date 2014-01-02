@@ -1,0 +1,122 @@
+<div id="companyaccount">
+  Company Account
+  <div style="margin-left:10px" id="balancesheet">
+    Balance Sheet
+    <div style="margin-left:10px" id="asset">
+      Asset
+      <div style="margin-left:20px" id="othercurrentasset">
+        OtherCurrentAsset
+      </div>
+
+      <div style="margin-left:20px" id="fixedasset">
+        FixedAsset
+      </div>
+
+      <div style="margin-left:20px" id="currentasset">
+        CurrentAsset
+
+        <div style="margin-left:30px" id="bank">
+          Bank
+        </div>
+
+        <div style="margin-left:30px" id="accountsreceivable">
+          AccountsReceivable
+        </div>
+      </div>
+
+      <div style="margin-left:20px" id="otherasset">
+        OtherAsset
+      </div>
+
+    </div>
+    <div style="margin-left:10px" id="equity">
+      Equity
+        
+       
+    </div>
+
+    <div style="margin-left:10px" id="liability">
+      Liability
+
+      <div style="margin-left:20px" id="currentliability">
+        Current Liability
+
+        <div style="margin-left:30px" id="accountspayable">
+          AccountsPayable
+        </div>
+      </div>
+
+      <div style="margin-left:20px" id="othercurrentliability">
+        OtherCurrentLiability
+
+        <div style="margin-left:30px" id="creditcard">
+          CreditCard
+        </div>
+      </div>
+      <div style="margin-left:20px" id="longtermliability">
+        LongTermLiability
+      </div>
+
+
+    </div>
+
+  </div>
+  <div style="margin-left:10px" id="Profitandloss">
+    Profit And Loss 
+
+    <div style="margin-left:20px" id="expense">
+      Expense
+
+      <div style="margin-left:30px" id="otherexpense">
+        OtherExpense
+      </div>
+
+      <div style="margin-left:30px" id="costofgoodssold">
+        CostOfGoodsSold
+      </div>
+    </div>
+
+    <div style="margin-left:20px" id="income">
+      Income
+
+      <div style="margin-left:30px" id="otherincome">
+        OtherIncome
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+        <script>
+  $( document ).ready(function() {
+    <%Account.all.each do |eac|%>
+   
+      
+           
+                   
+                   //if the div is not present then first check its parent
+                   //if it has a parent then find that div and append an html div with id as fullname
+              
+      
+       <%if eac.ParentRef_ListID.blank?%>
+           //if there is no ParentRef_List then this account should be appended to its account type
+           
+          $("#"+'<%=eac.AccountType.gsub(/\s+/, "").gsub(/:+/,"").gsub(/\//,"").gsub(/'/,"").downcase.to_s%>').append("<div style='margin-left:15px;padding-left:15px;' id='<%=eac.FullName.gsub(/\s+/, "").gsub(/:+/,"").gsub(/\//,"").gsub(/'/,"").downcase.to_s%>'><%=eac.Name%></div>" );  
+  
+       <%else%>  
+           $("#"+'<%=eac.ParentRef_FullName.gsub(/\s+/, "").gsub(/:+/,"").gsub(/\//,"").gsub(/'/,"").downcase.to_s%>').append( "<div style='margin-left:15px;padding-left:15px;' id=\"<%=eac.FullName.gsub(/\s+/, "").gsub(/:+/,"").gsub(/\//,"").gsub(/'/,"").downcase.to_s%>\"><%=eac.Name%></div>" );  
+       <%end%>
+                       
+               
+                <%end%>
+   });
+  </script>  
+     
+    
+
+
+
+

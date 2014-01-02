@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+<h3>Your OERP Given Credentials Are : </h3>
+<p>
+  <b>Database:</b>
+  <%= @erp.database %>
+</p>
+
+<p>
+  <b>Username:</b>
+  <%= @erp.username %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%= @erp.password %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @erp.url %>
+</p>
+
+
+<%#= link_to 'Edit', edit_erp_path(@erp) %> 
+<%#= link_to 'Back', erps_path %>
+ <br>
+<p> If You Are Ready With OERP database credentials Then Click On Start Migration Button</p></br>
+<%= button_to "Start Migration",url_for(:action => 'index', :controller => 'imports' ), :id =>@erp.id %>

@@ -1,0 +1,42 @@
+I, [2014-01-02T17:22:31.092787 #12351]  INFO -- : 2014-01-02T17:22:31+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] Starting job worker
+I, [2014-01-02T17:22:31.506721 #12351]  INFO -- : 2014-01-02T17:22:31+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] Job Import#export_standard_migration (id=8) RUNNING
+E, [2014-01-02T17:24:22.531991 #12351] ERROR -- : 2014-01-02T17:24:22+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] Job Import#export_standard_migration (id=8) FAILED (8 prior attempts) with RuntimeError: Error
+I, [2014-01-02T17:24:22.715193 #12351]  INFO -- : 2014-01-02T17:24:22+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] Job Import#export_standard_migration (id=9) RUNNING
+E, [2014-01-02T17:24:44.735053 #12351] ERROR -- : 2014-01-02T17:24:44+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] Job Import#export_standard_migration (id=9) FAILED (0 prior attempts) with RuntimeError: Error
+I, [2014-01-02T17:24:44.822629 #12351]  INFO -- : 2014-01-02T17:24:44+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] 2 jobs processed at 0.0150 j/s, 2 failed
+I, [2014-01-02T17:24:55.042032 #12351]  INFO -- : 2014-01-02T17:24:55+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] Job Import#export_standard_migration (id=9) RUNNING
+E, [2014-01-02T17:25:18.864306 #12351] ERROR -- : 2014-01-02T17:25:18+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] Job Import#export_standard_migration (id=9) FAILED (1 prior attempts) with RuntimeError: Error
+I, [2014-01-02T17:25:19.025590 #12351]  INFO -- : 2014-01-02T17:25:19+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] 1 jobs processed at 0.0413 j/s, 1 failed
+I, [2014-01-02T17:25:39.093891 #12351]  INFO -- : 2014-01-02T17:25:39+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] Job Import#export_standard_migration (id=9) RUNNING
+E, [2014-01-02T17:26:00.108071 #12351] ERROR -- : 2014-01-02T17:26:00+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] Job Import#export_standard_migration (id=9) FAILED (2 prior attempts) with RuntimeError: Error
+I, [2014-01-02T17:26:00.239017 #12351]  INFO -- : 2014-01-02T17:26:00+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] 1 jobs processed at 0.0472 j/s, 1 failed
+I, [2014-01-02T17:27:30.343651 #12351]  INFO -- : 2014-01-02T17:27:30+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] Job Import#export_standard_migration (id=9) RUNNING
+E, [2014-01-02T17:27:50.775528 #12351] ERROR -- : 2014-01-02T17:27:50+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] Job Import#export_standard_migration (id=9) FAILED (3 prior attempts) with RuntimeError: Error
+I, [2014-01-02T17:27:50.921491 #12351]  INFO -- : 2014-01-02T17:27:50+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] 1 jobs processed at 0.0485 j/s, 1 failed
+I, [2014-01-02T17:32:11.262058 #12351]  INFO -- : 2014-01-02T17:32:11+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] Job Import#export_standard_migration (id=9) RUNNING
+E, [2014-01-02T17:32:49.085767 #12351] ERROR -- : 2014-01-02T17:32:49+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] Job Import#export_standard_migration (id=9) FAILED (4 prior attempts) with RuntimeError: Error
+I, [2014-01-02T17:32:49.379921 #12351]  INFO -- : 2014-01-02T17:32:49+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] 1 jobs processed at 0.0261 j/s, 1 failed
+I, [2014-01-02T17:43:19.910517 #12351]  INFO -- : 2014-01-02T17:43:19+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] Job Import#export_standard_migration (id=9) RUNNING
+E, [2014-01-02T17:43:41.391145 #12351] ERROR -- : 2014-01-02T17:43:41+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] Job Import#export_standard_migration (id=9) FAILED (5 prior attempts) with RuntimeError: Error
+I, [2014-01-02T17:43:41.532516 #12351]  INFO -- : 2014-01-02T17:43:41+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] 1 jobs processed at 0.0461 j/s, 1 failed
+I, [2014-01-02T17:54:01.973367 #12351]  INFO -- : 2014-01-02T17:54:01+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] Job Import#export_standard_migration (id=10) RUNNING
+E, [2014-01-02T17:54:25.000280 #12351] ERROR -- : 2014-01-02T17:54:25+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] Job Import#export_standard_migration (id=10) FAILED (0 prior attempts) with RuntimeError: Error
+I, [2014-01-02T17:54:25.133527 #12351]  INFO -- : 2014-01-02T17:54:25+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] 1 jobs processed at 0.0430 j/s, 1 failed
+I, [2014-01-02T17:54:35.212116 #12351]  INFO -- : 2014-01-02T17:54:35+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] Job Import#export_standard_migration (id=10) RUNNING
+E, [2014-01-02T17:54:57.052238 #12351] ERROR -- : 2014-01-02T17:54:57+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] Job Import#export_standard_migration (id=10) FAILED (1 prior attempts) with RuntimeError: Error
+I, [2014-01-02T17:54:57.186531 #12351]  INFO -- : 2014-01-02T17:54:57+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] 1 jobs processed at 0.0454 j/s, 1 failed
+I, [2014-01-02T17:55:22.255229 #12351]  INFO -- : 2014-01-02T17:55:22+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] Job Import#export_standard_migration (id=10) RUNNING
+E, [2014-01-02T17:55:45.063927 #12351] ERROR -- : 2014-01-02T17:55:45+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] Job Import#export_standard_migration (id=10) FAILED (2 prior attempts) with RuntimeError: Error
+I, [2014-01-02T17:55:45.210773 #12351]  INFO -- : 2014-01-02T17:55:45+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] 1 jobs processed at 0.0435 j/s, 1 failed
+I, [2014-01-02T17:57:26.359412 #12351]  INFO -- : 2014-01-02T17:57:26+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] Job Import#export_standard_migration (id=10) RUNNING
+E, [2014-01-02T17:57:53.764888 #12351] ERROR -- : 2014-01-02T17:57:53+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] Job Import#export_standard_migration (id=10) FAILED (3 prior attempts) with RuntimeError: Error
+I, [2014-01-02T17:57:54.081380 #12351]  INFO -- : 2014-01-02T17:57:54+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] 1 jobs processed at 0.0241 j/s, 1 failed
+I, [2014-01-02T18:02:14.393284 #12351]  INFO -- : 2014-01-02T18:02:14+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] Job Import#export_standard_migration (id=10) RUNNING
+E, [2014-01-02T18:02:36.202381 #12351] ERROR -- : 2014-01-02T18:02:36+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] Job Import#export_standard_migration (id=10) FAILED (4 prior attempts) with RuntimeError: Error
+I, [2014-01-02T18:02:36.270673 #12351]  INFO -- : 2014-01-02T18:02:36+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] 1 jobs processed at 0.0455 j/s, 1 failed
+I, [2014-01-02T18:05:26.495569 #12351]  INFO -- : 2014-01-02T18:05:26+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] Job Import#export_standard_migration (id=9) RUNNING
+E, [2014-01-02T18:05:48.143355 #12351] ERROR -- : 2014-01-02T18:05:48+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] Job Import#export_standard_migration (id=9) FAILED (6 prior attempts) with RuntimeError: Error
+I, [2014-01-02T18:05:48.238510 #12351]  INFO -- : 2014-01-02T18:05:48+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] 1 jobs processed at 0.0457 j/s, 1 failed
+I, [2014-01-02T18:13:08.559510 #12351]  INFO -- : 2014-01-02T18:13:08+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] Job Import#export_standard_migration (id=10) RUNNING
+E, [2014-01-02T18:13:31.179788 #12351] ERROR -- : 2014-01-02T18:13:31+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] Job Import#export_standard_migration (id=10) FAILED (5 prior attempts) with RuntimeError: Error
+I, [2014-01-02T18:13:31.249556 #12351]  INFO -- : 2014-01-02T18:13:31+0530: [Worker(delayed_job host:pragmatic-laptop pid:12351)] 1 jobs processed at 0.0440 j/s, 1 failed

@@ -1,0 +1,48 @@
+
+      <%if !current_user.erp.blank?%>
+          <div style="padding-left: 10px;">
+          OpenERP detail you provided
+          <br/>
+          database :- <%=current_user.erp.database%>
+          <br/>
+          username :- <%=current_user.erp.username%>
+          
+          <br/>
+          url :- <%=current_user.erp.url%>
+          <br/> 
+          port :- <%=current_user.erp.port%>
+          <br/> 
+         Your Import Status
+        <br/>
+        <!--<%if current_user.database and  current_user.database.status %>
+          Done
+        <%else%>
+           Not Done,You Will Soon Get an Email from Us , After Import of Data Migration is Done .
+        <%end%>-->
+        In-Process
+        <br/>
+        You will get a completion Email from Us once migration is complete.
+            Thanks you patient.....!!!!!   
+        </div>   
+     <%end%>
+
+
+
+     <%if current_user and current_user.user_payment_choice%>
+      <%if current_user.user_payment_choice == "basic"%> 
+           <%=render :partial=>"item_count"%>
+      <%end%>
+      <%if current_user.user_payment_choice == "standard"%> 
+             <%=render :partial=>"item_count"%>
+      <%end%>
+     <%end%>   
+
+
+
+
+
+
+
+
+
+

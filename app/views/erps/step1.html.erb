@@ -1,0 +1,119 @@
+<div class="left1">
+  <div class="text1">
+     <ul>
+          <%=form_tag('/databases')%>
+          <li>Customer</li>
+          <li>Supplier</li>
+          <li>Charts Of Accounts</li>
+          
+          
+    </ul>
+    
+    <div class="btn" style="margin-left:-50px;margin-top:103px">
+     <%= link_to image_tag('mg.png'), url_for(:action => 'create', :controller => 'databases',:id=>"basic"),:method=>"post"%> 
+   </div>
+  <%#=url_for(:action => 'index', :controller => 'home') %>
+  
+      </form>
+      
+  </div>
+ </div>
+          
+  <div class="meddle">
+   <div class="text1">
+     <ul>
+         <%=form_tag('/databases')%>
+         <li>Customer</li>
+         <li>Supplier</li>
+         <li>Charts Of Accounts</li>
+         <li>Products</li>
+         <li>Inventory</li>
+        
+    </ul>
+    </div>
+    
+    <div class="btn" style="padding-top:92px;">
+    <%= link_to image_tag('mg.png'),url_for(:action => 'create', :controller => 'databases',:id=>"standard"),:method=>"post"%>
+    </div>
+         </form>
+         
+  </div>
+           
+
+<div class="right1">
+  <div class="text12">
+   <ul>
+       <%=form_tag('/databases')%>
+      <li>Customer</li>
+         <li>Supplier</li>
+         <li>Charts Of Accounts</li>
+         <li>Products</li>
+         <li>Inventory</li> 
+      <li>Bill</li>
+     <li>Invoice</li>
+  </ul>
+  </div>
+     <div class="btn">
+    <%#= link_to image_tag('/images/mg.png'), url_for(:action => 'create', :controller => 'databases',:id=>"premium"),:method=>"post"%>
+    <%=  image_tag('mg.png')%>   
+    </div>
+  </form>
+</div>
+ 
+ 
+<div id="left">
+  <div class="text">
+<%if current_user%>
+ 
+ <div class=" container">
+
+<div class="stepstofollow_coloumn">
+
+<div class="stepsto_followheadingbg">
+<div class=" steptofollowtext">Steps To Follow</div>
+</div>
+
+<div class="firstselecttext">
+  <p>
+    <strong>1st :- Select Type of Migration From Above Which Will Create On Database For Quickbook.</strong>
+  </p>
+  <p><strong>2nd :  Now Populate Your QuickBooks Data To Our Mysql Database Using AccessBooks RealTime On Our Server 
+      178.63.19.197. Port 3306. user  'rubyonrails' and password is 'IIEinstein'
+               See manual for AccessBooks RealTime installation Here
+               <a href="http://synergration.com/software/accessbooks-realtime/" target="_blank">Download Access Book</a>
+</strong></p>
+ 
+<p><strong>3rd :-  Download and Install OpenERP Quickbook Module <%= link_to "Here",imports_download_quickbook_path%>
+  </strong></p>
+
+<p><strong>Note: While installing this module OpenERP Prompt you for Charts of Accounts-COA selection please do not install any COA aand make sure you set your database currency as required before starting migration  
+                <br/>
+                After successful installation of OpenERP Qucikbook Module Click on Start Migration Button 
+             </strong></p>
+
+
+ </div>
+   <div class="footer1">
+
+ 
+  <%#= button_to "Start Migration to OpenERP", {:action => 'new', :controller => 'erps' },:id=>"startmigration_button"%>
+<%= button_to " Step 1", { },:id=>"startmigration_button"%>
+
+</div>
+   <pre>           
+   Click Your Migration Type From Above Three Types <strong>Basic,Standard,Premium</strong>
+   </pre>
+ </div>
+   </div>
+
+ 
+
+  
+
+<%end%>
+</div>
+  
+  </div>
+
+
+  

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quickbook42</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+      
+<div id="header">
+  <div class="Messages"><p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+       <p class="login">
+        <%if current_user%>
+          
+              <%=link_to "Log out", destroy_user_session_path, :method => :delete %>
+       <%end%>
+       </p>
+  </div>
+	<div id="main">
+          
+  <div class="topbar">
+    <div class="logo">
+      
+       
+      <%=image_tag "logo.gif"%>
+    </div>
+    <div class="serchbar"></div>
+    <div class="navibar">
+     <div class="menu"><a href="/">Home</a></div>
+      <div class="menu">|</div>
+      <div class="menu"><a href="<%=feedbacks_aboutus_path%>">About Us</a></div>
+      <div class="menu">|</div>
+      <div class="menu"> <a href="#">Services</a></div>
+      <div class="menu">|</div>
+      <div class="menu"><a href="#">Products</a></div>
+      <div class="menu">|</div>
+      <div class="menu"> <a href="<%=feedbacks_contactus_path%>">Contact Us</a></div>
+    </div>
+  </div>
+          <div class="flash"><embed src="/assets/opne.swf" width="1234px" height="312px"></embed></div>
+ 
+  </div>
+</div>
+
+       <div id="main2">
+	 <div id="contaner">
+         
+           <%= yield %>
+          
+        </div>
+      </div>
+       
+       
+<div id="footer">
+	<div id="main">
+	<div class="footer_text_bar">
+    	<div class="footer_menu"><a href="/">Home</a></div>
+        <div class="footer_menu">|</div>
+        <div class="footer_menu"><a href="<%=feedbacks_aboutus_path%>">About Us</a></div>
+        <div class="footer_menu">|</div>
+        <div class="footer_menu"><a href="#">Services</a></div>
+        <div class="footer_menu">|</div>
+        <div class="footer_menu"><a href="#">Products</a></div>
+        <div class="footer_menu">|</div>
+        <div class="footer_menu"><a href="#">Clients</a></div>
+        <div class="footer_menu">|</div>
+        <div class="footer_menu"><a href="#">Community </a></div>
+        <div class="footer_menu">|</div>
+        <div class="footer_menu"><a href="#">Blog</a></div>
+        <div class="footer_menu">|</div>
+        <div class="footer_menu"><a href="<%=feedbacks_contactus_path%>">Contact Us</a></div>
+        <div class="footer_text">© Copyright 2010 Pragmatic Techsoft Pvt. Ltd. All rights reserved.</div>
+    </div>
+    </div>
+</div>
+ 
+</body>
+</html>
