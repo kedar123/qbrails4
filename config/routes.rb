@@ -1,4 +1,10 @@
 Quickbook42::Application.routes.draw do
+  get "payments/index"
+  get "payments/confirm"
+  post "payments/complete"
+  get "payments/checkout"
+  post "payments/payment_authorize"
+  resource "payments"
   devise_for :users
   resources :homes
   resources :databases
@@ -58,19 +64,18 @@ Quickbook42::Application.routes.draw do
   #   end
  root to: "homes#index"
    get "home/index"
-
+    resource :feedback
   get "feedbacks/aboutus"
   get "feedbacks/contactus" 
   get "imports/download_quickbook"
-   resources :erps
+  resources :erps
   post "erps/new"
   get "erps/new"
-    get "erps/edit"
-    post "erps/edit"
-     get "erps/show"
+  get "erps/edit"
+  post "erps/edit"
+  get "erps/show"
   get "imports/download_quickbook"
   post "imports/download_quickbook"
-  
   post "imports/import" 
   get  'imports/:id' => 'imports#index'
   post  'imports/:id' => 'imports#index'
