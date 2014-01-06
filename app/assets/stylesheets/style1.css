@@ -186,7 +186,7 @@ a:hover {
 }
 .left1
 {
-	background:url('basic.png');
+	background:url('free.png');
 	width:213px;
 	height:313px;
 	margin:10px 10px 10px 60px ;
@@ -253,7 +253,7 @@ a:hover {
 	margin:10px 10px 10px 10px ;
 	overflow:hidden;
 	float:left;
-        opacity: 0.5;
+         
 }
 .btn
 {

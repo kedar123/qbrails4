@@ -1,6 +1,6 @@
 class Saleorpurchasedetail < ActiveRecord::Base
   
-  self.table_name = "saleorpurchasedetail"
+  self.table_name = "salesorpurchasedetail"
   
   
 end

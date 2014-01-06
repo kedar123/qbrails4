@@ -22,12 +22,12 @@ class ImportsController < ApplicationController
     logger.info "some infffffffffffffffffffffffff"
     logger.info current_user.user_payment_choice
     #logger.info current_user.inspect
-    if current_user.user_payment_choice == "basic" 
-      import.delay.export_basic_migration(current_user)
+    if current_user.user_payment_choice == "free" 
+      import.delay.export_free_migration(current_user)
     elsif current_user.user_payment_choice == "standard" 
       import.delay.export_standard_migration(current_user)
     elsif current_user.user_payment_choice == "premium"
-      import.delay.export_all_migration(current_user)
+      import.delay.export_premium_migration(current_user)
     end
       #import.export_testupdate_migration(current_user)
        logger.info "started background job" 

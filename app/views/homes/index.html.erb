@@ -2,15 +2,17 @@
   <div class="text1">
      <ul>
           <%=form_tag('/databases')%>
+          <li>Charts Of Accounts</li>
           <li>Customer</li>
           <li>Supplier</li>
-          <li>Charts Of Accounts</li>
-          
-          
+          <li>Employee</li>
+      
     </ul>
     
-    <div class="btn" style="margin-left:-50px;margin-top:103px">
-     <%= link_to image_tag('mg.png'), url_for(:action => 'create', :controller => 'databases',:id=>"basic"),:method=>"post"%> 
+    <div class="btn" style="margin-left:-50px;margin-top:80px">
+     <%#= link_to image_tag('mg.png'), url_for(:action => 'create', :controller => 'databases',:id=>"basic"),:method=>"post"%> 
+     <%= link_to image_tag('mg.png'), url_for(:action => 'index', :controller => 'payments',:id=>"free")%> 
+    <%#suppose its a free then on payments index page create a database %>  
    </div>
   <%#=url_for(:action => 'index', :controller => 'home') %>
   
@@ -22,18 +24,20 @@
   <div class="meddle">
    <div class="text1">
      <ul>
-         <%=form_tag('/databases')%>
-         <li>Customer</li>
-         <li>Supplier</li>
-         <li>Charts Of Accounts</li>
-         <li>Products</li>
-         <li>Inventory</li>
+        <%=form_tag('/databases')%>
+          
+          <li>Charts Of Accounts</li>
+          <li>Customer</li>
+          <li>Supplier</li>
+          <li>Employee</li>
+          <li>Products</li>
         
     </ul>
     </div>
     
     <div class="btn" style="padding-top:92px;">
-    <%= link_to image_tag('mg.png'),url_for(:action => 'create', :controller => 'databases',:id=>"standard"),:method=>"post"%>
+    <%#= link_to image_tag('mg.png'), url_for(:action => 'create', :controller => 'databases',:id=>"basic"),:method=>"post"%> 
+    <%= link_to image_tag('mg.png'), url_for(:action => 'index', :controller => 'payments',:id=>"standard") %>   
     </div>
          </form>
          
@@ -44,18 +48,18 @@
   <div class="text12">
    <ul>
        <%=form_tag('/databases')%>
-      <li>Customer</li>
-         <li>Supplier</li>
-         <li>Charts Of Accounts</li>
-         <li>Products</li>
-         <li>Inventory</li> 
-      <li>Bill</li>
-     <li>Invoice</li>
+          <li>Charts Of Accounts</li>
+          <li>Customer</li>
+          <li>Supplier</li>
+          <li>Employee</li>
+          <li>Products</li>
+         <li>Inventory</li>
   </ul>
   </div>
      <div class="btn">
     <%#= link_to image_tag('/images/mg.png'), url_for(:action => 'create', :controller => 'databases',:id=>"premium"),:method=>"post"%>
-    <%=  image_tag('mg.png')%>   
+  <%#= link_to image_tag('mg.png'),url_for(:action => 'create', :controller => 'databases',:id=>"standard"),:method=>"post"%>  
+  <%= link_to image_tag('mg.png'),url_for(:action => 'index', :controller => 'payments',:id=>"premium") %>       
     </div>
   </form>
 </div>
@@ -96,14 +100,53 @@
                 <h2>First Step</h2>
                 <section>
                     <p>
-                      <strong>1st :- Select Type of Migration From Above Which Will Create On Database For Your Quickbook.
-                        <p>Name of Your Database:  
+                      <strong> 
+                         <p>
+                           
+                           <strong>
+                             <!--
+                             if user has sign up and come to home page then first step he should see a line which says to him that
+                             select a migration type from above.this line he should not see when he has selected a 
+                             migration file.
+                             -->
+                              
+                              
+                             <%if current_user.user_payment_choice.blank? or current_user.payment_status == false or  current_user.payment_status == nil%>
+                                 1st :- Select Type of Migration From Above.
+                             <%end%>
+                           </strong> 
+                           <!--
+                           this line i should also show when user has another type of migration and he has not 
+                           completed the payment.means he click on migration and while actual payment he did not done that 
+                           so another time when he comes to an home page he should see this line.
+                           -->
+                           
+                           
+                           </p>
+                        <p>
                           <%if current_user.database%>
+                              Name of Your Database:  
                              <span style="color:#2184BE"><%=current_user.database.name %></span>
                             <br/>
                             Now Click On Next 
                           <%end%>
+                          <%#what i have to do here is if the database is blank and a user has selected a migration then show
+him a link to create a database and also one more condition and that is if its a free migration type%>
+                            <%#i should not check the user_payment_choice here as i changed a flow that is. at first step there
+is always a create a db link%>
+                            <%#actually the condition is required because anyone can come and create a databse. so if its a free
+then allow him to create a db. else for other choices the user must complete a payment first. so in user table i must have a boolean field
+named as payment_status boolean . after a payment is complete make this field true.%>
+ <%#so here there are 2 conditions first is when database is blank and user type is free and secondly when%>                           
+<%#payment is done%>                            
+<%if ((current_user.database.blank? and current_user.user_payment_choice == "free") or (current_user.payment_status == true and current_user.database.blank?)) %>
+   1st :- Click                          
+  <%=link_to  " Here " ,url_for(:action => 'create', :controller => 'databases',:id=>current_user.user_payment_choice),:method=>"post"%>
+      To Create A Database Schema  
+<%end%>
+      
                         </p>
+                        
                       </strong>
                     </p>
                 </section>

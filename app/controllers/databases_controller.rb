@@ -61,7 +61,7 @@ class DatabasesController < ApplicationController
        
      respond_to do |format|
       if @database.save
-        format.html { redirect_to home_index_path, :notice=> 'Database was successfully created.' }
+        format.html { redirect_to root_path, :notice=> 'Database was successfully created.' }
         format.json { render :json=> @database, :status=>:created, :location=> @database }
       else
         format.html { render :action=> "new" }

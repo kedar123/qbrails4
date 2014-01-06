@@ -349,7 +349,7 @@ class Import < ActiveRecord::Base
   Database.connection.execute("use oct_4") 
    end
   
-  def export_all_migration(current_user)
+  def export_premium_migration(current_user)
     
   @error = false
    
@@ -463,13 +463,13 @@ logger.info	 "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
       #iteminvassmlindet = Iteminventoryassemblylinedetail.find(:all)
       #Iteminventoryassemblylinedetail.export_iteminventoryaseemblilinedetail(iteminvassmlindet,current_user)
 
-  	  bill = Bill.find(:all)#Bill.all  #vendor run first
-	    Bill.export_bill(bill,current_user)
+  	#  bill = Bill.find(:all)#Bill.all  #vendor run first
+	  #  Bill.export_bill(bill,current_user)
       logger.info "sales receipt is done"
       
      	logger.info "invoice called ....successfullyyyyyyyyy.."
-			invoice = Invoice.find(:all)#Invoice.all
-      Invoice.export_invoice(invoice,current_user)
+		#	invoice = Invoice.find(:all)#Invoice.all
+     # Invoice.export_invoice(invoice,current_user)
  
 =begin  
     logger.info "using above databaseeeeeeeee"
@@ -809,9 +809,9 @@ logger.info	 "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
       Itemsubtotal.export_itemsubtotal(itemsubtotal,current_user) 
       
       
-      iteminvassmlindet = Iteminventoryassemblylinedetail.find(:all)
+     # iteminvassmlindet = Iteminventoryassemblylinedetail.find(:all)
       logger.info "the iteminventoryassemblylinedetails"
-      logger.info iteminvassmlindet.size
+      #logger.info iteminvassmlindet.size
        
       #this table is not required because its item is for just to know a quantity there reference is from 
       #iteminventory table as well as from iteminventoryassembly table.
@@ -822,31 +822,31 @@ logger.info	 "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
             
 #      logger.info "Bill migrating............ calleddd"
     	 logger.info "Bill migrating............ calleddd"
-  	  bill = Bill.find(:all)#Bill.all  #vendor run first
+  	 # bill = Bill.find(:all)#Bill.all  #vendor run first
 	 # Bill.export_bill(bill,current_user)
 #       
 #         p " purchase orders callingggggggggg"
-    	purorder = Purchaseorder.find(:all)#Purchaseorder.all
+    #	purorder = Purchaseorder.find(:all)#Purchaseorder.all
   	#Purchaseorder.export_purchaseorder(purorder,current_user)
 #    
 #      p "caling salesorder................."
- 			salesorder = Salesorder.find(:all)#Salesorder.all
+ 		#	salesorder = Salesorder.find(:all)#Salesorder.all
  	#		Salesorder.export_salesorder(salesorder,current_user)
 #    
  #     logger.info "sales receiptttttt"
-      salesrec = Salesreceipt.find(:all)
+    #  salesrec = Salesreceipt.find(:all)
       #no uniqueness is checked
   #   Salesreceipt.export_salesreceipt(salesrec,current_user)
       #calling receive paymentttt
  #    logger.info "calling receive paymentsss" 
-     recivpay = Receivepayment.find(:all)
+   #  recivpay = Receivepayment.find(:all)
   #   Receivepayment.call_receive_payment_save(recivpay,current_user)
       
       
  #     logger.info "sales receipt is done"
       
  #    	logger.info "invoice called ....successfullyyyyyyyyy.."
-			invoice = Invoice.find(:all)#Invoice.all
+#			invoice = Invoice.find(:all)#Invoice.all
    #   Invoice.export_invoice(invoice,current_user)
       
       
@@ -929,8 +929,8 @@ begin
 
  end
 
-    
-      def export_basic_migration(current_user)
+      #in free now i need to limit the query to 10 users
+      def export_free_migration(current_user)
    @error = false
    begin
    @ooor = Ooor.new(:url => "http://"+current_user.erp.url+":#{current_user.erp.port}/xmlrpc", :database => current_user.erp.database, :username => current_user.erp.username, :password => current_user.erp.password,:scope_prefix => current_user.database.name.upcase.to_s)
@@ -951,23 +951,25 @@ begin
      
       logger.info "Account calleddd>>>>>>>>>>>>>>>>>"
 	     logger.info "Account calleddd>>>>>>>>>>>>>>>>>>"
-      account = Account.all
+      #account = Account.all
+      #its because of its a free that is why instead of all the limit is of 10
+      account = Account.find(:all,:limit=>10)
       logger.info "accounttttttttttttttttt"
       logger.info account.size
   	  Account.export_account(account,current_user)
       logger.info "Account End>>>>>>>>>>>>>>>>>>"
   
       logger.info "Customer.....calleddd..........."
-      custmr = Customer.find(:all,:limit=>100)#Customer.all  
+      custmr = Customer.find(:all,:limit=>10)#Customer.all  
      Customer.call_customer_save(custmr,current_user)
 		  logger.info "Customer Ended>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
 		  logger.info "Customer Ended>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
 #		  
 
       logger.info  "vendorr  ....................calleddd"
-		  vendr = Vendor.find(:all,:limit=>100)#Vendor.all  
+		  vendr = Vendor.find(:all,:limit=>10)#Vendor.all  
  	    Vendor.call_vendor_save(vendr,current_user)
-	    employee = Employee.all
+	    employee = Employee.find(:all,:limit=>10)
      Employee.import_employee(employee,current_user)
 
    	  

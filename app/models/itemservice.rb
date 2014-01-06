@@ -267,7 +267,7 @@ class Itemservice < ActiveRecord::Base
           newp.quick_product_account_id = acid 
     if !acid.blank?
     acid = eval(current_user.database.name.upcase.to_s)::AccountAccount.find(acid)
- if acid.user_type.name == "Expense"
+    if acid.user_type.name == "Expense"
       newp.property_account_expense = acid.id
     else  
       newp.property_account_expense = eval(current_user.database.name.upcase.to_s)::AccountAccount.search([["name","=","Accounts Payable"]])[0]

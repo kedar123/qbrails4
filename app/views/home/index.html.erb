@@ -5,15 +5,18 @@
           <li>Customer</li>
           <li>Supplier</li>
           <li>Charts Of Accounts</li>
-          
-          
-    </ul>
+     </ul>
     
     <div class="btn" style="margin-left:-50px;margin-top:103px">
-     <%= link_to image_tag('mg.png'), url_for(:action => 'create', :controller => 'databases',:id=>"basic"),:method=>"post"%> 
-   </div>
-  <%#=url_for(:action => 'index', :controller => 'home') %>
-  
+      <%#now the flow has been changed instead of creating an database on this step i have to redirect him to a 
+       #payment page there will be 2 options to him one is paypal and another is authorized.net.after doing the 
+       #payments him to home page and in first step there will be a link to create a db so instead of creating an db here that 
+       #db will be created at  him to the first step in jquery steps view%>
+      <%#so the id as basic or standard will be saved at payment index page%>
+      <%#= link_to image_tag('mg.png'), url_for(:action => 'create', :controller => 'databases',:id=>"basic")%> 
+      <%= link_to image_tag('mg.png'), url_for(:action => 'index', :controller => 'payments',:id=>"free")%> 
+    </div>
+   
       </form>
       
   </div>
@@ -28,12 +31,14 @@
          <li>Charts Of Accounts</li>
          <li>Products</li>
          <li>Inventory</li>
-        
-    </ul>
+     </ul>
     </div>
     
     <div class="btn" style="padding-top:92px;">
-    <%= link_to image_tag('mg.png'),url_for(:action => 'create', :controller => 'databases',:id=>"standard"),:method=>"post"%>
+      
+    <%#= link_to image_tag('mg.png'),url_for(:action => 'create', :controller => 'databases',:id=>"standard"),:method=>"post"%>
+    <%= link_to image_tag('mg.png'),url_for(:action => 'index', :controller => 'payments',:id=>"standard")%>
+      
     </div>
          </form>
          
@@ -55,7 +60,9 @@
   </div>
      <div class="btn">
     <%#= link_to image_tag('/images/mg.png'), url_for(:action => 'create', :controller => 'databases',:id=>"premium"),:method=>"post"%>
-    <%=  image_tag('mg.png')%>   
+    <%#=  image_tag('mg.png')%>   
+    <%= link_to image_tag('mg.png'),url_for(:action => 'index', :controller => 'payments',:id=>"premium")%>
+
     </div>
   </form>
 </div>

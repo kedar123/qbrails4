@@ -1,0 +1,39 @@
+<h1>Purchase Sprockets</h1>
+<p>Thank you for your decision to purchase our sprockets.</p>
+<p>Your order total is $50.00</p>
+<p>
+  <%= link_to image_tag('https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif'), :action => 'checkout' %>
+</p>
+
+ <%=form_tag  payments_payment_authorize_path %>
+   
+ <table id="authorize_payment" style="display:block">
+   <tr>
+   <td height="45" class="listening_eventstext">  
+    <%= label_tag 'x_card_num', 'Credit Card Number'%>
+ 
+   </td>
+    <td class="listening_eventstext"> 
+    <%= text_field_tag 'x_card_num' %>
+    </td>  
+   </tr>
+    <tr>
+   <td height="45" class="listening_eventstext">  
+    <%= label_tag 'x_exp_date', 'Expiration Date (MMYY)'%>
+ 
+   </td>
+    <td class="listening_eventstext"> 
+    <%= text_field_tag 'x_exp_date' %>
+    <%= hidden_field_tag 'amount','10' %>
+      
+    </td>  
+   </tr>
+   <tr>
+     <td>
+       <%= submit_tag 'Authorize.net',:id=>"Checkavailabilitybutton2"%>
+       </td>
+     </tr>
+ </table>
+ </form> 
+
+
