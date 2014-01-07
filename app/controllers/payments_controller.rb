@@ -23,8 +23,8 @@ class PaymentsController < ApplicationController
   #so suppose its a free then. instead of checkout just redirect him to a migration page
   #otherwise its seems to be an paypal redirection as user clicked on paypal and he cames here then 
   def checkout
-  setup_response = gateway.setup_purchase(6000,
-    :items => [{:name => "Quick Book Migration", :quantity => 1,:description => "All Modules",:amount=> 6000}], 
+  setup_response = gateway.setup_purchase(5000,
+    :items => [{:name => "Quick Book Migration", :quantity => 1,:description => "All Modules",:amount=> 5000}], 
     :ip                => request.remote_ip,
     :return_url        => url_for(:action => 'confirm', :only_path => false),
     :cancel_return_url => url_for(:action => 'index', :only_path => false)
@@ -47,7 +47,7 @@ class PaymentsController < ApplicationController
   end
   
   def complete
-    purchase = gateway.purchase(6000,
+    purchase = gateway.purchase(5000,
       :ip       => request.remote_ip,
       :payer_id => params[:payer_id],
       :token    => params[:token]
@@ -71,16 +71,18 @@ class PaymentsController < ApplicationController
   
   
   def payment_authorize
-      transaction = AuthorizeNet::AIM::Transaction.new('483qQaLD', '9X9PvMKT22jj74cS', :gateway => :sandbox)
+      transaction = AuthorizeNet::AIM::Transaction.new('34jttcC4G2TZ', '57Z6x4N5Pe3GpA7x', :gateway => :sandbox)
       credit_card = AuthorizeNet::CreditCard.new(params[:x_card_num], params[:x_exp_date])
-      response = transaction.purchase(params[:amount], credit_card)
+      @credit_card = AuthorizeNet::CreditCard.new('4111111111111111', '01' + (Time.now + (3600 * 24 * 365)).strftime('%y'))
+      response = transaction.purchase(params[:amount], @credit_card)
       logger.info response.inspect
       logger.info "sssssssssssssssssssssssssssssssss"
       if response.success?
-          #suppose user come to this page  after a successful transaction happens that is reservation is done after he click on back button and
-          #the a session of checkin date is blank which gives an error.
-          #
-          redirect_to :back ,:notice=>"Successful Transaction"
+          #after a successful transaction an person is need to redirect to a root page for creating
+          #a database.
+         current_user.payment_status = true
+         current_user.save
+         redirect_to root_path ,:notice=>"Your Payment Is Successful Please See The Step To Create A Database"
       else
          p response.inspect
          p "response.inspectttttt"

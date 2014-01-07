@@ -48,6 +48,7 @@ class DatabasesController < ApplicationController
   # POST /databases
   # POST /databases.json
   def create
+    
     current_user.user_payment_choice = params[:id]
     current_user.save
     if current_user.database.blank?
@@ -69,7 +70,7 @@ class DatabasesController < ApplicationController
       end
     end
     else
-      redirect_to home_index_path, :notice=> 'Database was Already created.'
+      redirect_to homes_index_path, :notice=> 'Database was Already created.'
     end
   end
 

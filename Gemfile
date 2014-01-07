@@ -56,3 +56,7 @@ gem 'jquery-turbolinks'
 #i used this jquery turbolinks but turbolinks is actually required for speed up the rails 4 app.later i will check 
 #this app
 #with turbolinks
+gem "cucumber-rails", :group => :test, :require => false
+gem "capybara", :group => :test
+gem "database_cleaner", :group => :test
+gem "email_spec", :group => :test
