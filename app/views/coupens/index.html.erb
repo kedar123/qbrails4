@@ -1,0 +1,27 @@
+<h1>Listing coupens</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Coupen</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @coupens.each do |coupen| %>
+      <tr>
+        <td><%= coupen.coupen %></td>
+        <td><%= link_to 'Show', coupen %></td>
+        <td><%= link_to 'Edit', edit_coupen_path(coupen) %></td>
+        <td><%= link_to 'Destroy', coupen, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Coupen', new_coupen_path %>

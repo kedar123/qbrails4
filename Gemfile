@@ -60,3 +60,4 @@ gem "cucumber-rails", :group => :test, :require => false
 gem "capybara", :group => :test
 gem "database_cleaner", :group => :test
 gem "email_spec", :group => :test
+gem 'unicorn'

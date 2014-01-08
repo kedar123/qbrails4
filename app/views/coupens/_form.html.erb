@@ -1,0 +1,22 @@
+<%= form_for(@coupen) do |f| %>
+  <% if @coupen.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@coupen.errors.count, "error") %> prohibited this coupen from being saved:</h2>
+
+      <ul>
+      <% @coupen.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :coupen %><br>
+    <%value = ""; 50.times{value  << (65 + rand(25)).chr}%>
+    <%= f.text_field :coupen,:value=>value.to_s %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

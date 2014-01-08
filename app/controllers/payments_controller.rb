@@ -29,6 +29,10 @@ class PaymentsController < ApplicationController
     :return_url        => url_for(:action => 'confirm', :only_path => false),
     :cancel_return_url => url_for(:action => 'index', :only_path => false)
   )
+  logger.info "the response from paypal"
+  logger.info setup_response.inspect
+  logger.info setup_response.token
+  
   redirect_to gateway.redirect_url_for(setup_response.token)
   end
 
@@ -92,14 +96,35 @@ class PaymentsController < ApplicationController
   
   
   
+  def coupen_check
+     
+       cp = Coupen.find_by_coupen(params[:coupen])
+       if cp.blank?
+         redirect_to :back ,:notice=>"Invalid Coupen"
+       else
+         redirect_to root_path ,:notice=>"Your Coupen Is Valid Please See The Step To Create A Database"
+       end
+       
+  end
+  
+  
 private
+
+#  def gateway
+#        @gateway ||= PaypalExpressGateway.new(
+#           :login => 'kedar.pathak-facilitator_api1.pragtech.co.in',
+#          :password => '1364994877',
+#          :signature => 'ACLa8jsQN8TPFLDY57dLNb5-3qq.AgN5u20e33t3nrXP3uDzoZTGNERk'
+#        )
+#  end
 
   def gateway
         @gateway ||= PaypalExpressGateway.new(
-           :login => 'kedar.pathak-facilitator_api1.pragtech.co.in',
-          :password => '1364994877',
-          :signature => 'ACLa8jsQN8TPFLDY57dLNb5-3qq.AgN5u20e33t3nrXP3uDzoZTGNERk'
+           :login => "kedarrpathak2001_api1.yahoo.com",
+          :password => "BU84RVBTFDQYSK6L",
+          :signature => "ARzJcWvnZBmQcxIhLmAWLxAOUxPCAmt.qcUu3839O7fqLNCaTyEIqIM0"
         )
   end
+  
   
 end

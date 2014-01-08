@@ -1,14 +1,15 @@
 Quickbook42::Application.routes.draw do
+  resources :coupens
+
   get "payments/index"
   get "payments/confirm"
   post "payments/complete"
   get "payments/checkout"
   post "payments/payment_authorize"
+  post "payments/coupen_check"
   resource "payments"
   devise_for :users
   resources :homes
- 
-  
   resources :databases
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

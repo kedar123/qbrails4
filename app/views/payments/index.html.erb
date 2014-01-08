@@ -36,5 +36,31 @@
      </tr>
  </table>
  </form> 
+ 
+ 
+ 
+ 
 
 
+ <%=form_tag  payments_coupen_check_path %>
+   
+ <table id="authorize_payment" style="display:block">
+ 
+    <tr>
+   <td height="45" class="listening_eventstext">  
+    <%= label_tag 'coupen', 'Coupen'%>
+ 
+   </td>
+    <td class="listening_eventstext"> 
+    <%= text_field_tag 'coupen' %>
+     
+      
+    </td>  
+   </tr>
+   <tr>
+     <td>
+       <%= submit_tag 'Submit Coupen',:id=>"Checkavailabilitybutton2"%>
+       </td>
+     </tr>
+ </table>
+ </form> 
