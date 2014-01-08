@@ -36,12 +36,12 @@ div {
  
 
 #error_explanation {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
+      background-color: #F0F0F0;
+    border: 2px solid red;
+    margin-bottom: 20px;
+    margin-left: 98px;
+    padding: 14px 27px 0;
+    width: 450px;
   h2 {
     text-align: left;
     font-weight: bold;

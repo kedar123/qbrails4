@@ -1,30 +1,32 @@
+<div class="centerdiv">
 <h2>Sign up</h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  <%= f.email_field :email, :autofocus => true ,:class=>"inputs",:placeholder=>"Email" %></div>
 
   <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+  <%= f.password_field :password ,:class=>"inputs",:placeholder=>"Password" %></div>
 
   <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+  <%= f.password_field :password_confirmation,:class=>"inputs",:placeholder=>"Password Confirmation"  %></div>
   <div><%= f.label :country %><br />
-  <%= f.text_field :country %></div>
+  <%= f.text_field :country ,:class=>"inputs",:placeholder=>"Country" %></div>
   <div><%= f.label :state %><br />
-  <%= f.text_field :state %></div>
+  <%= f.text_field :state ,:class=>"inputs",:placeholder=>"State" %></div>
   <div><%= f.label :zip_code %><br />
-  <%= f.text_field :zip_code %></div>
+  <%= f.text_field :zip_code ,:class=>"inputs",:placeholder=>"Zip Code" %></div>
   <div><%= f.label :mobile %><br />
-  <%= f.text_field :mobile %></div>
+  <%= f.text_field :mobile ,:class=>"inputs",:placeholder=>"Mobile" %></div>
   <div><%= f.label :phone %><br />
-  <%= f.text_field :phone %></div>
+  <%= f.text_field :phone ,:class=>"inputs",:placeholder=>"Phone" %></div>
   <div><%= f.label :address %><br />
-  <%= f.text_field :address %></div>
+  <%= f.text_field :address ,:class=>"inputs",:placeholder=>"Address" %></div>
 
-  <div><%= f.submit "Sign up" %></div>
+  <div><%= f.submit "Sign up",:id=>"startmigration_button" %></div>
 <% end %>
-
+ <br/><br/><br/>
 <%= render "devise/shared/links" %>
+</div>
