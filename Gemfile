@@ -61,3 +61,9 @@ gem "capybara", :group => :test
 gem "database_cleaner", :group => :test
 gem "email_spec", :group => :test
 gem 'unicorn'
+group :assets do
+  gem 'execjs'
+  gem 'therubyracer', :platforms => :ruby
+  gem 'johnson'
+  
+end
