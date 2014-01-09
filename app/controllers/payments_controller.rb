@@ -1,6 +1,7 @@
 class PaymentsController < ApplicationController
+  
   include ActiveMerchant::Billing
-   
+  before_filter :authenticate_user! 
   def index
     
     current_user.user_payment_choice = params[:id]
