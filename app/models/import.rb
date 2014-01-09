@@ -1051,15 +1051,15 @@ begin
 #     
 #      logger.info "Bill migrating............ calleddd"
  #   	 logger.info "Bill migrating............ calleddd"
-  	  bill = Bill.find(:all)#Bill.all  #vendor run first
+  	 # bill = Bill.find(:all)#Bill.all  #vendor run first
 #	   Bill.export_bill(bill,current_user)
 #       
 #         p " purchase orders callingggggggggg"
-    	purorder = Purchaseorder.find(:all)#Purchaseorder.all
+    #	purorder = Purchaseorder.find(:all)#Purchaseorder.all
  # 	Purchaseorder.export_purchaseorder(purorder,current_user)
 #    
 #      p "caling salesorder................."
- 			salesorder = Salesorder.find(:all)#Salesorder.all
+ 	#		salesorder = Salesorder.find(:all)#Salesorder.all
  #			Salesorder.export_salesorder(salesorder,current_user)
 #    
 #      logger.info "sales receiptttttt"
