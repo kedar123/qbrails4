@@ -50,49 +50,7 @@
    function check_blank_fields(){
      var check_form = true;
       
-      if(!$("#address" ).val())
-        {
-          alert("Please Enter Address");
-          check_form = false;
-          return check_form;
-        }
-      if(!$("#phone" ).val())
-        {
-          alert("Please Enter Phone");
-          check_form = false;
-          return check_form;
-        }  
-           if(!$("#mobile" ).val())
-        {
-          alert("Please Enter Mobile");
-          check_form = false;
-          return check_form;
-        }
-         if(!$("#zip_code" ).val())
-        {
-          alert("Please Enter Zip Code");
-          check_form = false;
-          return check_form;
-        }
-           if(!$("#street" ).val())
-        {
-          alert("Please Enter Street");
-          check_form = false;
-          return check_form;
-        }
-           if(!$("#state" ).val())
-        {
-          alert("Please Enter State");
-          check_form = false;
-          return check_form;
-        }
-           if(!$("#country" ).val())
-        {
-          alert("Please Enter Country");
-          check_form = false;
-          return check_form;
-        }
-         if(!IsEmail($("#user_email" ).val()))
+                if(!IsEmail($("#user_email" ).val()))
         {
           alert("Please Enter Email");
           check_form = false;
@@ -106,8 +64,54 @@
           check_form = false;
           return check_form;
         }
-        
-        password.value != cpassword.value
+               if(!$("#country" ).val())
+        {
+          alert("Please Enter Country");
+          check_form = false;
+          return check_form;
+        }
+               if(!$("#state" ).val())
+        {
+          alert("Please Enter State");
+          check_form = false;
+          return check_form;
+        }
+                   if(!$("#street" ).val())
+        {
+          alert("Please Enter Street");
+          check_form = false;
+          return check_form;
+        }
+  
+
+         if(!$("#zip_code" ).val())
+        {
+          alert("Please Enter Zip Code");
+          check_form = false;
+          return check_form;
+        }
+
+               if(!$("#mobile" ).val())
+        {
+          alert("Please Enter Mobile");
+          check_form = false;
+          return check_form;
+        }
+    
+               if(!$("#phone" ).val())
+        {
+          alert("Please Enter Phone");
+          check_form = false;
+          return check_form;
+        }
+              if(!$("#address" ).val())
+        {
+          alert("Please Enter Address");
+          check_form = false;
+          return check_form;
+        }
+
+     
       
      return check_form;
    }
