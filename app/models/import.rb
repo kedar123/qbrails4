@@ -682,11 +682,11 @@ logger.info	 "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
     logger.info e.backtrace.inspect 
     
    logger.info "connectinggggg to oct_4" 
-   Database.connection.execute("use quickbook42_development")
+   Database.connection.execute("use mysqlquickbook")
    @error = true
   end
    logger.info "connectinggggg to oct_4" 
-   Database.connection.execute("use quickbook42_development")
+   Database.connection.execute("use mysqlquickbook")
    current_user.database.status = true
    current_user.database.save
   if @error
@@ -915,11 +915,11 @@ begin
     logger.info e.backtrace.inspect 
     
    logger.info "connectinggggg to oct_4" 
-   Database.connection.execute("use quickbook42_development")
+   Database.connection.execute("use mysqlquickbook")
    @error = true
   end
    logger.info "connectinggggg to oct_4" 
-   Database.connection.execute("use quickbook42_development")
+   Database.connection.execute("use mysqlquickbook")
    current_user.database.status = true
    current_user.database.save
   if @error
@@ -1143,11 +1143,11 @@ begin
     logger.info e.backtrace.inspect 
     
    logger.info "connectinggggg to oct_4" 
-   Database.connection.execute("use quickbook42_development")
+   Database.connection.execute("use mysqlquickbook")
    @error = true
   end
    logger.info "connectinggggg to oct_4" 
-   Database.connection.execute("use quickbook42_development")
+   Database.connection.execute("use mysqlquickbook")
    current_user.database.status = true
    current_user.database.save
   if @error

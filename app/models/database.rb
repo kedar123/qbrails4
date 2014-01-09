@@ -3485,7 +3485,7 @@ CREATE TABLE earningsdetail (
 
     
     
-    Database.connection.execute("use quickbook42_development")
+    Database.connection.execute("use mysqlquickbook")
     #Database.connection.execute("use qbtooper_development_mysql")
  
     
