@@ -12,6 +12,7 @@ class RegistrationsController < Devise::RegistrationsController
      
     p user_signed_in?
     #there are some issues with rails 4 devise that is why i have creaated this new model. 
+    if current_user
     usd = Useraddress.new
     usd.user_id = current_user.id
     usd.country = params[:country]
@@ -21,6 +22,7 @@ class RegistrationsController < Devise::RegistrationsController
     usd.phone = params[:phone]
     usd.address = params[:address]
     usd.save
+    end
     begin
     UserMailer.welcome_email(current_user).deliver
     rescue=>e

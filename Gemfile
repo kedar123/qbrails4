@@ -64,6 +64,5 @@ gem 'unicorn'
 group :assets do
   gem 'execjs'
   gem 'therubyracer', :platforms => :ruby
-  gem 'johnson'
-  
 end
+ 

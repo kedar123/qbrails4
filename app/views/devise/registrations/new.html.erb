@@ -1,7 +1,7 @@
 <div class="centerdiv">
 <h2>Sign up</h2>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name),:html=>{:onSubmit=>"return check_blank_fields()"}) do |f| %>
   <%= devise_error_messages! %>
 
   <div><%= f.label :email %><br />
@@ -28,10 +28,95 @@
   <div><%= f.label :phone %><br />
   <%= text_field_tag :phone , "",:class=>"inputs",:placeholder=>"Phone" %></div>
   <div><%= f.label :address %><br />
-  <%= text_field_tag :address , "",:class=>"inputs",:placeholder=>"Address" %></div>
+    <%= text_field_tag :address , "",:name=>"address",:class=>"inputs",:placeholder=>"Address" %>
+ 
 
   <div><%= f.submit "Sign up",:id=>"startmigration_button" %></div>
 <% end %>
  <br/><br/><br/>
 <%= render "devise/shared/links" %>
 </div>
+
+
+ 
+		
+ 
+
+	 
+
+		 
+ <script>
+   
+   function check_blank_fields(){
+     var check_form = true;
+      
+      if(!$("#address" ).val())
+        {
+          alert("Please Enter Address");
+          check_form = false;
+          return check_form;
+        }
+      if(!$("#phone" ).val())
+        {
+          alert("Please Enter Phone");
+          check_form = false;
+          return check_form;
+        }  
+           if(!$("#mobile" ).val())
+        {
+          alert("Please Enter Mobile");
+          check_form = false;
+          return check_form;
+        }
+         if(!$("#zip_code" ).val())
+        {
+          alert("Please Enter Zip Code");
+          check_form = false;
+          return check_form;
+        }
+           if(!$("#street" ).val())
+        {
+          alert("Please Enter Street");
+          check_form = false;
+          return check_form;
+        }
+           if(!$("#state" ).val())
+        {
+          alert("Please Enter State");
+          check_form = false;
+          return check_form;
+        }
+           if(!$("#country" ).val())
+        {
+          alert("Please Enter Country");
+          check_form = false;
+          return check_form;
+        }
+         if(!IsEmail($("#user_email" ).val()))
+        {
+          alert("Please Enter Email");
+          check_form = false;
+          return check_form;
+        }
+      
+        
+        if( $("#user_password").val() !=  $("#user_password_confirmation").val() )
+        {
+          alert("Password Dosent Match");
+          check_form = false;
+          return check_form;
+        }
+        
+        password.value != cpassword.value
+      
+     return check_form;
+   }
+   
+   function IsEmail(email) {
+  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(email);
+}
+   
+   
+   </script>
+ 
