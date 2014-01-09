@@ -9,6 +9,18 @@ class RegistrationsController < Devise::RegistrationsController
     #but need to send an email
     p "after logged in"
     p current_user
+     
+    p user_signed_in?
+    #there are some issues with rails 4 devise that is why i have creaated this new model. 
+    usd = Useraddress.new
+    usd.user_id = current_user.id
+    usd.country = params[:country]
+    usd.state = params[:state]
+    usd.zip_code = params[:zip_code]
+    usd.mobile = params[:mobile]
+    usd.phone = params[:phone]
+    usd.address = params[:address]
+    usd.save
     begin
     UserMailer.welcome_email(current_user).deliver
     rescue=>e

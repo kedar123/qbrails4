@@ -8,7 +8,9 @@ Quickbook42::Application.routes.draw do
   post "payments/payment_authorize"
   post "payments/coupen_check"
   resource "payments"
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations",:sessions => "sessions",:passwords=>"passwords"}
+
+  #devise_for :users
   resources :homes
   resources :databases
   # The priority is based upon order of creation: first created -> highest priority.
