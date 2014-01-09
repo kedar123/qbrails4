@@ -739,3 +739,8 @@ background: #DFE9EC;
 color: #414848; 
 } 
 
+.form_class{
+    margin:0px;
+    padding:0px;
+    float:left;
+}

@@ -142,9 +142,8 @@ named as payment_status boolean . after a payment is complete make this field tr
 <%if ((current_user.database.blank? and current_user.user_payment_choice == "free") or (current_user.payment_status == true and current_user.database.blank?)) %>
    1st :- Click                          
   <%#=link_to  " Here " ,url_for(:action => 'create', :controller => 'databases',:id=>current_user.user_payment_choice),method: "post"%>
-  <%=button_to " Here " ,url_for(:action => 'create', :controller => 'databases',:id=>current_user.user_payment_choice)%>
-   
-   
+  <%=button_to " Here " ,url_for(:action => 'create', :controller => 'databases',:id=>current_user.user_payment_choice),:form_class=>"form_class"%>
+    
    To Create A Database Schema  
      
 <%end%>
