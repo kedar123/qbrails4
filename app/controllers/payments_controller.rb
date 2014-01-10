@@ -25,11 +25,15 @@ class PaymentsController < ApplicationController
   #otherwise its seems to be an paypal redirection as user clicked on paypal and he cames here then 
   def checkout
   setup_response = gateway.setup_purchase(5000,
-    :items => [{:name => "Quick Book Migration", :quantity => 1,:description => "All Modules",:amount=> 5000}], 
+    :items => [{:name => "Quick Book Migration", :description => "All Modules",:amount=> 5000}], 
     :ip                => request.remote_ip,
     :return_url        => url_for(:action => 'confirm', :only_path => false),
     :cancel_return_url => url_for(:action => 'index', :only_path => false),
-    :logoimg => "http://pragtech.co.in/images/logo.png"
+    :logoimg => "http://pragtech.co.in/images/logo.png",
+    :header_img => "http://pragtech.co.in/images/logo.png",
+    :allow_guest_checkout=> true,
+    :business => 'kedar1234@gmail.com'
+    
   )
   logger.info "the response from paypal"
   logger.info setup_response.inspect
@@ -127,6 +131,15 @@ private
           :signature => "ACLa8jsQN8TPFLDY57dLNb5-3qq.AgN5u20e33t3nrXP3uDzoZTGNERk"
         )
   end
+  
+ # def gateway
+ #       @gateway ||= PaypalExpressGateway.new(
+ #          :login => "kedarrpathak2001_api1.yahoo.com",
+ #         :password => "BU84RVBTFDQYSK6L",
+ #         :signature => "ARzJcWvnZBmQcxIhLmAWLxAOUxPCAmt.qcUu3839O7fqLNCaTyEIqIM0"
+ #       )
+ # end
+
   
   
 end
