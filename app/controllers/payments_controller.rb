@@ -29,10 +29,7 @@ class PaymentsController < ApplicationController
     :ip                => request.remote_ip,
     :return_url        => url_for(:action => 'confirm', :only_path => false),
     :cancel_return_url => url_for(:action => 'index', :only_path => false),
-    :logoimg => "http://pragtech.co.in/images/logo.png",
-    :header_img => "http://pragtech.co.in/images/logo.png",
-    :allow_guest_checkout=> true,
-    :business => 'kedar1234@gmail.com'
+    :allow_guest_checkout=> true
     
   )
   logger.info "the response from paypal"
