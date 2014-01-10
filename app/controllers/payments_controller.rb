@@ -28,7 +28,8 @@ class PaymentsController < ApplicationController
     :items => [{:name => "Quick Book Migration", :quantity => 1,:description => "All Modules",:amount=> 5000}], 
     :ip                => request.remote_ip,
     :return_url        => url_for(:action => 'confirm', :only_path => false),
-    :cancel_return_url => url_for(:action => 'index', :only_path => false)
+    :cancel_return_url => url_for(:action => 'index', :only_path => false),
+    :logoimg => "http://pragtech.co.in/images/logo.png"
   )
   logger.info "the response from paypal"
   logger.info setup_response.inspect
@@ -121,9 +122,9 @@ private
 
   def gateway
         @gateway ||= PaypalExpressGateway.new(
-           :login => "kedarrpathak2001_api1.yahoo.com",
-          :password => "BU84RVBTFDQYSK6L",
-          :signature => "ARzJcWvnZBmQcxIhLmAWLxAOUxPCAmt.qcUu3839O7fqLNCaTyEIqIM0"
+           :login => "kedar.pathak-facilitator_api1.pragtech.co.in",
+          :password => "1364994877",
+          :signature => "ACLa8jsQN8TPFLDY57dLNb5-3qq.AgN5u20e33t3nrXP3uDzoZTGNERk"
         )
   end
   

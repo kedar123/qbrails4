@@ -29,12 +29,16 @@
 
 
      <%if current_user and current_user.user_payment_choice%>
-      <%if current_user.user_payment_choice == "basic"%> 
+      <%if current_user.user_payment_choice == "free"%> 
            <%=render :partial=>"item_count"%>
       <%end%>
       <%if current_user.user_payment_choice == "standard"%> 
              <%=render :partial=>"item_count"%>
       <%end%>
+      <%if current_user.user_payment_choice == "premium"%> 
+             <%=render :partial=>"item_count"%>
+      <%end%>
+
      <%end%>   
 
 
