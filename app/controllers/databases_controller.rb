@@ -70,7 +70,7 @@ class DatabasesController < ApplicationController
       end
     end
     else
-      redirect_to homes_index_path, :notice=> 'Database was Already created.'
+      redirect_to redirect_to root_path, :notice=> 'Database was Already created.'
     end
   end
 
