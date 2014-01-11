@@ -149,7 +149,7 @@ named as payment_status boolean . after a payment is complete make this field tr
    To Create A Database Schema  
    <%#one more condition i need to add is for a coupen based if a valid coupen is there and a database is blank then also 
    a link should appear%>
- <%elsif !current_user.coupenassigned.blank?%> 
+ <%elsif !current_user.coupenassigned.blank? and current_user.database.blank?%> 
   <%=button_to " Here " ,url_for(:action => 'create', :controller => 'databases',:id=>current_user.user_payment_choice),:form_class=>"form_class"%>
     
    To Create A Database Schema  
