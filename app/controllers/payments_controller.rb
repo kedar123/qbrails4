@@ -105,6 +105,9 @@ class PaymentsController < ApplicationController
        if cp.blank?
          redirect_to :back ,:notice=>"Invalid Coupen"
        else
+         current_user.coupenassigned = params[:coupen]
+         current_user.save
+         
          redirect_to root_path ,:notice=>"Your Coupen Is Valid Please See The Step To Create A Database"
        end
        
