@@ -1,5 +1,6 @@
 class CoupensController < ApplicationController
   before_action :set_coupen, only: [:show, :edit, :update, :destroy]
+  before_filter :check_admin
 
   # GET /coupens
   # GET /coupens.json
@@ -74,4 +75,16 @@ class CoupensController < ApplicationController
     def coupen_params
       params.require(:coupen).permit(:coupen)
     end
+    
+    def check_admin
+        if current_user
+          if current_user.email == "kedar134@gmail.com"
+          else
+            redirect_to root_path ,:notice=>"Admin Can Generate A Coupon"
+          end
+        else
+             redirect_to root_path ,:notice=>"Admin Can Generate A Coupon"
+        end 
+    end
+    
 end

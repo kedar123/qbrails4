@@ -24,12 +24,12 @@ class PaymentsController < ApplicationController
   #so suppose its a free then. instead of checkout just redirect him to a migration page
   #otherwise its seems to be an paypal redirection as user clicked on paypal and he cames here then 
   def checkout
-  setup_response = gateway.setup_purchase(5000,
-    :items => [{:name => "Quick Book Migration", :description => "All Modules",:amount=> 5000}], 
+  setup_response = gateway.setup_purchase(100,
+    :items => [{:name => "Quick Book Migration", :description => "All Modules",:amount=> 100}], 
     :ip                => request.remote_ip,
     :return_url        => url_for(:action => 'confirm', :only_path => false),
     :cancel_return_url => url_for(:action => 'index', :only_path => false),
-    :allow_guest_checkout=> true
+    :allow_guest_checkout=> false
     
   )
   logger.info "the response from paypal"
@@ -54,7 +54,7 @@ class PaymentsController < ApplicationController
   end
   
   def complete
-    purchase = gateway.purchase(5000,
+    purchase = gateway.purchase(100,
       :ip       => request.remote_ip,
       :payer_id => params[:payer_id],
       :token    => params[:token]

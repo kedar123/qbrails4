@@ -1,3 +1,6 @@
+<div class="centerdiv"> 
+<div id="left">
+  <div class="text">
 <h1>Please Confirm Your Payment Details</h1>
 
 <table>
@@ -12,5 +15,8 @@
 </table>
 
 <%= form_tag :action => 'complete', :token => params[:token], :payer_id => params[:PayerID] do %>
-  <%= submit_tag 'Complete Payment' %>
+  <%= submit_tag 'Complete Payment',:id=>"startmigration_button" %>
 <% end %>
+</div>
+</div>
+  </div>

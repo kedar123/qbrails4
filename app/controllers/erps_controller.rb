@@ -101,10 +101,18 @@ class ErpsController < ApplicationController
           logger.info "the connection was unsuccessful"
           logger.info 
           notice = 'Can not connect to OpenERP please check details again'
-        end  
+        end
+        p "before render"
+        p notice
+        if notice == 'Can not connect to OpenERP please check details again'
+            @notice = 'Can not connect to OpenERP please check details again'
+           format.html { render :action=> "edit" , :notice=> notice}
+        else
          format.html { redirect_to @erp, :notice=> notice }
+        end
          format.json {render  :head =>:no_content }
       else
+        #
         format.html { render :action=> "edit" }
         format.json { render :json=> @erp.errors, :status=> :unprocessable_entity }
       end

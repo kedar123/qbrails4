@@ -65,4 +65,4 @@ group :assets do
   gem 'execjs'
   gem 'therubyracer', :platforms => :ruby
 end
- 
+ gem 'watir' , :group => :test
