@@ -7,6 +7,7 @@ Quickbook42::Application.routes.draw do
   get "payments/checkout"
   post "payments/payment_authorize"
   post "payments/coupen_check"
+  get "homes/show_means"
   resource "payments"
   devise_for :users, :controllers => {:registrations => "registrations",:sessions => "sessions",:passwords=>"passwords"}
 

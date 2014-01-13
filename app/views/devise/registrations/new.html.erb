@@ -58,12 +58,22 @@
         }
       
         
+        
+        if( $("#user_password").val().length <  8 )
+        { 
+          alert("Please Enter Password At Least 5 Digits");
+          check_form = false;
+          return check_form;
+        }
+        
         if( $("#user_password").val() !=  $("#user_password_confirmation").val() )
         {
           alert("Password Dosent Match");
           check_form = false;
           return check_form;
         }
+        
+        
                if(!$("#country" ).val())
         {
           alert("Please Enter Country");
@@ -86,20 +96,26 @@
 
          if(!$("#zip_code" ).val())
         {
+          
           alert("Please Enter Zip Code");
           check_form = false;
           return check_form;
+          
         }
 
-               if(!$("#mobile" ).val())
+               if((!$("#mobile").val()) || ($("#mobile").val().length < 10)  )
         {
           alert("Please Enter Mobile");
           check_form = false;
           return check_form;
         }
+        
     
                if(!$("#phone" ).val())
         {
+ 
+          
+          
           alert("Please Enter Phone");
           check_form = false;
           return check_form;

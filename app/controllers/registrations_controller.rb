@@ -30,6 +30,7 @@ class RegistrationsController < Devise::RegistrationsController
       logger.info e.inspect
       logger.info e.message
     end
+    #redirect_to root_path
   end
 
   def update
