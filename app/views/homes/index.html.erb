@@ -116,9 +116,16 @@
                                <%#in this if the last condition is added because if its a free type then the payment is false and at that time this should not be displayed%>                             
                                  1st :- Select Type of Migration From Above. 
                               <%elsif current_user.user_payment_choice.blank? and (current_user.payment_status == false or  current_user.payment_status == nil) and current_user.database.blank? and current_user.coupenassigned.blank?%>   
-                                 
-                                 1st :- Select Type of Migration From Above.
+                                  1st :- Select Type of Migration From Above.
+                                  <%#here i need to add one more condition and that is of if the coupen is invalid then i must show this line%>
+                                  <%#as %>
+                              <%elsif !current_user.user_payment_choice.blank? and (current_user.payment_status == false or  current_user.payment_status == nil) and current_user.database.blank? and current_user.coupenassigned.blank? and   current_user.user_payment_choice != "free"%>  
+                                  1st :- Select Type of Migration From Above. 
+                                    
                              <%end%>
+                                  
+                                 
+                                 
                               <%#i am adding one more condition here and that is suppose and user payment choice is not blank 
 and payment is blank then the text should appear for %>
                                   
