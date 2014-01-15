@@ -30,10 +30,9 @@ class PaymentsController < ApplicationController
     :items => [{:name => "Quick Book Migration", :description => "All Modules",:amount=> 5000}], 
     :ip                => request.remote_ip,
     :return_url        => url_for(:action => 'confirm', :only_path => false),
-    :cancel_return_url => url_for(:action => 'index', :only_path => false),
+    :cancel_return_url => url_for(:action => 'index',:id=>current_user.user_payment_choice , :only_path => false),
     :allow_guest_checkout=> false
-    
-  )
+   )
   logger.info "the response from paypal"
   logger.info setup_response.inspect
   logger.info setup_response.token
