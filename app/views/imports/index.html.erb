@@ -27,8 +27,10 @@
      <%end%>
 
 
-
-     <%if current_user and current_user.user_payment_choice%>
+<%#i am putting here an begin rescue so that if there is an error in database connection then he will be 
+#connected to an original database%>
+<%begin%>
+    <%if current_user and current_user.user_payment_choice%>
       <%if current_user.user_payment_choice == "free"%> 
            <%=render :partial=>"item_count"%>
       <%end%>
@@ -39,7 +41,17 @@
              <%=render :partial=>"item_count"%>
       <%end%>
 
-     <%end%>   
+    <%end%>
+<%rescue => e%>
+<%logger.info "some connection problem on index page"%>
+<%logger.info e.inspect%>
+
+<%Database.connection.execute("use mysqlquickbook")%> 
+
+<%end%>
+
+
+
 
 
 
