@@ -12,7 +12,7 @@ When(/^I am On Root Page Of Home Index standard with coupen\.$/) do
   b.goto 'http://localhost:3000/'
   b.a(:href => "/payments/index?id=standard").click
   b.a(:href => "/users/sign_up").click
-  b.text_field(:id=>"user_email").set("kedar152@gmail.com")
+  b.text_field(:id=>"user_email").set("kedar21@gmail.com")
   b.text_field(:id=>"user_password").set("kedar123")
   b.text_field(:id=>"user_password_confirmation").set("kedar123")
   b.text_field(:id=>"country").set("kedar123")
@@ -29,7 +29,8 @@ When(/^I am On Root Page Of Home Index standard with coupen\.$/) do
   #b.button(:id=>'submitLogin').click
   #b.button(:id=>'continue_abovefold').click
   #b.button(:value=>"Complete Payment").click
-  b.text_field(:id=>"coupen").set("RKYCPKRSSFSNSWLPYSBWPVUFYGKGSKUVWSKTCSJNFCTSOSBRIR")
+ 
+  b.text_field(:id=>"coupen").set("XETGYQECWLFCQJUHHSDKWHVTKGACHADBOMOCGFWLSPOQICUWIY")
   b.button(:id => 'startmigration_button').click
   b.button(:text => " Here ").click
   b.a(:text => "Next").click

@@ -12,7 +12,7 @@ When(/^I am On Root Page Of Home Index premium$/) do
   b.goto 'http://localhost:3000/'
   b.a(:href => "/payments/index?id=premium").click
   b.a(:href => "/users/sign_up").click
-  b.text_field(:id=>"user_email").set("kedar149@gmail.com")
+  b.text_field(:id=>"user_email").set("kedar61@maill.com")
   b.text_field(:id=>"user_password").set("kedar123")
   b.text_field(:id=>"user_password_confirmation").set("kedar123")
   b.text_field(:id=>"country").set("kedar123")

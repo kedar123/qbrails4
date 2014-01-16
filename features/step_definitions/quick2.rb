@@ -15,8 +15,10 @@ When(/^I am On Root Page Of Home Index standard$/) do
   b.windows.first.use
   b.goto 'http://localhost:3000/'
   b.a(:href => "/payments/index?id=standard").click
+  sleep 2
   b.a(:href => "/users/sign_up").click
-  b.text_field(:id=>"user_email").set("kedar139@gmail.com")
+  sleep 3
+  b.text_field(:id=>"user_email").set("kedar17@gmaill.com")
   b.text_field(:id=>"user_password").set("kedar123")
   b.text_field(:id=>"user_password_confirmation").set("kedar123")
   b.text_field(:id=>"country").set("kedar123")
@@ -27,7 +29,9 @@ When(/^I am On Root Page Of Home Index standard$/) do
   b.text_field(:id=>"phone").set("9763370419")
   b.text_field(:id=>"address").set("9763370419")
   b.button(:id => 'startmigration_button').click
+   
   b.a(:href => "/payments/checkout").click
+  sleep 2
   b.text_field(:id=>'login_email').set('test@pragtech.co.in')
   b.text_field(:id=>'login_password').set('kedar123')
   b.button(:id=>'submitLogin').click

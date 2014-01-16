@@ -11,11 +11,11 @@ When(/^I am On Root Page Of Home Index1$/) do
   #pending # express the regexp above with the code you wish you had
 
   b = Watir::Browser.new
-  b.goto 'http://localhost:3000/'
+  b.goto 'http://localhost:3000'
  
   b.a(:href => "/payments/index?id=free").click
-   
-  b.text_field(:id=>"user_email").set("kedar135@gmail.com")
+   sleep 2
+  b.text_field(:id=>"user_email").set("kedar12@gmaill.com")
   b.text_field(:id=>"user_password").set("kedar123")
    
   b.button(:id => 'startmigration_button').click
@@ -24,23 +24,24 @@ When(/^I am On Root Page Of Home Index1$/) do
   #the down functions will be copied to another test file because. i need to put a manual step betn as i need to 
   #migrate a 
   #here a database is already created
+  sleep 5
   b.a(:text => "Next").click
   b.a(:text => "Next").click
   b.a(:text => "Next").click
   b.button(:id => 'startmigration_button').click
   #now need to give local openerp details
-  b.text_field(:id=>"erp_database").set("quickbooktest50")
+  b.text_field(:id=>"erp_database").set("quickbooktest8")
   b.text_field(:id=>"erp_username").set("admin")
   b.text_field(:id=>"erp_password").set("admin")
-  b.text_field(:id=>"erp_url").set("127.0.0.1")
+  b.text_field(:id=>"erp_url").set("178.63.19.197")
   b.text_field(:id=>"erp_port").set("8069")
   b.button(:value=>"Done").click
   if ( (b.text.match(/^OpenERP Connection established successfully$/) == nil ))
     #this step is for making an correction in erp details
-  b.text_field(:id=>"erp_database").set("quickbooktest50")
+  b.text_field(:id=>"erp_database").set("quickbooktest8")
   b.text_field(:id=>"erp_username").set("admin")
   b.text_field(:id=>"erp_password").set("admin")
-  b.text_field(:id=>"erp_url").set("127.0.0.1")
+  b.text_field(:id=>"erp_url").set("178.63.19.197")
   b.text_field(:id=>"erp_port").set("8069")
   b.button(:value=>"Done").click
   b.button(:value=>"Start Migration").click
