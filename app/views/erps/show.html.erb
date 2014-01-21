@@ -5,29 +5,17 @@
 <p>
   <b>Database:</b>
   <%= @erp.database %>
-</p>
-
-<p>
+<br/>
   <b>UserName:</b>
   <%= @erp.username %>
-</p>
-<!--
-<p>
-  <b>Password:</b>
-  <%= @erp.password %>
-</p>
--->
-<p>
+<br/>
   <b>Url:</b>
   <%= @erp.url %>
-</p>
-
-<p>
+<br/>
   <b>Port:</b>
   <%= @erp.port %>
 </p>
 <%#= link_to 'Edit', edit_erp_path(@erp) %> 
 <%#= link_to 'Back', erps_path %>
  <br>
-<p> If You Are Ready With OpenERP database credentials Then Click On Start Migration Button</p></br>
-<%= button_to "Start Migration",url_for(:action => 'index', :controller => 'imports' ), :id =>@erp.id ,:class=>"button_done"%>
+ <%= button_to "Start Migration",url_for(:action => 'index', :controller => 'imports' ), :id =>@erp.id ,:id=>"start_migration_button"%>

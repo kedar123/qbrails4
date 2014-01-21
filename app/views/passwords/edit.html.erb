@@ -1,8 +1,12 @@
- 
+ <style>
+   #body div div {
+     margin:0px;
+   }
+   </style>
  <div class="container" style="width:50%">
   <div class="new_formbg">
   <div class="mainbg">
-  <div class="new_formheadingbg">Change your password</div>
+  <div class="new_formheadingbg"><b>Change your password</b></div>
      <div class="login_coloumn">
  <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
  <table width="350px;"> 
@@ -38,7 +42,7 @@
     <td> 
         
        <%= f.password_field :password_confirmation,:placeholder=>"Password Confirmation",:class=>"textfieldclass1" %>
-       <div>
+       <div style="margin:0px;padding:0px;">
     
     <span style="color:red">
     <%if  @user.errors.messages.has_key? :password_confirmation   %>
@@ -61,7 +65,7 @@
   <tr>
      <td width="85"> 
       <label>
-       <%= f.submit "Change Password" ,:id=>"newsubmit_button"%>
+       <%= f.submit "Change Password" ,:id=>"migration_button"%>
         </label>
          </td>
   </tr>
@@ -71,7 +75,7 @@
  <div class="footer" style="line-height:21px;">
  <div class="signinbutton">
    
-   <%=link_to "cancel",root_path%>
+   <%=link_to "cancel",root_path ,:id=>"migration_button"%>
    
  <%#= render "devise/shared/links" %>
     </div>

@@ -2,6 +2,7 @@ class PaymentsController < ApplicationController
   
   include ActiveMerchant::Billing
   before_filter :authenticate_user! 
+  layout 'prof'
   def index
     
     current_user.user_payment_choice = params[:id]
@@ -23,24 +24,45 @@ class PaymentsController < ApplicationController
   #checkout is depend on the type user has selected.that is free,standard,premium
   #so suppose its a free then. instead of checkout just redirect him to a migration page
   #otherwise its seems to be an paypal redirection as user clicked on paypal and he cames here then 
-  def checkout
-    
+  #an old checkout method because giving an timeout error
+  def checkoutl
    
-  setup_response = gateway.setup_purchase(5000,
-    :items => [{:name => "Quick Book Migration", :description => "All Modules",:amount=> 5000}], 
+    
+  begin 
+  setup_response = gateway.setup_purchase(50,
+    :items => [{:name => "Quick Book Migration", :description => "All Modules",:amount=> 50}], 
     :ip                => request.remote_ip,
     :return_url        => url_for(:action => 'confirm', :only_path => false),
     :cancel_return_url => url_for(:action => 'index',:id=>current_user.user_payment_choice , :only_path => false),
     :allow_guest_checkout=> false
    )
-  logger.info "the response from paypal"
-  logger.info setup_response.inspect
-  logger.info setup_response.token
-  
+   
+   
   redirect_to gateway.redirect_url_for(setup_response.token)
-  
+  rescue=>e
+    logger.info "some errors in active merchant"
+    logger.info e.inspect
+    redirect_to :back ,:notice=>"There Are Some Errors In Connection Please Try Again"
   end
-
+  end
+  
+  def checkout
+    response = EXPRESS_GATEWAY.setup_purchase(50,
+    ip: request.remote_ip,
+    return_url: url_for(:action => 'confirm', :only_path => false),
+    cancel_return_url: url_for(:action => 'index',:id=>current_user.user_payment_choice , :only_path => false),
+    currency: 'USD',
+    locale: I18n.locale.to_s.sub(/-/, '_'), #you can put 'en' if you don't know what it means :)
+    brand_name: 'Pragmatic', #The name of the company
+    header_image: 'http://http://pragtech.co.in/images/logo.png',
+    allow_guest_checkout: false,   #payment with credit card for non PayPal users
+    items: [{:name => "Quick Book Migration", :description => "All Modules",:amount=> 50}] #array of hashes, amount is a price in cents
+  )
+  redirect_to EXPRESS_GATEWAY.redirect_url_for(response.token)
+  end
+  
+  
+  
   def confirm
     redirect_to :action => 'index' unless params[:token]
 
@@ -57,7 +79,7 @@ class PaymentsController < ApplicationController
   end
   
   def complete
-    purchase = gateway.purchase(5000,
+    purchase = gateway.purchase(50,
       :ip       => request.remote_ip,
       :payer_id => params[:payer_id],
       :token    => params[:token]
@@ -120,21 +142,21 @@ class PaymentsController < ApplicationController
   
 private
 
-#  def gateway
-#        @gateway ||= PaypalExpressGateway.new(
-#           :login => 'kedar.pathak-facilitator_api1.pragtech.co.in',
-#          :password => '1364994877',
-#          :signature => 'ACLa8jsQN8TPFLDY57dLNb5-3qq.AgN5u20e33t3nrXP3uDzoZTGNERk'
-#        )
-#  end
-
   def gateway
         @gateway ||= PaypalExpressGateway.new(
-           :login => "kedar.pathak-facilitator_api1.pragtech.co.in",
-          :password => "1364994877",
-          :signature => "ACLa8jsQN8TPFLDY57dLNb5-3qq.AgN5u20e33t3nrXP3uDzoZTGNERk"
+           :login => 'kedar.pathak-facilitator_api1.pragtech.co.in',
+          :password => '1364994877',
+          :signature => 'ACLa8jsQN8TPFLDY57dLNb5-3qq.AgN5u20e33t3nrXP3uDzoZTGNERk'
         )
   end
+
+  #def gateway
+  #      @gateway ||= PaypalExpressGateway.new(
+  #         :login => "kedar.pathak-facilitator_api1.pragtech.co.in",
+   #       :password => "1364994877",
+   #       :signature => "ACLa8jsQN8TPFLDY57dLNb5-3qq.AgN5u20e33t3nrXP3uDzoZTGNERk"
+   #     )
+  #end
   
  # def gateway
  #       @gateway ||= PaypalExpressGateway.new(

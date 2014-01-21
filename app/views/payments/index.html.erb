@@ -5,7 +5,11 @@
 <p>Thank you for your decision to purchase our QuickBook To Openerp Data Migration.</p>
 <p>Your order total is $50.00</p>
 <p>
-  <%= link_to image_tag('https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif'), :action => 'checkout' %>
+   
+  <a href="/payments/checkout" data-no-turbolink method="post">
+<img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" alt="Btn xpresscheckout">
+</a>
+    <%#=link_to(image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"), payments_checkout_path)%>
 </p>
 <!--i am commenting this as at first phase i am consontrating on paypal payment
  <%=form_tag  payments_payment_authorize_path %>
@@ -62,13 +66,14 @@
    </tr>
    <tr>
      <td>
-       <%= submit_tag 'Submit Coupen',:id=>"startmigration_button"%>
+       <%= submit_tag 'Submit Coupen',:id=>"migration_button"%>
        </td>
      </tr>
  </table>
  </form> 
     
   </div>
+ 
   </div>
   </div>
  

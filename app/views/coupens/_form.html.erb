@@ -16,7 +16,8 @@
     <%value = ""; 50.times{value  << (65 + rand(25)).chr}%>
     <%= f.text_field :coupen,:value=>value.to_s %>
   </div>
+<br/><br/><br/>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit",:id=>"migration_button"%>
   </div>
 <% end %>

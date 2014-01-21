@@ -4,9 +4,9 @@
   <div class="new_formbg">
   <div class="mainbg">
   <div class="new_formheadingbg">Forgot your password?</div>
-     <div class="login_coloumn">
+     <div class="login_coloumn" style="clear:both">
  <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
- <table width="274" height="180" border="0" align="center">
+ <table width="274" height="90" border="0" align="center">
   
  
   <tr>
@@ -38,7 +38,7 @@
  
     <td width="85"> 
       <label>
-        <%= f.submit "Reset Password" ,:class=>"",:id=>"newsubmit_button"%>
+        <%= f.submit "Reset Password" ,:class=>"",:id=>"migration_button" %>
         
         </label>
          </td>

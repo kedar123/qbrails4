@@ -19,9 +19,12 @@
     
   <div style="clear:both;margin:0px !important;padding:0px !important;">
 <br/> 
-  <%= f.submit "Sign in" ,:id=>"migration_button" ,:style=>"margin-left:0px;"%></div>
+  <%= f.submit "Log In" ,:id=>"migration_button" ,:style=>"margin-left:0px;"%>
+  <%= link_to "Forgot password?", new_password_path(resource_name) %><br />
+  </div>
 <% end %>
 </div>
 <div style="height:300px;margin-top:0px;padding-top:0px;">
-  <%= render "devise/shared/links" %>
+  <%#= render "devise/shared/links" %>
+  
 </div>

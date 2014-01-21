@@ -90,7 +90,7 @@ body {
 	background: url(bg-nav-right-selected.gif) no-repeat top right;
 }
 #header .section ul li.selected a {
-	background: url(bg-nav-left-selected.gif) no-repeat top left;
+	/*background: url(bg-nav-left-selected.gif) no-repeat top left;*/
 }
 #header .article {
 	background: #fff;
@@ -885,6 +885,32 @@ color: #414848;
     text-decoration: none;
 }
 
+
+#migration_button_shared_sign_up{
+       -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #1b2130;
+    border-radius: 15px 15px 15px 15px;
+     
+    border-width: 1px;
+    box-shadow: 0 2px 0 rgba(255, 255, 255, 0.2) inset;
+    color: #FFFFFF;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 24px;
+    margin-bottom: 20px;
+    margin-left: 0;
+    margin-top: -4px;
+    min-width: 57px;
+    padding: 4px 25px 9px;
+    text-decoration: none;
+}
+
+
+
 #migration_button_shared_reg{
       -moz-border-bottom-colors: none;
     -moz-border-left-colors: none;
@@ -912,3 +938,50 @@ color: #414848;
     margin: 0px;
     float:left;
 }
+
+.new_formheadingbg {
+  line-height: 40px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #555;
+  text-align: center;
+  text-shadow: 0 1px white;
+    
+  background-image: -webkit-linear-gradient(top, whiteffd, #eef2f5);
+  background-image: -moz-linear-gradient(top, whiteffd, #eef2f5);
+  background-image: -o-linear-gradient(top, whiteffd, #eef2f5);
+  background-image: linear-gradient(to bottom, whiteffd, #eef2f5);
+  -webkit-box-shadow: 0 1px whitesmoke;
+   
+  height:40px; }
+.textfieldclass {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    -moz-outline-radius: 3px 3px 3px 3px;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-color: #C4C4C4 #D1D1D1 #D4D4D4;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12) inset;
+    color: #404040;
+    height: 34px;
+    /*margin: 5px;*/
+    outline: 5px solid #EFF4F7;
+    padding: 0 10px;
+    width: 315px;
+	
+	}
+        
+        .h1style{
+              color: #2F394E;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom:  20px;
+    text-transform: capitalize;
+            
+        }

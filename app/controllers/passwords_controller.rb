@@ -1,11 +1,11 @@
-class PasswordsController < Devise::SessionsController
+class PasswordsController < Devise::PasswordsController
   prepend_before_filter :require_no_authentication
   # Render the #edit only if coming from a reset password email link
   append_before_filter :assert_reset_token_passed, :only => :edit
-
+  layout 'prof'
   # GET /resource/password/new
   def new
-    build_resource({})
+    super
   end
 
   # POST /resource/password
@@ -26,7 +26,7 @@ class PasswordsController < Devise::SessionsController
   end
     # PUT /resource/password
   def update
-    exit
+    
     self.resource = resource_class.reset_password_by_token(resource_params)
     p "8888888888888888888888888888"
     p self.resource

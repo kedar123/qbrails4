@@ -1,7 +1,9 @@
 class RegistrationsController < Devise::RegistrationsController
   layout 'prof'
   def new
+     
     super
+      
   end
 
   def create
@@ -23,6 +25,8 @@ class RegistrationsController < Devise::RegistrationsController
     usd.phone = params[:phone]
     usd.address = params[:address]
     usd.save
+    else
+      flash[:notice] = "Email Already Taken"
     end
     begin
     UserMailer.welcome_email(current_user).deliver

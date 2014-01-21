@@ -19,27 +19,49 @@
 <body>
 	<div id="header">
           <% if user_signed_in?%>
-             <span style="float:right;margin-right:10px;font-size: 10pt;"><a href="/users/sign_out"> Logout</a></span>
+             <span style="float:right;margin-right:10px;font-size: 10pt;"><a href="/users/sign_out" id="migration_button_shared_sign_up"> Logout</a></span>
           <%else%>
-             <span style="float:right;margin-right:10px;font-size: 10pt;"><a href="/users/sign_in"> Login</a></span>
+             <span style="float:right;margin-right:10px;font-size: 10pt;"><%= link_to "Sign up", new_registration_path(:user) ,:id=>"migration_button_shared_sign_up" %></span>
+             <span style="float:right;margin-right:10px;font-size: 10pt;"><a href="/users/sign_in"   id="migration_button_shared_sign_up"> Login</a></span>
+
           <%end%>
 		<div class="section">
 			<div class="logo">
-				<%#=image_tag "logo.gif"%>
+				<%=image_tag "http://pragtech.co.in/images/logo.png"%>
 			</div>
-			<ul>
-				 
-				<li class="selected">
+                 	<ul>
+				 <%if params[:controller] == "homes"%>
+                          <li class="selected">
+				 <%else%> 
+                            <li>
+                                  <%end%>
+				
 					<a href="/">Home</a>
 				</li>
-				<li>
+                                <%if params[:controller] == "feedbacks"%>
+				<li class="selected">
+                                  <%else%>
+                                  <li>
+                                  <%end%>
 					<a href="<%=feedbacks_contactus_path%>">contact us</a>
 				</li>
-				<li>
+                                <%if params[:controller] == "terms"%>
+                                <li class="selected">
+                                 
+                                <%else%> 
+                                <li>
+                                 
+                                <%end%>
+				 
 					<a href="<%=terms_path%>">Terms</a>
 				</li>
 				 
 			</ul>
+                   <span class="notice" style="float:left;margin:0px;padding:0px;height:18px;"><%= notice %></span>
+                   <span class="alert" style="float:left;margin:0px;padding:0px;height:18px;"><%= alert %></span>
+                   
+                    
+		
 		</div>
 		 
 	</div>

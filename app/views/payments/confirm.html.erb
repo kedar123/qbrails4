@@ -13,9 +13,9 @@
   <tr><td>Country</td><td><%= @address['country'] %></td></tr>
   <tr><td>Zip</td><td><%= @address['zip'] %></td></tr>
 </table>
-
+<br/>
 <%= form_tag :action => 'complete', :token => params[:token], :payer_id => params[:PayerID] do %>
-  <%= submit_tag 'Complete Payment',:id=>"startmigration_button" %>
+  <%= submit_tag 'Complete Payment',:id=>"migration_button" %>
 <% end %>
 </div>
 </div>

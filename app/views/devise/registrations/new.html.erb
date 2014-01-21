@@ -1,11 +1,29 @@
+<style>
+  #body div div {
+    float: left;
+    margin: 0 0px;
+    padding: 0;
+}
+  </style>
+  <script>
+    document.addEventListener('page:fetch', function() {
+          
+        document.getElementById("emailtaken").innerHTML="";
+});
+    </script>
 <div class="centerdiv">
-<h3>Sign up</h3>
-
+<h3>Sign up
+ 
+</h3>
+<br/>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name),:html=>{:onSubmit=>"return check_blank_fields()"}) do |f| %>
-  <%= devise_error_messages! %>
+  <%#= devise_error_messages! %>
 
   <div><%= f.label :email %><br /><br />
-  <%= f.email_field :email, :autofocus => true ,:class=>"inputs",:placeholder=>"Email" %></div>
+       <%= f.email_field :email, :autofocus => true ,:class=>"inputs",:placeholder=>"Email" %>
+ 
+  </div>
+
 
   <div style="clear:both;"><br /><br/><%= f.label :password %><br /><br />
   <%= f.password_field :password ,:class=>"inputs",:placeholder=>"Password" %></div>
@@ -35,7 +53,7 @@
 <% end %>
  <br/><br/><br/>
  <div style="clear:both;">
-<%= render "devise/shared/links" %>
+<%#= render "devise/shared/links" %>
    </div>
 </div>
 
