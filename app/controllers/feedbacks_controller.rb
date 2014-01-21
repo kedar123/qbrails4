@@ -2,6 +2,7 @@
 class FeedbacksController < ApplicationController
   
   skip_before_filter :authenticate_user!
+  layout "prof"
   
   def create
     feedback = Feedback.new(:email=>params[:email],:subject=>params[:subject],:message=>params[:message])

@@ -1,117 +1,100 @@
-<div class="left1">
-  <div class="text1">
-     <ul>
-          <%=form_tag('/databases')%>
-          <li>Charts Of Accounts</li>
-          <li>Customer</li>
-          <li>Supplier</li>
-          <li>Employee</li>
-      
-    </ul>
-    
-    <div class="btn" style="margin-left:-50px;margin-top:80px">
-     <%#= link_to image_tag('mg.png'), url_for(:action => 'create', :controller => 'databases',:id=>"basic"),:method=>"post"%> 
-     <%= link_to image_tag('mg.png'), url_for(:action => 'index', :controller => 'payments',:id=>"free")%> 
-    <%#suppose its a free then on payments index page create a database %>  
-   </div>
-  <%#=url_for(:action => 'index', :controller => 'home') %>
-  
-      </form>
-      
-  </div>
- </div>
-          
-  <div class="meddle">
-   <div class="text1">
-     <ul>
-        <%=form_tag('/databases')%>
-          
-          <li>Charts Of Accounts</li>
-          <li>Customer</li>
-          <li>Supplier</li>
-          <li>Employee</li>
-          <li>Products</li>
-        
-    </ul>
-    </div>
-    
-    <div class="btn" style="padding-top:92px;">
-    <%#= link_to image_tag('mg.png'), url_for(:action => 'create', :controller => 'databases',:id=>"basic"),:method=>"post"%> 
-    <%= link_to image_tag('mg.png'), url_for(:action => 'index', :controller => 'payments',:id=>"standard") %>   
-    </div>
-         </form>
-         
-  </div>
+ 
+		<div style="float:left">
+			 
+			<div class="section">
+				<div class="article">
+					<h2>Free</h2>
+					<p>
+	 
+          <strong>Charts Of Accounts</strong><br/>
+          <strong>Customer</strong><br/>
+          <strong>Supplier</strong><br/>
+          <strong>Employee</strong>
            
-
-<div class="right1">
-  <div class="text12">
-   <ul>
-       <%=form_tag('/databases')%>
-          <li>Charts Of Accounts</li>
-          <li>Customer</li>
-          <li>Supplier</li>
-          <li>Employee</li>
-          <li>Products</li>
-         <li>Inventory</li>
-  </ul>
-  </div>
-     <div class="btn">
-    <%#= link_to image_tag('/images/mg.png'), url_for(:action => 'create', :controller => 'databases',:id=>"premium"),:method=>"post"%>
-  <%#= link_to image_tag('mg.png'),url_for(:action => 'create', :controller => 'databases',:id=>"standard"),:method=>"post"%>  
-  <%= link_to image_tag('mg.png'),url_for(:action => 'index', :controller => 'payments',:id=>"premium") %>       
-    </div>
-  </form>
-</div>
+      				</p>
+                                <p  style="padding-top:45px;padding-bottom:0px;position:absolute"><b>
+                                <%= link_to  "Migrate" ,url_for(:action => 'index', :controller => 'payments',:id=>"free") %></b>
+	 			</p>
+                                </div>
+ 			</div>
+		</div>
+	<div style="float:left">
+			 
+			<div class="section">
+				<div class="article">
+                                  <h2>Standard</h2>
+					<p>
+           <strong>Charts Of Accounts</strong><br/>
+           <strong>Customer</strong><br/>
+           <strong>Supplier</strong><br/>
+           <strong>Employee</strong><br/>
+           <strong>Products</strong>
+      				</p>
+                                <p  style="padding-top:22px;padding-bottom:0px;position:absolute">
+                                  <b>
+                                    <%= link_to  "Migrate" ,url_for(:action => 'index', :controller => 'payments',:id=>"standard") %>       
+             
+                                    </b>
+                                </p>
+                                                     
+				</div>
+				 
+			</div>
+		</div>
+<div>
+			 
+			<div class="section">
+				<div class="article">
+					<h2>Premium</h2>
+					<p>
+           <strong>Charts Of Accounts</strong><br/>
+           <strong>Customer</strong><br/>
+           <strong>Supplier</strong><br/>
+           <strong>Employee</strong><br/>
+           <strong>Products</strong><br/>
+           
+            <strong>Inventory</strong>
+      				</p>
+                                 
+                                 <p  style="margin-top:-22px;position:absolute">
+                                  <b>
+                                    <%= link_to  "Migrate" ,url_for(:action => 'index', :controller => 'payments',:id=>"premium") %>       
+             
+                                    </b>
+                                </p>
+                                  
+				</div>
+				 
+			</div>
+		</div>
  
+     
+ <style>
+   #body .content {
+    background-color: #a5d1ff;
+    float: left;
+    margin: 0 35px 0 10px;
+    padding: 0;
+    width: 785px;
+    margin-left: 2%;
+}
  
-<div id="left">
-  <div class="text">
-<%if current_user%>
- 
- <div class=" container">
+   </style>
 
-<div class="stepstofollow_coloumn">
-
-<div class="stepsto_followheadingbg">
-<div class=" steptofollowtext">Steps To Follow</div>
-</div>
-
-<div class="firstselecttext">
- 
- 
-  
- <%=javascript_include_tag "jquery.steps.min"%>
-  
- <script>
-       
-                $(function ()
-                {
-                    $("#wizard").steps({
-                        headerTag: "h2",
-                        bodyTag: "section",
-                        transitionEffect: "slideLeft",
-                        enableFinishButton: false
-                    });
-                });
-     </script>
-
-            <div id="wizard">
-                <h2>First Step</h2>
+            <%if current_user%>
+                 <div id="wizard">
+                <h4>First Step</h4>
                 <section>
-                    <p>
-                      <strong> 
-                         <p>
-                           
-                           <strong>
+                    
+                       
+                         
+                            <strong>
                              <!--
                              if user has sign up and come to home page then first step he should see a line which says to him that
                              select a migration type from above.this line he should not see when he has selected a 
                              migration file.
                              -->
-                              
-                              
-                             <%if (current_user.user_payment_choice.blank?) or 
+                              <%if   (current_user.user_payment_choice.blank?) or 
                                  (current_user.payment_status == false or  current_user.payment_status == nil and current_user.user_payment_choice.blank? and current_user.database.blank? )%>
                                <%#in this if the last condition is added because if its a free type then the payment is false and at that time this should not be displayed%>                             
                                  1st :- Select Type of Migration From Above. 
@@ -121,28 +104,21 @@
                                   <%#as %>
                               <%elsif !current_user.user_payment_choice.blank? and (current_user.payment_status == false or  current_user.payment_status == nil) and current_user.database.blank? and current_user.coupenassigned.blank? and   current_user.user_payment_choice != "free"%>  
                                   1st :- Select Type of Migration From Above. 
-                                    
-                             <%end%>
-                                  
-                                 
-                                 
-                              <%#i am adding one more condition here and that is suppose and user payment choice is not blank 
+                              <%end%>
+                               <%#i am adding one more condition here and that is suppose and user payment choice is not blank 
 and payment is blank then the text should appear for %>
-                                  
-                           </strong> 
+                            </strong> 
                            <!--
                            this line i should also show when user has another type of migration and he has not 
                            completed the payment.means he click on migration and while actual payment he did not done that 
                            so another time when he comes to an home page he should see this line.
                            -->
                            
-                           
-                           </p>
-                        <p>
+                        
                           <%if current_user.database%>
                               Name of Your Database:  
                              <span style="color:#2184BE"><%=current_user.database.name %></span>
-                            <br/>
+                            
                             Now Click On Next 
                           <%end%>
                           <%#what i have to do here is if the database is blank and a user has selected a migration then show
@@ -154,88 +130,89 @@ then allow him to create a db. else for other choices the user must complete a p
 named as payment_status boolean . after a payment is complete make this field true.%>
  <%#so here there are 2 conditions first is when database is blank and user type is free and secondly when%>                           
 <%#payment is done%>                            
-<%if ((current_user.database.blank? and current_user.user_payment_choice == "free") or (current_user.payment_status == true and current_user.database.blank?)) %>
-   1st :- Click                          
+ 
+ <%if ((current_user.database.blank? and current_user.user_payment_choice == "free") or (current_user.payment_status == true and current_user.database.blank?)) %>
+ <p class="firstclick"> <strong> 1st :- Click </strong></p>                          
   <%#=link_to  " Here " ,url_for(:action => 'create', :controller => 'databases',:id=>current_user.user_payment_choice),method: "post"%>
-  <%=button_to " Here " ,url_for(:action => 'create', :controller => 'databases',:id=>current_user.user_payment_choice),:form_class=>"form_class"%>
-    
+  <%=button_to " Here " ,url_for(:action => 'create', :controller => 'databases',:id=>current_user.user_payment_choice),:form_class=>"form_class",:id=>"migration_button"%>
+   <p>   <strong>
    To Create A Database Schema  
+</strong>   </p>
    <%#one more condition i need to add is for a coupen based if a valid coupen is there and a database is blank then also 
    a link should appear%>
+    
  <%elsif !current_user.coupenassigned.blank? and current_user.database.blank?%> 
-  <%=button_to " Here " ,url_for(:action => 'create', :controller => 'databases',:id=>current_user.user_payment_choice),:form_class=>"form_class"%>
-    
+ <p class="firstclick"> <strong>   1st :- Click</strong></p>
+  <%=button_to " Here " ,url_for(:action => 'create', :controller => 'databases',:id=>current_user.user_payment_choice),:form_class=>"form_class",:id=>"migration_button"%>
+    <p>   <strong>
    To Create A Database Schema  
-   
+</strong>   </p>   
 <%end%>
-    
+     
       
-                        </p>
+                     
                         
-                      </strong>
-                    </p>
+                   
                 </section>
 
-                <h2>Second Step</h2>
+                <h4>Second Step</h4>
                 <section>
                      
                        <p><strong>2nd :  Now Populate Your QuickBooks Data To Our Mysql Database Using AccessBooks RealTime
                            On Our Server 
       178.63.19.197. Port 3306. user  'rubyonrails' and password is 'IIEinstein'
                . In The Database <span style="color:#2184BE">'<%=current_user.database.name if current_user.database%>'
-               </span> See manual for AccessBooks 
-               RealTime installation Here
-               <a href="http://synergration.com/software/accessbooks-realtime/" target="_blank">Download Access Book</a>
+               </span> <span>See manual for AccessBooks 
+               RealTime installation Here</span>
+               <a href="http://synergration.com/software/accessbooks-realtime/" target="_blank"  id = "migration_button_link">Download Access Book</a>
 </strong></p>
                       
                     
                 </section>
 
-                <h2>Third Step</h2>
-                <section>
-                   <p> 
-                   <p><strong>3rd :-  Download and Install OpenERP Quickbook Module <%= link_to "Here",imports_download_quickbook_path%>
-  </strong></p>
+                <h4>Third Step</h4>
+                <section > 
+                     
+                   <p><strong>3rd :-  Download and Install OpenERP Quickbook Module
+ <%= link_to "Here",imports_download_quickbook_path,:id=>"migration_button_link_here"%>
+  </strong> 
 
-<p><strong>Note: While installing this module OpenERP Prompt you for Charts of Accounts-COA selection please do not install any COA aand make sure you set your database currency as required before starting migration  
-                <br/>
+ <strong>Note: While installing this module OpenERP Prompt you for Charts of Accounts-COA selection please do not install any 
+    COA aand make sure you set your database currency as required before starting migration  
+                 
                 After successful installation of OpenERP Qucikbook Module Click on Start Migration Button 
-             </strong></p>
-                    </p>
-                    
-                    
-                    
-                    
+             </strong> 
+                      
                     
                 </section>
 
-                <h2>Forth Step</h2>
+                <h4>Forth Step</h4>
                 <section>
                   <p >
-      <%= button_to "Start Migration to OpenERP", {:action => 'new', :controller => 'erps' },:id=>"startmigration_button"%>
+      <%= button_to "Start Migration to OpenERP", {:action => 'new', :controller => 'erps' },:id=>"start_migration_button"%>
                  </p> 
                 </section>
             </div>
-   
+            
+<%end%>
 
- </div>
 
-    
- </div>
-   
-  
-   
-   
-   </div>
+
+
 
  
+ 
+  <script>
+                $(function ()
+                {
+                    $("#wizard").steps({
+                        headerTag: "h4",
+                        bodyTag: "section",
+                        transitionEffect: "slideLeft",
+                        enableFinishButton: false
+                        
+                    });
+                });
+            </script>
 
-  
-
-<%end%>
-</div>
-  
-  </div>
-
-
-  
+           

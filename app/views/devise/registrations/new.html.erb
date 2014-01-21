@@ -1,40 +1,42 @@
 <div class="centerdiv">
-<h2>Sign up</h2>
+<h3>Sign up</h3>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name),:html=>{:onSubmit=>"return check_blank_fields()"}) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
+  <div><%= f.label :email %><br /><br />
   <%= f.email_field :email, :autofocus => true ,:class=>"inputs",:placeholder=>"Email" %></div>
 
-  <div><%= f.label :password %><br />
+  <div style="clear:both;"><br /><br/><%= f.label :password %><br /><br />
   <%= f.password_field :password ,:class=>"inputs",:placeholder=>"Password" %></div>
 
-  <div><%= f.label :password_confirmation %><br />
+  <div style="clear:both;"><br /><br/><%= f.label :password_confirmation %><br /><br/>
   <%= f.password_field :password_confirmation,:class=>"inputs",:placeholder=>"Password Confirmation"  %></div>
-  <div><%= f.label :country %><br />
+  <div style="clear:both;"><br /><br/><%= f.label :country %><br /><br/>
   <%= text_field_tag :country ,"" ,:class=>"inputs",:placeholder=>"Country" %></div>
-  <div><%= f.label :state %><br />
+  <div style="clear:both;"><br /><br/><%= f.label :state %><br /><br/>
   <%= text_field_tag :state , "",:class=>"inputs",:placeholder=>"State" %></div>
-<div><%= f.label :street %><br />
+  <div style="clear:both;"><br /><br/><%= f.label :street %><br /><br/>
   <%= text_field_tag :street , "",:class=>"inputs",:placeholder=>"Street" %></div>
     
-<div><%= f.label :zip_code %><br />
+  <div style="clear:both;"><br /><br/><%= f.label :zip_code %><br /><br/>
     
     
   <%= text_field_tag :zip_code ,"" ,:class=>"inputs",:placeholder=>"Zip Code" %></div>
-  <div><%= f.label :mobile %><br />
+  <div style="clear:both;"><br /><br/><%= f.label :mobile %><br /><br/>
   <%= text_field_tag :mobile , "",:class=>"inputs",:placeholder=>"Mobile" %></div>
-  <div><%= f.label :phone %><br />
+  <div style="clear:both;"><br /><br/><%= f.label :phone %><br /><br/>
   <%= text_field_tag :phone , "",:class=>"inputs",:placeholder=>"Phone" %></div>
-  <div><%= f.label :address %><br />
+  <div style="clear:both;"><br /><br/><%= f.label :address %><br /><br/>
     <%= text_field_tag :address , "",:name=>"address",:class=>"inputs",:placeholder=>"Address" %>
  
-
-  <div><%= f.submit "Sign up",:id=>"startmigration_button" %></div>
+</div>
+  <div style="clear:both;"><br /><br/><%= f.submit "Sign up",:id=>"migration_button" %></div>
 <% end %>
  <br/><br/><br/>
+ <div style="clear:both;">
 <%= render "devise/shared/links" %>
+   </div>
 </div>
 
 

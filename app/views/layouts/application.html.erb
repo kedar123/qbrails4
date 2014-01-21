@@ -11,8 +11,8 @@
 </head>
 <body>
       
-<div id="header">
-  <div class="Messages"><p class="notice"><%= notice %></p>
+<div id="">
+   <div class="Messages"><p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
        <p class="login">
         <%if current_user%>
@@ -21,14 +21,14 @@
          
        <%end%>
        </p>
-  </div>
-	<div id="main">
+  </div> 
+	 <div id="main">
           
   <div class="topbar">
     <div class="logo">
       
        
-      <%=image_tag "logo.gif"%>
+      <%#=image_tag "logo.gif"%>
     </div>
     <div class="serchbar"></div>
     <div class="navibar">
@@ -43,11 +43,11 @@
       <div class="menu"> <a href="<%=feedbacks_contactus_path%>">Contact Us</a></div>
     </div>
   </div>
-          <div class="flash"><embed src="<%= asset_path('opne.swf')%>" width="1234px" height="312px">
-            </embed>
+          <!--<div class="flash"><embed src="http://localhost:3000/assets/QuickBookVideo.mpeg"
+ autostart="true"  height="250" width="250"/>
           </div>
- 
-  </div>
+           -->
+  </div> 
 </div>
 
        <div id="main2">

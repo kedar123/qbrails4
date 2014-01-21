@@ -1,6 +1,6 @@
 class HomesController < ApplicationController
   before_action :set_home, only: [:show, :edit, :update, :destroy]
-
+layout 'prof'
   # GET /homes
   # GET /homes.json
   def index
@@ -25,6 +25,13 @@ class HomesController < ApplicationController
    end
   end
 
+  
+  def index2
+    render :layout=>"prof"
+  end
+  
+  
+  
   # GET /homes/1
   # GET /homes/1.json
   def show

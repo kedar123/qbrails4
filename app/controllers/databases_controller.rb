@@ -58,6 +58,7 @@ class DatabasesController < ApplicationController
     @database.name = @database.name + @database.id.to_s
     @database.user_id = current_user.id
     @database.save
+    
     Database.create_default_schema(@database)  
        
      respond_to do |format|

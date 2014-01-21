@@ -1,19 +1,27 @@
-<div class="centerdiv">
-<h2>Sign in</h2>
+<div class="centerdiv" >
+<h5>Sign in</h5>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
+  <div style="margin:0px;padding:0px;"><%= f.label :email ,:style=>"margin-botton:12px;"%>
+    <br/><br/>
+    
   <%= f.email_field :email, :autofocus => true,:size=>25,:class=>"inputs",:placeholder=>"Email" %></div>
 
-  <div><%= f.label :password %><br />
+  <div style="float:none;clear:both;margin-left: 0px;">
+<br/>
+  <%= f.label :password ,:style=>"margin-botton:12px;"%><br />
+    <br/>
   <%= f.password_field :password ,:size=>25,:class=>"inputs",:placeholder=>"Password"%></div>
-
+ 
   <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+    <div style="margin-top:12px;margin-left:0px;"><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
   <% end -%>
-
-  <div><%= f.submit "Sign in" ,:id=>"startmigration_button"%></div>
+    
+  <div style="clear:both;margin:0px !important;padding:0px !important;">
+<br/> 
+  <%= f.submit "Sign in" ,:id=>"migration_button" ,:style=>"margin-left:0px;"%></div>
 <% end %>
-<br/><br/><br/>
-<%= render "devise/shared/links" %>
+</div>
+<div style="height:300px;margin-top:0px;padding-top:0px;">
+  <%= render "devise/shared/links" %>
 </div>

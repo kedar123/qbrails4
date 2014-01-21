@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<!-- Website Template by freewebsitetemplates.com -->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Quick Book Data Migration</title>
+ 
+        <link rel="stylesheet" href="/assets/style2.css" type="text/css"/>	
+        <link rel="stylesheet" href="/assets/normalize.css" type="text/css"/>
+        <link rel="stylesheet" href="/assets/jquery.steps.css" type="text/css"/>
+        
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.steps.min", "data-turbolinks-track" => true %>
+ 
+        
+        
+         
+</head>
+<body>
+	<div id="header">
+          <% if user_signed_in?%>
+             <span style="float:right;margin-right:10px;font-size: 10pt;"><a href="/users/sign_out"> Logout</a></span>
+          <%else%>
+             <span style="float:right;margin-right:10px;font-size: 10pt;"><a href="/users/sign_in"> Login</a></span>
+          <%end%>
+		<div class="section">
+			<div class="logo">
+				<%#=image_tag "logo.gif"%>
+			</div>
+			<ul>
+				 
+				<li class="selected">
+					<a href="/">Home</a>
+				</li>
+				<li>
+					<a href="<%=feedbacks_contactus_path%>">contact us</a>
+				</li>
+				<li>
+					<a href="<%=terms_path%>">Terms</a>
+				</li>
+				 
+			</ul>
+		</div>
+		 
+	</div>
+  <div id="body">
+          <%=yield%>
+  </div>
+<div id="footer">
+		 
+</div>
+</body>
+</html>
