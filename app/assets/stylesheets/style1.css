@@ -346,7 +346,7 @@ a:hover {
 .alert{
     font-size:12px;
     font-weight: bold;
-    color: red;
+    color: #FF0000;
     text-align: center;
       
 }
@@ -355,7 +355,7 @@ a:hover {
     
     font-size:12px;
     font-weight: bold;
-    color: green;
+    color: #008000;
     text-align: center;
     
 }

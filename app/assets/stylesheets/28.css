@@ -28,13 +28,13 @@ div {
     margin-bottom: 10px; } }
 
 #notice {
-  color: green; }
+  color: #008000; }
 
  
 
 #error_explanation {
   width: 450px;
-  border: 2px solid red;
+  border: 2px solid #FF0000;
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
