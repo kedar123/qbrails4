@@ -1,7 +1,7 @@
  
 <h5>Sign in</h5>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name) ,:html=>{:onsubmit=>"return sign_in_email()"} ) do |f| %>
   <div style="margin:0px;padding:0px;"><%= f.label :email ,:style=>"margin-botton:12px;"%>
     <br/><br/>
     
@@ -28,3 +28,30 @@
   <%#= render "devise/shared/links" %>
   
 </div>
+<script>
+      
+      function sign_in_email(){
+        var check_form = true;
+        if(!IsEmail($("#user_email").val()))
+        {
+          alert("Please Enter Email");
+          check_form = false;
+          return check_form;
+        }
+       
+        if(!$("#user_password" ).val())
+        {
+          alert("Please Enter Password");
+          check_form = false;
+          return check_form;
+        } 
+        
+        return  check_form ;
+    
+      }
+             function IsEmail(email) {
+                   var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                   return regex.test(email);
+             }
+        
+  </script>
