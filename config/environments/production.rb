@@ -27,7 +27,7 @@ Quickbook42::Application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Generate digests for assets URLs.
   config.assets.digest = true
@@ -90,4 +90,13 @@ Quickbook42::Application.configure do
     :password       =>  "pragmatic"
     
   } 
+    config.after_initialize do
+   paypal_options = {
+    login: "paypal_api1.pragtech.co.in",
+    password: "V996T2LW3QBLPZFB",
+    signature: "AFcWxV21C7fd0v3bYYYRCpSSRl31ATdQOOCe1m3eBpjpnp7dZ6rE22q5"
+  }
+  ::EXPRESS_GATEWAY = ActiveMerchant::Billing::PaypalExpressGateway.new(paypal_options)
+end
+  
 end
