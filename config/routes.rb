@@ -1,4 +1,7 @@
 Quickbook42::Application.routes.draw do
+  get "terms/legal"
+  resources :terms
+
   resources :coupens
 
   get "payments/index"
@@ -8,6 +11,10 @@ Quickbook42::Application.routes.draw do
   post "payments/payment_authorize"
   post "payments/coupen_check"
   get "homes/show_means"
+  get "homes/index2"
+ 
+  
+  
   resource "payments"
   devise_for :users, :controllers => {:registrations => "registrations",:sessions => "sessions",:passwords=>"passwords"}
 
