@@ -746,66 +746,66 @@ logger.info	 "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
    	  
  
        logger.info "zzzzzzzzzzzzzzzzzz"
-      itemsalestax = Itemsalestax.find(:all)#Itemsalestax.all
+      itemsalestax = Itemsalestax.find(:all,:limit=>10)#Itemsalestax.all
       logger.info "ccccccccccccccccccccccccccc"
       Itemsalestax.export_item(itemsalestax,current_user)
  
  	    logger.info "item sales tax group"
-      itemsalestg = Itemsalestaxgroup.find(:all)
+      itemsalestg = Itemsalestaxgroup.find(:all,:limit=>10)
       Itemsalestaxgroup.export_itemsalestgr(itemsalestg,current_user) 
       
              
 		  logger.info "Itemservice calleddd"
 logger.info "Itemservice calleddd"
- 	    itemserv = Itemservice.find(:all)#Itemservice.all 
+ 	    itemserv = Itemservice.find(:all,:limit=>10)#Itemservice.all 
   	 Itemservice.export_itemservices(itemserv,current_user)
  			logger.info "Itemdiscountttt......... calleddd"
 # 		
 logger.info	"Itemdiscountttt......... calleddd"
-			itemdiscnt = Itemdiscount.find(:all)#Itemdiscount.all
+			itemdiscnt = Itemdiscount.find(:all,:limit=>10)#Itemdiscount.all
 			Itemdiscount.export_itemdiscounts(itemdiscnt,current_user)
 #	
    		logger.info "Itemfixedasset................. calleddd"
 logger.info	"Itemfixedasset................. calleddd"
- 			itemfixasset = Itemfixedasset.find(:all)#Itemfixedasset.all 
+ 			itemfixasset = Itemfixedasset.find(:all,:limit=>10)#Itemfixedasset.all 
    		Itemfixedasset.export_itemfixassets(itemfixasset,current_user)
 
 
  			logger.info "Itemgroup ........... calleddd"
 logger.info "Itemgroup ........... calleddd"
-  		itemgroup = Itemgroup.find(:all)#Itemgroup.all
+  		itemgroup = Itemgroup.find(:all,:limit=>10)#Itemgroup.all
  	 		Itemgroup.export_itemgroups(itemgroup,current_user)
 			logger.info "Iteminventry.............. calleddd"
 #   		
 # 
 logger.info	"Iteminventry.............. calleddd"
-			iteminventory = Iteminventory.find(:all)#Iteminventory.all
+			iteminventory = Iteminventory.find(:all,:limit=>10)#Iteminventory.all
 	   Iteminventory.export_iteminventories(iteminventory,current_user)
 			logger.info "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
 #			
 logger.info	 "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
-			itemnoninventory = Itemnoninventory.find(:all)#Itemnoninventory.all
+			itemnoninventory = Itemnoninventory.find(:all,:limit=>10)#Itemnoninventory.all
 			Itemnoninventory.export_itemnoninventory(itemnoninventory,current_user)
 			logger.info "Iteminventoryassembly................... calleddd"
 # 			
 #      p "Iteminventoryassembly................... calleddd"
-			iteminventoryassembly = Iteminventoryassembly.find(:all)#Iteminventoryassembly.all      
+			iteminventoryassembly = Iteminventoryassembly.find(:all,:limit=>10)#Iteminventoryassembly.all      
  			Iteminventoryassembly.export_iteminventoryaseemblies(iteminventoryassembly,current_user)
 			logger.info "Itemmothercharge.................. calleddd"
 # 			
 #      p "Itemmothercharge.................. calleddd"
- 			itemothercharge = Itemothercharge.find(:all)#Itemothercharge.all
+ 			itemothercharge = Itemothercharge.find(:all,:limit=>10)#Itemothercharge.all
 			Itemothercharge.export_itemothercharge(itemothercharge,current_user)
     	logger.info "Itempaymentt.................. calleddd"
 #  		
 #   
 #      p "Itempaymentt.................. calleddd"
-  	  itempayment = Itempayment.find(:all)#Itempayment.all 
+  	  itempayment = Itempayment.find(:all,:limit=>10)#Itempayment.all 
  			Itempayment.export_itempayment(itempayment,current_user)
 			logger.info "ItemService................... calleddd"
 			logger.info "ItemService................... calleddd"
  
-      itemsubtotal = Itemsubtotal.find(:all)#Itemsubtotal.all
+      itemsubtotal = Itemsubtotal.find(:all,:limit=>10)#Itemsubtotal.all
       Itemsubtotal.export_itemsubtotal(itemsubtotal,current_user) 
       
       

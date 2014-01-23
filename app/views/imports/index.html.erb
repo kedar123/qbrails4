@@ -2,18 +2,18 @@
       <%if !current_user.erp.blank?%>
           <div style="padding-left: 10px;height:128px;">
           OpenERP detail you provided
-          <br/>
-          database :- <%=current_user.erp.database%>
-          <br/>
-          username :- <%=current_user.erp.username%>
+          <br/><br/>
+          <b>database :-</b> <%=current_user.erp.database%>
+          <br/><br/>
+          <b>username :-</b> <%=current_user.erp.username%>
           
-          <br/>
-          url :- <%=current_user.erp.url%>
-          <br/> 
-          port :- <%=current_user.erp.port%>
-          <br/> 
+          <br/><br/>
+          <b>url :- </b><%=current_user.erp.url%>
+          <br/> <br/>
+          <b>port :- </b><%=current_user.erp.port%>
+          <br/> <br/>
          Your Import Status
-        <br/>
+        <br/><br/>
         <!--<%if current_user.database and  current_user.database.status %>
           Done
         <%else%>
@@ -25,8 +25,8 @@
             Thanks you patient.....!!!!!   
         </div>   
      <%end%>
-
-
+<br/><br/><br/><br/><br/>
+<div style="clear:both;margin:0px;padding:0px;padding-top: 100px;">
 <%#i am putting here an begin rescue so that if there is an error in database connection then he will be 
 #connected to an original database%>
 <%begin%>
@@ -49,7 +49,7 @@
 <%Database.connection.execute("use mysqlquickbook")%> 
 
 <%end%>
-
+</div>
 
 
 

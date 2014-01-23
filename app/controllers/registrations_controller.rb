@@ -24,12 +24,18 @@ class RegistrationsController < Devise::RegistrationsController
     usd.mobile = params[:mobile]
     usd.phone = params[:phone]
     usd.address = params[:address]
+    usd.first_name = params[:first_name]
+    usd.middle_name = params[:middle_name]
+    usd.last_name = params[:last_name]
     usd.save
     else
       flash[:notice] = "Email Already Taken"
+    
     end
     begin
     UserMailer.welcome_email(current_user).deliver
+    UserMailer.sales_email(current_user).deliver
+    
     rescue=>e
       logger.info "there are some errors while sending an email"
       logger.info e.inspect

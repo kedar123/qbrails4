@@ -1,6 +1,18 @@
+<style>
+  table, td, th
+{
+border:1px solid green !important;
+}
+th
+{
+background-color:green !important;
+color:white !important;
+}
+
+  </style>
 <%Database.connection.execute("use #{current_user.database.name}")%> 
 <div style="padding-left: 10px;">
-           <b>
+           <b style="color:#1b2130">
                 The Following Tables Were Get Migrated In Above Openerp      
            </b>
            
@@ -8,10 +20,10 @@
            <table>
              <tr>
               
-               <th>
+               <th style="color:#1b2130">
                  Table Name
                </th>
-                <th>
+                <th style="color:#1b2130">
                  Count
                </th> 
              </tr>

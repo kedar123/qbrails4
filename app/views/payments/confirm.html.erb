@@ -1,8 +1,8 @@
-<div class="centerdiv"> 
+
 <div id="left">
   <div class="text">
 <h1>Please Confirm Your Payment Details</h1>
-
+<!--
 <table>
   <tr><td>Name</td><td><%= @address['name'] %></td></tr>
   <tr><td>Company</td><td><%= @address['company'] %></td></tr>
@@ -13,10 +13,18 @@
   <tr><td>Country</td><td><%= @address['country'] %></td></tr>
   <tr><td>Zip</td><td><%= @address['zip'] %></td></tr>
 </table>
+-->
+<p>
+  Dear <b><%=current_user.useraddress.first_name%></b>
+  </p>
+<p>Your order total is <b>$<%=@amount/100%>.00</b></p>
+<p>Your migration type is <b><%=current_user.user_payment_choice%></b></p>
+
+
 <br/>
 <%= form_tag :action => 'complete', :token => params[:token], :payer_id => params[:PayerID] do %>
   <%= submit_tag 'Complete Payment',:id=>"migration_button" %>
 <% end %>
 </div>
 </div>
-  </div>
+ 

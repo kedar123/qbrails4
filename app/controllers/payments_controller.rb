@@ -12,6 +12,11 @@ class PaymentsController < ApplicationController
       redirect_to root_path ,:notice=>"Please Go Through Steps At Bottom"
     end 
     
+    if current_user.user_payment_choice == "standard"
+        @amount = 199    
+    elsif current_user.user_payment_choice == "premium"
+        @amount = 999
+    end
     
   end
 
@@ -34,7 +39,7 @@ class PaymentsController < ApplicationController
     :ip                => request.remote_ip,
     :return_url        => url_for(:action => 'confirm', :only_path => false),
     :cancel_return_url => url_for(:action => 'index',:id=>current_user.user_payment_choice , :only_path => false),
-    :allow_guest_checkout=> false
+    :allow_guest_checkout=> true
    )
    
    
@@ -47,7 +52,13 @@ class PaymentsController < ApplicationController
   end
   
   def checkout
-    response = EXPRESS_GATEWAY.setup_purchase(50,
+       if current_user.user_payment_choice == "standard"
+          @amount = 199*100    
+       elsif current_user.user_payment_choice == "premium"
+          @amount = 999*100
+       end
+    
+    response = EXPRESS_GATEWAY.setup_purchase(@amount,
     ip: request.remote_ip,
     return_url: url_for(:action => 'confirm', :only_path => false),
     cancel_return_url: url_for(:action => 'index',:id=>current_user.user_payment_choice , :only_path => false),
@@ -56,14 +67,21 @@ class PaymentsController < ApplicationController
     brand_name: 'Pragmatic', #The name of the company
     header_image: 'http://http://pragtech.co.in/images/logo.png',
     allow_guest_checkout: false,   #payment with credit card for non PayPal users
-    items: [{:name => "Quick Book Migration", :description => "All Modules",:amount=> 50}] #array of hashes, amount is a price in cents
+    items: [{:name => "Quick Book Migration", :description => "All Modules",:amount=> @amount}] #array of hashes, amount is a price in cents
   )
+  p "what is the responseeeee"
+  p response.inspect
   redirect_to EXPRESS_GATEWAY.redirect_url_for(response.token)
   end
   
   
   
   def confirm
+    if current_user.user_payment_choice == "standard"
+          @amount = 199*100    
+       elsif current_user.user_payment_choice == "premium"
+          @amount = 999*100
+       end
     redirect_to :action => 'index' unless params[:token]
 
     details_response = gateway.details_for(params[:token])
@@ -79,7 +97,13 @@ class PaymentsController < ApplicationController
   end
   
   def complete
-    purchase = gateway.purchase(50,
+    
+       if current_user.user_payment_choice == "standard"
+          @amount = 199*100    
+       elsif current_user.user_payment_choice == "premium"
+          @amount = 999*100
+       end
+    purchase = gateway.purchase(@amount,
       :ip       => request.remote_ip,
       :payer_id => params[:payer_id],
       :token    => params[:token]

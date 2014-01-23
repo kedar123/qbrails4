@@ -1,9 +1,16 @@
-<div class="centerdiv"> 
+ 
 <div id="left">
   <div class="text">
 <h1>Purchase Quick Book To Openerp Migration</h1>
 <p>Thank you for your decision to purchase our QuickBook To Openerp Data Migration.</p>
-<p>Your order total is $50.00</p>
+   <!--
+   now it depends on users payment choice the price is get changed.
+   so on standard assume that 149$ . and on premium assume 199
+   #now from the root page user either select standard or premium. for free he will not come here.
+   so the condition here is if its standard then one amt or otherwise other amt. that will be decided in controller.
+   -->
+  <p>Your order total is $<%=@amount%>.00</p>
+  
 <p>
    
   <a href="/payments/checkout" data-no-turbolink method="post">
@@ -75,5 +82,5 @@
   </div>
  
   </div>
-  </div>
+ 
  

@@ -11,7 +11,7 @@
         document.getElementById("emailtaken").innerHTML="";
 });
     </script>
-<div class="centerdiv">
+ 
 <h3>Sign up
  
 </h3>
@@ -19,33 +19,46 @@
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name),:html=>{:onSubmit=>"return check_blank_fields()"}) do |f| %>
   <%#= devise_error_messages! %>
 
-  <div><%= f.label :email %><br /><br />
+  <div><%= f.label :email %> <b style="margin-left:5px;font-size: 15px;">*</b> <br /><br />
        <%= f.email_field :email, :autofocus => true ,:class=>"inputs",:placeholder=>"Email" %>
  
   </div>
 
 
-  <div style="clear:both;"><br /><br/><%= f.label :password %><br /><br />
+  <div style="clear:both;"><br /><br/><%= f.label :password %><b style="margin-left:5px;font-size: 15px;">*</b><br /><br />
   <%= f.password_field :password ,:class=>"inputs",:placeholder=>"Password" %></div>
 
-  <div style="clear:both;"><br /><br/><%= f.label :password_confirmation %><br /><br/>
+  <div style="clear:both;"><br /><br/><%= f.label :password_confirmation %><b style="margin-left:5px;font-size: 15px;">*</b><br /><br/>
   <%= f.password_field :password_confirmation,:class=>"inputs",:placeholder=>"Password Confirmation"  %></div>
-  <div style="clear:both;"><br /><br/><%= f.label :country %><br /><br/>
+  
+  <div style="clear:both;"><br /><br/><%= f.label :first_name %><b style="margin-left:5px;font-size: 15px;">*</b><br /><br/>
+  <%= text_field_tag :first_name ,"" ,:class=>"inputs",:placeholder=>"First Name" %></div>
+
+  <div style="clear:both;"><br /><br/><%= f.label :middle_name %> (optional)<br /><br/>
+  <%= text_field_tag :middle_name ,"" ,:class=>"inputs",:placeholder=>"Middle Name" %></div>
+
+  <div style="clear:both;"><br /><br/><%= f.label :last_name %><b style="margin-left:5px;font-size: 15px;">*</b><br /><br/>
+  <%= text_field_tag :last_name ,"" ,:class=>"inputs",:placeholder=>"Last Name" %></div>
+
+
+  <div style="clear:both;"><br /><br/><%= f.label :country %><b style="margin-left:5px;font-size: 15px;">*</b><br /><br/>
   <%= text_field_tag :country ,"" ,:class=>"inputs",:placeholder=>"Country" %></div>
-  <div style="clear:both;"><br /><br/><%= f.label :state %><br /><br/>
+
+  <div style="clear:both;"><br /><br/><%= f.label :state %><b style="margin-left:5px;font-size: 15px;">*</b><br /><br/>
   <%= text_field_tag :state , "",:class=>"inputs",:placeholder=>"State" %></div>
-  <div style="clear:both;"><br /><br/><%= f.label :street %><br /><br/>
+  <div style="clear:both;"><br /><br/><%= f.label :street %><b style="margin-left:5px;font-size: 15px;">*</b><br /><br/>
   <%= text_field_tag :street , "",:class=>"inputs",:placeholder=>"Street" %></div>
     
-  <div style="clear:both;"><br /><br/><%= f.label :zip_code %><br /><br/>
+  <div style="clear:both;"><br /><br/><%= f.label :zip_code %><b style="margin-left:5px;font-size: 15px;">*</b><br /><br/>
     
     
   <%= text_field_tag :zip_code ,"" ,:class=>"inputs",:placeholder=>"Zip Code" %></div>
-  <div style="clear:both;"><br /><br/><%= f.label :mobile %><br /><br/>
+  <div style="clear:both;"><br /><br/><%= f.label :mobile %><b style="margin-left:5px;font-size: 15px;">*</b><br /><br/>
   <%= text_field_tag :mobile , "",:class=>"inputs",:placeholder=>"Mobile" %></div>
-  <div style="clear:both;"><br /><br/><%= f.label :phone %><br /><br/>
+  <div style="clear:both;"><br /><br/><%= f.label :phone %><b style="margin-left:5px;font-size: 15px;">*</b><br /><br/>
   <%= text_field_tag :phone , "",:class=>"inputs",:placeholder=>"Phone" %></div>
-  <div style="clear:both;"><br /><br/><%= f.label :address %><br /><br/>
+  <div style="clear:both;"><br /><br/><%= f.label :address %><b style="margin-left:5px;font-size: 15px;">*</b>
+    <br /><br/>
     <%= text_field_tag :address , "",:name=>"address",:class=>"inputs",:placeholder=>"Address" %>
  
 </div>
@@ -55,7 +68,7 @@
  <div style="clear:both;">
 <%#= render "devise/shared/links" %>
    </div>
-</div>
+ 
 
 
  
@@ -92,6 +105,31 @@
           check_form = false;
           return check_form;
         }
+        
+        
+        
+              if(!$("#first_name" ).val())
+        {
+          alert("Please Enter First Name");
+          check_form = false;
+          return check_form;
+        }
+       /*      if(!$("#middle_name" ).val())
+        {
+          alert("Please Enter Middle Name");
+          check_form = false;
+          return check_form;
+        }
+        */
+        
+             if(!$("#last_name" ).val())
+        {
+          alert("Please Enter Last Name");
+          check_form = false;
+          return check_form;
+        }
+        
+        
         
         
                if(!$("#country" ).val())
@@ -147,6 +185,9 @@
           return check_form;
         }
 
+
+       
+       
      
       
      return check_form;

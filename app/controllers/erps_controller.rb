@@ -29,7 +29,11 @@ class ErpsController < ApplicationController
   # GET /erps/new.json
   def new
     logger.info "is this current user"
- 
+        #what i need to do here is if the database is not yet created then redirect back to root page.with a notice that please create
+    #a database
+    if current_user.database.blank?
+       redirect_to root_path ,:notice=>"Please Create A Database In First Step." and return
+    end
     
     if user_signed_in?
       if   current_user.erp.blank?
@@ -61,7 +65,7 @@ class ErpsController < ApplicationController
     @erp = Erp.new(erp_params)
     current_user.erp = @erp
 
-    respond_to do |format|
+     respond_to do |format|
        notice = 'OpenERP Connection established successfully'
         begin
            @ooor = Ooor.new(:url => "http://"+current_user.erp.url+":#{current_user.erp.port}/xmlrpc", :database => current_user.erp.database, :username => current_user.erp.username, :password => current_user.erp.password,:scope_prefix => current_user.database.name.upcase.to_s)
@@ -74,15 +78,15 @@ class ErpsController < ApplicationController
           logger.info 
           notice = 'Can not connect to OpenERP please check details again'
         end  
- 
-      if current_user.save  and notice == 'OpenERP Connection established successfully'
+       if current_user.save  and notice == 'OpenERP Connection established successfully'
          format.html { redirect_to  erp_path(current_user.erp), :notice=> notice }
          format.json { render :json=> @erp, :status=> :created, :location=> @erp }
-      else
-        format.html { render :action=> "new" }
+       else
+        format.html { render :action=> "new",:notice=>notice }
         format.json { render :json=> @erp.errors, :status=> :unprocessable_entity }
       end
     end
+    
   end
 
   # PUT /erps/1

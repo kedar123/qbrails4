@@ -81,6 +81,7 @@
 .wizard > .actions > ul > li
 {
     float: left;
+    margin-left: -10px;
 }
 
 .wizard.vertical > .steps > ul > li

@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<!-- Website Template by freewebsitetemplates.com -->
+ 
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -19,15 +19,18 @@
 <body>
 	<div id="header">
           <% if user_signed_in?%>
-             <span style="float:right;margin-right:10px;font-size: 10pt;"><a href="/users/sign_out" id="migration_button_shared_sign_up"> Logout</a></span>
+              <span style="float:right;margin-right:10px;font-size: 10pt;margin-top: 20px;"><a href="/users/sign_out" id="migration_button_shared_sign_up"> Logout</a></span>
           <%else%>
-             <span style="float:right;margin-right:10px;font-size: 10pt;"><%= link_to "Sign up", new_registration_path(:user) ,:id=>"migration_button_shared_sign_up" %></span>
-             <span style="float:right;margin-right:10px;font-size: 10pt;"><a href="/users/sign_in"   id="migration_button_shared_sign_up"> Login</a></span>
+             <span style="float:right;margin-right:10px;font-size: 10pt;margin-top: 20px;"><%= link_to "Sign up", new_registration_path(:user) ,:id=>"migration_button_shared_sign_up" %></span>
+             <span style="float:right;margin-right:10px;font-size: 10pt;margin-top: 20px;"><a href="/users/sign_in"   id="migration_button_shared_sign_up"> Login</a></span>
 
           <%end%>
 		<div class="section">
 			<div class="logo">
-				<%=image_tag "http://pragtech.co.in/images/logo.png"%>
+				<%=image_tag "Data_migrationlogo1.png"%>
+                                 <div style="color:red;margin-left: 318px;text-decoration: blink;">
+                                      Beta
+                                   </div>
 			</div>
                  	<ul>
 				 <%if params[:controller] == "homes"%>
@@ -57,16 +60,27 @@
 				</li>
 				 
 			</ul>
-                   <span class="notice" style="float:left;margin:0px;padding:0px;height:18px;"><%= notice %></span>
-                   <span class="alert" style="float:left;margin:0px;padding:0px;height:18px;"><%= alert %></span>
-                   
+                  
                     
 		
 		</div>
 		 
 	</div>
   <div id="body">
-          <%=yield%>
+    
+    <div>
+     <div class="notice" style="height: 20px;text-align: center;clear: both;float:none;color:red !important">
+<%= notice %>
+     </div>
+     <div class="alert" style="height: 20px;text-align: center;clear:both;float:none;color:red !important">
+<%= alert %>
+     </div>
+      </div>
+    
+    <div class="centerdiv"> 
+      
+      <%=yield%>
+     </div>
   </div>
 <div id="footer">
 		 
