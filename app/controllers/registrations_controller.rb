@@ -26,8 +26,11 @@ class RegistrationsController < Devise::RegistrationsController
     usd.last_name = params[:last_name]
     usd.save
     else
-      flash[:notice] = "Email Already Taken"
-    
+       
+      
+      
+       
+      
     end
     begin
     UserMailer.welcome_email(current_user).deliver

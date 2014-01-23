@@ -4,7 +4,7 @@ layout 'prof'
   # GET /homes
   # GET /homes.json
   def index
-     
+    
        # p Database.connection
   #here i need to write a code just for a test a test is like to check 
 # p Database.connection

@@ -19,7 +19,8 @@
 <body>
 	<div id="header">
           <% if user_signed_in?%>
-              <span style="float:right;margin-right:10px;font-size: 10pt;margin-top: 20px;"><a href="/users/sign_out" id="migration_button_shared_sign_up"> Logout</a></span>
+              <span style="float:right;margin-right:10px;font-size: 10pt;margin-top: 20px;">
+                <a href="/users/sign_out" id="migration_button_shared_sign_up"> Logout</a></span>
           <%else%>
              <span style="float:right;margin-right:10px;font-size: 10pt;margin-top: 20px;"><%= link_to "Sign up", new_registration_path(:user) ,:id=>"migration_button_shared_sign_up" %></span>
              <span style="float:right;margin-right:10px;font-size: 10pt;margin-top: 20px;"><a href="/users/sign_in"   id="migration_button_shared_sign_up"> Login</a></span>
@@ -69,10 +70,13 @@
   <div id="body">
     
     <div>
-     <div class="notice" style="height: 20px;text-align: center;clear: both;float:none;color:#FF0000 !important">
-<%= notice %>
+     <div class="notice" style="height: 20px;text-align: center;clear: both;float:none;color:#FF0000 !important" data-no-turbolink>
+           <%= notice %>
+        <%if params[:controller] == "registrations" and resource and resource.errors and resource.errors.has_key? :email%>
+             <%="Email Has Already Been Taken"%>
+        <%end%>
      </div>
-     <div class="alert" style="height: 20px;text-align: center;clear:both;float:none;color:#FF0000 !important">
+     <div class="alert" style="height: 20px;text-align: center;clear:both;float:none;color:#FF0000 !important" data-no-turbolink>
 <%= alert %>
      </div>
       </div>
