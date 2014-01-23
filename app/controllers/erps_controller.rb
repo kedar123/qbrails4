@@ -107,8 +107,7 @@ class ErpsController < ApplicationController
           logger.info 
           notice = 'Can not connect to OpenERP please check details again'
         end
-        p "before render"
-        p notice
+        
         if notice == 'Can not connect to OpenERP please check details again'
             @notice = 'Can not connect to OpenERP please check details again'
            format.html { render :action=> "edit" , :notice=> notice}

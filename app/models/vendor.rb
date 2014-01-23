@@ -4,17 +4,17 @@ class Vendor < ActiveRecord::Base
   self.table_name = "vendor"
 
   def self.call_vendor_save(vndr,current_user)
-    p "qqqqqqqqqqqqqqq"
+     
     ver = 1
     vndr.each do |vender|
       begin
-      p "aaaaaaaaaaaa"
+       
      logger.info ver+= 1
      logger.info "variable record>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
-     p "zzzzzzzzzzzzzzzzzzzzz"
+     
      logger.info ver += 1 
      logger.info "in vend or do........"
-     p "sasasasaasa"
+      
       old_res = eval(current_user.database.name.upcase.to_s)::ResPartner.search([["quick_list_number","=",vender.ListID]])[0] 
       logger.info old_res
       logger.info "45451321584874874964"

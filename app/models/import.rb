@@ -6,7 +6,7 @@ class Import < ActiveRecord::Base
   end
 
   def self.call_a_class_method
-    p "this should be printed"
+     
     logger.info "this should be printed"
     name = ['a','b','c','d','e','f','g','h','i','j']
     a=File.new(a[rand(8)].to_s+a[rand(8)].to_s+a[rand(8)].to_s+a[rand(8)].to_s+a[rand(8)].to_s+a[rand(8)].to_s, "w")
@@ -18,36 +18,36 @@ class Import < ActiveRecord::Base
   end
   
   def self.start_a_method
-    p "handelllllll"
+    
     p Time.now
   handle_asynchronously :call_a_class_method, :run_at => Proc.new { when_to_run }
-  p "ssssss"
+  
   end
   
  
   def call_start_import
-          p "in import controllerrrr"
+          
     	logger.info "Company calleddd"
 			logger.info "Company....calleddd............"
       
 	  	company = Company.all
     	#Company.export_company(company)	
 
-    	p "Customer.....calleddd..........."
+    	 
       custmr = Customer.all  
       #Customer.call_customer_save(custmr)
 		  logger.info "Customer Ended>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
-		  p "Customer Ended>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+		  
 		  
 
-      p 	"vendorr  ....................calleddd"
+       
 		  vendr = Vendor.all  
  	    #Vendor.call_vendor_save(vendr)
 	    employee = Employee.all
       #Employee.import_employee(employee)
 
    	  logger.info "Account calleddd>>>>>>>>>>>>>>>>>"
-	     p "Account calleddd>>>>>>>>>>>>>>>>>>"
+	      
      # account = Account.all
   	 # Account.export_account(account)
  
@@ -58,7 +58,7 @@ class Import < ActiveRecord::Base
     
     
  		  logger.info "Itemservice calleddd"
-			p "Itemservice calleddd"
+			 
  	    itemserv = Itemservice.all 
   	  Itemservice.export_itemservices(itemserv)
  			logger.info "Itemdiscountttt......... calleddd"
@@ -73,7 +73,7 @@ class Import < ActiveRecord::Base
    		Itemfixedasset.export_itemfixassets(itemfixasset)
 
  			logger.info "Itemgroup ........... calleddd"
-			p "Itemgroup ........... calleddd"
+		 
   		itemgroup = Itemgroup.all
  	 		Itemgroup.export_itemgroups(itemgroup)
 			logger.info "Iteminventry.............. calleddd"
@@ -89,53 +89,53 @@ class Import < ActiveRecord::Base
 			Itemnoninventory.export_itemnoninventory(itemnoninventory)
 			logger.info "Iteminventoryassembly................... calleddd"
  			
-      p "Iteminventoryassembly................... calleddd"
+      
 			iteminventoryassembly = Iteminventoryassembly.all      
  			Iteminventoryassembly.export_iteminventoryaseemblies(iteminventoryassembly)
 			logger.info "Itemmothercharge.................. calleddd"
  			
-      p "Itemmothercharge.................. calleddd"
+       
  			itemothercharge = Itemothercharge.all
 			Itemothercharge.export_itemothercharge(itemothercharge)
     	logger.info "Itempaymentt.................. calleddd"
   		
    
-      p "Itempaymentt.................. calleddd"
+       
   	  itempayment = Itempayment.all 
  			Itempayment.export_itempayment(itempayment)
 			logger.info "ItemService................... calleddd"
-			p "ItemService................... calleddd"
+			 
  			
     	itemserv = Itemservice.all
    		Itemservice.export_itemservices(itemserv)
 			logger.info "all data migrated........."
-      p "calling itemsubtotal.............................."
+       
       itemsubtotal = Itemsubtotal.all
       Itemsubtotal.export_itemsubtotal(itemsubtotal) 	
       
     
       logger.info "Bill migrating............ calleddd"
-      p "Bill migrating............ calleddd"
+       
   	  bill = Bill.all  #vendor run first
 	    Bill.export_bill(bill)
 
     
     
-      p " purchase orders callingggggggggg"
+       
     	purorder = Purchaseorder.all
   		purorlndetail = Purchaseorderlinedetail.all
   		Purchaseorder.export_purchaseorder(purorder,purorlndetail)
     
-      p "caling salesorder................."
+      
  			salesorder = Salesorder.all
  			soldetails = Salesorderlinedetails.all
  			Salesorder.export_salesorder(salesorder, soldetails)
     
-     	p "invoice called ....successfullyyyyyyyyy.."
+      
 			invoice = Invoice.all
       invoicelinedetail = Invoicelinedetail.all
 			Invoice.export_invoice(invoice,invoicelinedetail)
-  		p "invoicelinedetails called ....successfullyyyyyyyyy.."
+  		 
 
   end
  
@@ -144,18 +144,18 @@ class Import < ActiveRecord::Base
   @ooor = Ooor.new(:url => "http://"+current_user.erp.url+":8069/xmlrpc", :database => current_user.erp.database, :username => current_user.erp.username, :password => current_user.erp.password,:scope_prefix => current_user.database.name.upcase.to_s)
 
 
-   p "dbbbbbbbbbbbbbb       name     receiveddddddddddddddd s "
+   
    p dbname
    p dbname
    p dbname
     Database.connection.execute("use #{current_user.database.name}")
  
   
-    p "using above databaseeeeeeeee"
+     
    
     logger.info "using above databaseeeeeeeee"
 
-      p "export_all_migration  model import.rbbbbbin import controllerrrr"
+       
     	logger.info "Company calleddd"
 			logger.info "Company....calleddd............"
 	  	company = Company.all
@@ -164,11 +164,11 @@ class Import < ActiveRecord::Base
     	Company.export_company(company,current_user)	
      
  
-    	p "Customer.....calleddd..........."
+    	 
      # custmr = Customer.all  
      # Customer.call_customer_save(custmr,current_user)
 		  logger.info "Customer Ended>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
-		  p "Customer Ended>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+		  
 #		  
 
       p 	"vendorr  ....................calleddd"
@@ -178,94 +178,94 @@ class Import < ActiveRecord::Base
      # Employee.import_employee(employee,current_user)
 
    	  logger.info "Account calleddd>>>>>>>>>>>>>>>>>"
-	     p "Account calleddd>>>>>>>>>>>>>>>>>>"
+	     
       account = Account.all
   	  Account.export_account(account,current_user)
 # 
 
  	    logger.info "Bill migrating............ calleddd"
-    	 p "Bill migrating............ calleddd"
+    	 
   	  bill = Bill.all  #vendor run first
 	    Bill.export_bill(bill,current_user)
 		  logger.info "Itemservice calleddd"
-#			p "Itemservice calleddd"
+#			 
  	    itemserv = Itemservice.all 
   	  Itemservice.export_itemservices(itemserv,current_user)
  			logger.info "Itemdiscountttt......... calleddd"
 # 		
-#      p	"Itemdiscountttt......... calleddd"
+#       
 			itemdiscnt = Itemdiscount.all
 			Itemdiscount.export_itemdiscounts(itemdiscnt,current_user)
 #	
 #   		logger.info "Itemfixedasset................. calleddd"
-#		   p	"Itemfixedasset................. calleddd"
+#		   
  			itemfixasset = Itemfixedasset.all 
    		Itemfixedasset.export_itemfixassets(itemfixasset,current_user)
 
 
 # 			logger.info "Itemgroup ........... calleddd"
-#			p "Itemgroup ........... calleddd"
+#			 
   		itemgroup = Itemgroup.all
  	 		Itemgroup.export_itemgroups(itemgroup,current_user)
 #			logger.info "Iteminventry.............. calleddd"
 #   		
 # 
-#      p	"Iteminventry.............. calleddd"
+#      
 			iteminventory = Iteminventory.all
 	    Iteminventory.export_iteminventories(iteminventory,current_user)
 			logger.info "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
 #			
-#      p	 "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
+#       
 			itemnoninventory = Itemnoninventory.all
 			Itemnoninventory.export_itemnoninventory(itemnoninventory,current_user)
 			logger.info "Iteminventoryassembly................... calleddd"
 # 			
-#      p "Iteminventoryassembly................... calleddd"
+#       
 			iteminventoryassembly = Iteminventoryassembly.all      
  			Iteminventoryassembly.export_iteminventoryaseemblies(iteminventoryassembly,current_user)
 			logger.info "Itemmothercharge.................. calleddd"
 # 			
-#      p "Itemmothercharge.................. calleddd"
+#      
  			itemothercharge = Itemothercharge.all
 			Itemothercharge.export_itemothercharge(itemothercharge,current_user)
     	logger.info "Itempaymentt.................. calleddd"
 #  		
 #   
-#      p "Itempaymentt.................. calleddd"
+#       
   	  itempayment = Itempayment.all 
  			Itempayment.export_itempayment(itempayment,current_user)
 			logger.info "ItemService................... calleddd"
-			p "ItemService................... calleddd"
+			 
  
       itemsubtotal = Itemsubtotal.all
       Itemsubtotal.export_itemsubtotal(itemsubtotal,current_user) 	
 #      
-#      p " purchase orders callingggggggggg"
+#       
     	purorder = Purchaseorder.all
   		Purchaseorder.export_purchaseorder(purorder,current_user)
 #    
-#      p "caling salesorder................."
+#       
  			salesorder = Salesorder.all
  			Salesorder.export_salesorder(salesorder,current_user)
 #    
-     	p "invoice called ....successfullyyyyyyyyy.."
+     	 
 			invoice = Invoice.all
       Invoice.export_invoice(invoice,current_user)
   rescue =>e
    
-    p "in rescue error occureddd"
- p "ssssssssssssssssssssssssss"
+     
+  
     logger.info "in rescue error occureddd"
     logger.info e
     logger.info e.to_s
     logger.info e.message  
     logger.info e.backtrace.inspect 
     
-   p "connectinggggg to oct_4" 
+    
    Database.connection.execute("use oct_4")
    
   end
-   p "connectinggggg to oct_4" 
+    
    Database.connection.execute("use oct_4")
  end
   
@@ -436,20 +436,20 @@ logger.info	 "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
 			logger.info "Iteminventoryassembly................... calleddd"
 
 # 			
-#      p "Iteminventoryassembly................... calleddd"
+#       
 			iteminventoryassembly = Iteminventoryassembly.find(:all)#Iteminventoryassembly.all      
  			Iteminventoryassembly.export_iteminventoryaseemblies(iteminventoryassembly,current_user)
 			logger.info "Itemmothercharge.................. calleddd"
 
 # 			
-#      p "Itemmothercharge.................. calleddd"
+#       
  			itemothercharge = Itemothercharge.find(:all)#Itemothercharge.all
 			Itemothercharge.export_itemothercharge(itemothercharge,current_user)
     	logger.info "Itempaymentt.................. calleddd"
 
 #  		
 #   
-#      p "Itempaymentt.................. calleddd"
+#       
   	  itempayment = Itempayment.find(:all)#Itempayment.all 
  			Itempayment.export_itempayment(itempayment,current_user)
 			logger.info "ItemService................... calleddd"
@@ -557,20 +557,20 @@ logger.info	 "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
 			logger.info "Iteminventoryassembly................... calleddd"
 
 # 			
-#      p "Iteminventoryassembly................... calleddd"
+#       
 			iteminventoryassembly = Iteminventoryassembly.find(:all)#Iteminventoryassembly.all      
  			Iteminventoryassembly.export_iteminventoryaseemblies(iteminventoryassembly,current_user)
 			logger.info "Itemmothercharge.................. calleddd"
 
 # 			
-#      p "Itemmothercharge.................. calleddd"
+#       
  			itemothercharge = Itemothercharge.find(:all)#Itemothercharge.all
 			Itemothercharge.export_itemothercharge(itemothercharge,current_user)
     	logger.info "Itempaymentt.................. calleddd"
 
 #  		
 #   
-#      p "Itempaymentt.................. calleddd"
+#       
   	  itempayment = Itempayment.find(:all)#Itempayment.all 
  			Itempayment.export_itempayment(itempayment,current_user)
 			logger.info "ItemService................... calleddd"
@@ -593,14 +593,14 @@ logger.info	 "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
   	  bill = Bill.find(:all)#Bill.all  #vendor run first
 	    Bill.export_bill(bill,current_user)
 #       
-#         p " purchase orders callingggggggggg"
+#          
      purorder = Purchaseorder.find(:all)#Purchaseorder.all
      logger.info "Bill migrating............ calleddd555555"
   	 Purchaseorder.export_purchaseorder(purorder,current_user)
 
       
 #    
-#      p "caling salesorder................."
+#      
  			salesorder = Salesorder.find(:all)#Salesorder.all
  			Salesorder.export_salesorder(salesorder,current_user)
 #   
@@ -788,18 +788,18 @@ logger.info	 "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
 			Itemnoninventory.export_itemnoninventory(itemnoninventory,current_user)
 			logger.info "Iteminventoryassembly................... calleddd"
 # 			
-#      p "Iteminventoryassembly................... calleddd"
+#       
 			iteminventoryassembly = Iteminventoryassembly.find(:all,:limit=>10)#Iteminventoryassembly.all      
  			Iteminventoryassembly.export_iteminventoryaseemblies(iteminventoryassembly,current_user)
 			logger.info "Itemmothercharge.................. calleddd"
 # 			
-#      p "Itemmothercharge.................. calleddd"
+#      
  			itemothercharge = Itemothercharge.find(:all,:limit=>10)#Itemothercharge.all
 			Itemothercharge.export_itemothercharge(itemothercharge,current_user)
     	logger.info "Itempaymentt.................. calleddd"
 #  		
 #   
-#      p "Itempaymentt.................. calleddd"
+#      
   	  itempayment = Itempayment.find(:all,:limit=>10)#Itempayment.all 
  			Itempayment.export_itempayment(itempayment,current_user)
 			logger.info "ItemService................... calleddd"
@@ -825,11 +825,11 @@ logger.info	 "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
   	 # bill = Bill.find(:all)#Bill.all  #vendor run first
 	 # Bill.export_bill(bill,current_user)
 #       
-#         p " purchase orders callingggggggggg"
+#          
     #	purorder = Purchaseorder.find(:all)#Purchaseorder.all
   	#Purchaseorder.export_purchaseorder(purorder,current_user)
 #    
-#      p "caling salesorder................."
+#       
  		#	salesorder = Salesorder.find(:all)#Salesorder.all
  	#		Salesorder.export_salesorder(salesorder,current_user)
 #    
@@ -1019,18 +1019,18 @@ begin
 	#		Itemnoninventory.export_itemnoninventory(itemnoninventory,current_user)
 #			logger.info "Iteminventoryassembly................... calleddd"
 # 			
-#      p "Iteminventoryassembly................... calleddd"
+#       
 			iteminventoryassembly = Iteminventoryassembly.find(:all)#Iteminventoryassembly.all      
  	#		Iteminventoryassembly.export_iteminventoryaseemblies(iteminventoryassembly,current_user)
 	#		logger.info "Itemmothercharge.................. calleddd"
 # 			
-#      p "Itemmothercharge.................. calleddd"
+#       
  			itemothercharge = Itemothercharge.find(:all)#Itemothercharge.all
 	#		Itemothercharge.export_itemothercharge(itemothercharge,current_user)
  #   	logger.info "Itempaymentt.................. calleddd"
 #  		
 #   
-#      p "Itempaymentt.................. calleddd"
+#       
   	  itempayment = Itempayment.find(:all)#Itempayment.all 
  	#		Itempayment.export_itempayment(itempayment,current_user)
 #			logger.info "ItemService................... calleddd"#
@@ -1054,11 +1054,11 @@ begin
   	 # bill = Bill.find(:all)#Bill.all  #vendor run first
 #	   Bill.export_bill(bill,current_user)
 #       
-#         p " purchase orders callingggggggggg"
+#          
     #	purorder = Purchaseorder.find(:all)#Purchaseorder.all
  # 	Purchaseorder.export_purchaseorder(purorder,current_user)
 #    
-#      p "caling salesorder................."
+#       
  	#		salesorder = Salesorder.find(:all)#Salesorder.all
  #			Salesorder.export_salesorder(salesorder,current_user)
 #    

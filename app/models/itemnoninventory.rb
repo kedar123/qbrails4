@@ -16,7 +16,7 @@ logger.info item.ListID
 logger.info "is there any conflict"
 logger.info  oldac
   if oldac.blank?
-    p "itemnoninve............."
+     
          self.createnoniteminventory(current_user,item,var)
   else
     logger.info "this should not happen at first time iteminventory"
@@ -37,7 +37,7 @@ end
   
   def self.updatenoniteminventory(current_user,item,var,oldac)
     logger.info "885555554444111111222222222"
-        p var += 1
+         
           
       nuom = eval(current_user.database.name.upcase.to_s)::ProductUom.search([['name', '=', "Unit(s)"]])[0]   
       
@@ -144,7 +144,7 @@ end
   
   
   def self.createnoniteminventory(current_user,item,var)
-       p var += 1
+        
           logger.info "777415254585522325565215"
       nuom = eval(current_user.database.name.upcase.to_s)::ProductUom.search([['name', '=', "Unit(s)"]])[0]   
         

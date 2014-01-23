@@ -21,7 +21,7 @@ class Itemgroup < ActiveRecord::Base
     #this should not happen at first time
         self.update_item_group(item,current_user,var,oldac)
   end # end of do
- p " in end of do ........."
+ 
   # rescue =>e
   #   logger.info "some error in itemgroup"
   #   logger.info e.message
@@ -31,8 +31,7 @@ end
 
   
   def self.update_item_group(item,current_user,var,oldac)
-     p "itemgroups....................."
-   p var += 1
+     
       pctg = eval(current_user.database.name.upcase.to_s)::ProductCategory.search([['name', '=', "All products"]])[0]
       nuom = eval(current_user.database.name.upcase.to_s)::ProductUom.search([['name', '=', "Unit(s)"]])[0]   
          
@@ -103,8 +102,7 @@ end
   
   
   def self.create_item_group(item,current_user,var)
-     p "itemgroups....................."
-   p var += 1
+     
       pctg = eval(current_user.database.name.upcase.to_s)::ProductCategory.search([['name', '=', "All products"]])[0]
       nuom = eval(current_user.database.name.upcase.to_s)::ProductUom.search([['name', '=', "Unit(s)"]])[0]   
          

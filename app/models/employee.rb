@@ -3,19 +3,17 @@ class Employee < ActiveRecord::Base
    #attr_accessible :Name, :IsActive,:Email,:EmployeeAddress_Addr1,:EmployeeAddress_Addr2,:SSN ,:EmployeeAddress_City,:Phone,:Mobile ,:EmployeeAddress_PostalCode 
    def self.import_employee(employee,current_user)
    var = 0
- p employee.count
- p employee.count
- p employee.count
+  
 
 employee.each do |item|
     begin
    if !item.Name.blank?
 oldac =  eval(current_user.database.name.upcase.to_s)::ResourceResource.search([["quickbook_id","=",item.ListID.to_s]])[0]
 if oldac.blank?
-    p "in iffffffffffffffffffffffff"
+    
        self.common_employee_save(current_user,item)
 else
-  p " name blankkkkkkkkkkkkkkkkkkkkkk"
+   
    logger.info "this is need to be check at first timeeeeemployee"
      # this should not happen at first time
      self.common_employee_update(current_user,item,oldac)
@@ -68,7 +66,7 @@ end
    rpaddr.name = item.Name
    rpaddr.quick_list_number = "res"+item.ListID.to_s
 #   p rpaddr.type
-   p "b44 saveeeeeeeeee"
+   
 #   rpaddr.save
    rpaddr.save  
    end
@@ -148,7 +146,7 @@ end
    rpaddr.name = item.Name
    rpaddr.quick_list_number = "res"+item.ListID.to_s
 #   p rpaddr.type
-   p "b44 saveeeeeeeeee"
+    
 #   rpaddr.save
    rpaddr.save  
    end

@@ -37,7 +37,7 @@ class Company < ActiveRecord::Base
      @a.name = item.CompanyName
      @a.save
    end
-#    p "@a.id"
+ 
 #   p @a.id
   # respaddr.company_id = @a.id
   # respart.name = item.CompanyName

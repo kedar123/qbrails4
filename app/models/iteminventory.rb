@@ -25,7 +25,6 @@ logger.info oldac.inspect
     logger.info count
     logger.info "this count should be 123"
   end # end of do 
- p " end of doooooooo"
  
         
  end #end of def

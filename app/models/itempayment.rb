@@ -14,7 +14,7 @@ class Itempayment < ActiveRecord::Base
         #this should not happen at first time
       self.common_other_payment_update(item,current_user,var,oldac)
   end # end of do 
- p " end of doooooooo"
+  
   # rescue=>e
   #   logger.info "some error in itempayment"
   #   logger.info e.message
@@ -24,8 +24,8 @@ end
 
   
    def self.common_other_payment_update(item,current_user,var,oldac)
-           #p "item payment..................."
-    #   p var += 1
+            
+     
        pctg = eval(current_user.database.name.upcase.to_s)::ProductCategory.search([['name', '=', "payment"]])[0]
        nuom = eval(current_user.database.name.upcase.to_s)::ProductUom.search([['name', '=', "Hours"]])[0]   
     
@@ -84,13 +84,12 @@ end
   
   
   def self.common_other_payment(item,current_user,var)
-           #p "item payment..................."
-    #   p var += 1
+            
        pctg = eval(current_user.database.name.upcase.to_s)::ProductCategory.search([['name', '=', "payment"]])[0]
        nuom = eval(current_user.database.name.upcase.to_s)::ProductUom.search([['name', '=', "Hours"]])[0]   
    #    prtmp = eval(current_user.database.name.upcase.to_s)::ProductTemplate.new
 
-#   p "last saving"
+ 
 #    protemp = eval(current_user.database.name.upcase.to_s)::ProductTemplate.new 
 #    protemp.name = item.Name
 #    protemp.type = 'service'

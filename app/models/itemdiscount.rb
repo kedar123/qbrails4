@@ -82,13 +82,12 @@ end
           
     end    
     
- #   p "protemp id........."
+ #    
  #   p protemp.id
     #propro.product_tmpl_id = protemp.id
     propro.save
     #ProductUom.search([['category_id', '=', "Hour"]])[0]  
-#   p "search result for hour  ???????????????????????????"
-#    p nuom 
+#    
        protemp =  propro.product_tmpl_id
        protemp.uom_po_id = nuom
        protemp.uom_id = nuom
@@ -109,9 +108,9 @@ end
     datetimec = DateTime.new(item.TimeModified.split(" ")[0].split("/")[2].to_i,item.TimeModified.split(" ")[0].split("/")[0].to_i,item.TimeModified.split(" ")[0].split("/")[1].to_i,item.TimeModified.split(" ")[1].split(":")[0].to_i,item.TimeModified.split(" ")[1].split(":")[1].to_i,item.TimeModified.split(" ")[1].split(":")[2].to_i)
      
     protemp.quickbook_time = datetimec 
- #  p " last last last........................"
+ #   
     protemp.save
-    p "saving  pro temp saved .................. "
+     
    end
   end
   
@@ -163,13 +162,13 @@ end
           
     end    
     
- #   p "protemp id........."
- #   p protemp.id
+ #    
+ #    
     #propro.product_tmpl_id = protemp.id
     propro.save
     #ProductUom.search([['category_id', '=', "Hour"]])[0]  
-#   p "search result for hour  ???????????????????????????"
-#    p nuom 
+#    
+#     
        protemp =  propro.product_tmpl_id
        protemp.uom_po_id = nuom
        protemp.uom_id = nuom
@@ -191,9 +190,9 @@ end
     protemp.company_id = 1
     protemp.quickbook_id = item.ListID
      
- #  p " last last last........................"
+ #   
     protemp.save
-    p "saving  pro temp saved .................. "
+     
   end
   
   

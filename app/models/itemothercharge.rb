@@ -24,8 +24,7 @@ class Itemothercharge < ActiveRecord::Base
    def self.update_common_other_charge(item,current_user,var,oldac)
        #begin
 
-p "itemmothercharege................"
-   p var += 1
+ 
        nuom = eval(current_user.database.name.upcase.to_s)::ProductUom.search([['name', '=', "Hours"]])[0]   
      
      
@@ -113,7 +112,7 @@ p "itemmothercharege................"
     protemp.save
  
    
- p " end of doooooooo"
+  
  
     end
       
@@ -124,8 +123,7 @@ p "itemmothercharege................"
   def self.common_other_charge(item,current_user,var)
        #begin
 
-p "itemmothercharege................"
-   p var += 1
+ 
        nuom = eval(current_user.database.name.upcase.to_s)::ProductUom.search([['name', '=', "Hours"]])[0]   
      
     propro = eval(current_user.database.name.upcase.to_s)::ProductProduct.new
@@ -204,8 +202,7 @@ p "itemmothercharege................"
     protemp.save
  
    
- p " end of doooooooo"
- 
+  
  
       
   end

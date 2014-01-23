@@ -25,14 +25,12 @@ end
 
  
  def self.update_item_fix_asset(item,current_user,var,oldac)
-        p "itemfixedaset........................"
-   p var += 1
-   p "itemfixasset called"
-   p "in do inerrrrrrrrrrrrr"
+         
+    
     nuom = eval(current_user.database.name.upcase.to_s)::ProductUom.search([['name', '=', "Unit(s)"]])[0]   
-  #   p " last last last........................"
+  #    
  #   protemp.save
-    p "saving  pro temp saved .................. "
+     
     oldptm = eval(current_user.database.name.upcase.to_s)::ProductTemplate.find(oldac)
     datetimec = DateTime.new(item.TimeModified.split(" ")[0].split("/")[2].to_i,item.TimeModified.split(" ")[0].split("/")[0].to_i,item.TimeModified.split(" ")[0].split("/")[1].to_i,item.TimeModified.split(" ")[1].split(":")[0].to_i,item.TimeModified.split(" ")[1].split(":")[1].to_i,item.TimeModified.split(" ")[1].split(":")[2].to_i)
     if oldptm.quickbook_time == datetimec
@@ -102,7 +100,7 @@ end
     
     
        
- #   p " last last last........................"
+ #    
     protemp.save
     end
  end
@@ -111,14 +109,11 @@ end
 
  
  def self.create_item_fix_asset(item,current_user,var)
-      p "itemfixedaset........................"
-   p var += 1
-   p "itemfixasset called"
-   p "in do inerrrrrrrrrrrrr"
+      
        nuom = eval(current_user.database.name.upcase.to_s)::ProductUom.search([['name', '=', "Unit(s)"]])[0]   
-  #   p " last last last........................"
+   
  #   protemp.save
-    p "saving  pro temp saved .................. "
+     
     propro = eval(current_user.database.name.upcase.to_s)::ProductProduct.new
     propro.name = item.Name 
      if !item.AssetAccountRef_FullName.blank?
@@ -185,7 +180,7 @@ end
     
     
        
- #   p " last last last........................"
+ #    
     protemp.save
  end
  

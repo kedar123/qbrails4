@@ -15,7 +15,7 @@ layout 'prof'
        #    @ooor = Ooor.new(:url => current_user.erp.url, :database => current_user.erp.database, :username => current_user.erp.username, :password => current_user.erp.password)
         #import = Import.new
         #import.delay(:queue => 'tracking').call_start_import
-      #p "but import is doneee"
+       
        end
     end
    else

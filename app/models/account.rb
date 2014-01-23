@@ -799,7 +799,7 @@ logger.info 32
   ac.save
 # end 
           
-    p " account account successfully saved.............."
+     
     end
     
     #i need to write an extra function for checking where an children account available or not 
@@ -912,7 +912,7 @@ logger.info 32
   
 # end 
           
-    p " account account successfully saved.............."
+     
     end
     
 

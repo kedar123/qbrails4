@@ -69,8 +69,7 @@ class PaymentsController < ApplicationController
     allow_guest_checkout: false,   #payment with credit card for non PayPal users
     items: [{:name => "Quick Book Migration", :description => "All Modules",:amount=> @amount}] #array of hashes, amount is a price in cents
   )
-  p "what is the responseeeee"
-  p response.inspect
+   
   redirect_to EXPRESS_GATEWAY.redirect_url_for(response.token)
   end
   
@@ -141,8 +140,7 @@ class PaymentsController < ApplicationController
          current_user.save
          redirect_to root_path ,:notice=>"Your Payment Is Successful Please See The Step To Create A Database"
       else
-         p response.inspect
-         p "response.inspectttttt"
+          
            redirect_to :back ,:notice=>"There Are Some Errors In Payments Please Try Again"
       end
   end
