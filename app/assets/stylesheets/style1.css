@@ -50,7 +50,7 @@ a:hover {
 #main
 {
 	width:100%;
-	margin:48px auto 0px auto;
+	margin:0px auto 0px auto;
 	height:auto;
 	overflow:hidden;
 }
@@ -276,7 +276,7 @@ a:hover {
 }
 .video
 {
-	margin:10px 5px 0px 5px ;
+	/*margin:10px 5px 0px 5px ;*/
 }
 
 #footer
