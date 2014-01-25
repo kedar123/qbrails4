@@ -14,16 +14,7 @@
 <body>
       
 <div id="">
-   <div class="Messages"><p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-       <p class="login">
-        <%if current_user%>
-          
-              <%#=link_to "Log out "+current_user.email, destroy_user_session_path %>
-         
-       <%end%>
-       </p>
-  </div> 
+
 	 <div id="main">
 <div class="container">
           
@@ -114,6 +105,20 @@
        <div id="main2">
 	 <div id="contaner">
          <div class="centerdiv">
+              <div class="Messages"><p class="notice"><%= notice %>
+      <%if params[:controller] == "registrations" and resource and resource.errors and resource.errors.has_key? :email%>
+             <%="Email Has Already Been Taken"%>
+        <%end%>
+     </p>
+       <p class="alert"><%= alert %></p>
+       <p class="login">
+        <%if current_user%>
+          
+              <%#=link_to "Log out "+current_user.email, destroy_user_session_path %>
+         
+       <%end%>
+       </p>
+  </div> 
            <%= yield %>
           </div>
         </div>
