@@ -2,8 +2,10 @@
 <html>
 <head>
   <title>Quickbook42</title>
+  
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  
  
   
   
@@ -17,44 +19,106 @@
        <p class="login">
         <%if current_user%>
           
-              <%=link_to "Log out "+current_user.email, destroy_user_session_path %>
+              <%#=link_to "Log out "+current_user.email, destroy_user_session_path %>
          
        <%end%>
        </p>
   </div> 
 	 <div id="main">
+<div class="container">
           
   <div class="topbar">
     <div class="logo">
-      
-       
-      <%#=image_tag "logo.gif"%>
+       <%=image_tag "Data_migrationlogo.png"%>
+         <div style="color:#FF0000;margin-left: 318px;text-decoration: blink;">
+                                      Beta
+         </div>
     </div>
-    <div class="serchbar"></div>
-    <div class="navibar">
+    <div class="serchbar">
+      <%=image_tag "serch_bar.png"%>
+         <div style="color:#FF0000;margin-left: 18px;">
+      <% if user_signed_in?%>
+              <span style="float:right;margin-right:55px;font-size: 10pt;margin-top: 00px;">
+                <a href="/users/sign_out" class="newbtn_orange"> Logout</a></span>
+          <%else%>
+             <span style="float:right;margin-right:55px;font-size: 10pt;margin-top: 00px;"><%= link_to "Sign up", new_registration_path(:user) ,:class=>"newbtn_orange" %></span>
+             <span style="float:right;margin-right:10px;font-size: 10pt;margin-top: 00px;"><a href="/users/sign_in"   class="newbtn_orange"> Login</a></span>
+
+          <%end%>
+        </div>
+   </div>
+   <div class="navibar">
      <div class="menu"><a href="/">Home</a></div>
       <div class="menu">|</div>
       <div class="menu"><a href="<%=feedbacks_aboutus_path%>">About Us</a></div>
       <div class="menu">|</div>
-      <div class="menu"> <a href="#">Services</a></div>
+      <div class="menu"> <a href="/terms">Terms</a></div>
       <div class="menu">|</div>
-      <div class="menu"><a href="#">Products</a></div>
+      <div class="menu"><a href="/terms/features">Features</a></div>
       <div class="menu">|</div>
       <div class="menu"> <a href="<%=feedbacks_contactus_path%>">Contact Us</a></div>
     </div>
   </div>
-          <!--<div class="flash"><embed src="http://localhost:3000/assets/QuickBookVideo.mpeg"
- autostart="true"  height="250" width="250"/>
-          </div>
-           -->
-  </div> 
+</div>
+          <div class="flash">
+
+<div class="bannerbg">
+
+<div class="banner_container">
+
+<div class=" quickbook_coloumn">
+<img src="/assets/Quickbook_logo.png" style="margin-left:15px;" />
+
+<div class="quickbooktext">Quickbooks To OpenERP 
+Data MigrationQuickbooks To OpenERP 
+Data MigrationQuickbooks To OpenERP 
+Data MigrationQuickbooks To OpenERP 
+Data Migration</div>
+
+
+
+</div>
+<div class="arrowflash"><img src="/assets/arrow1.png" /></div>
+
+
+
+<div class="video_coloumn">
+ <a class="video" id="videoimage" title="Quickbook Video" href="http://www.youtube.com/v/ZeStnz5c2GI?fs=1&amp;autoplay=1">
+
+    <img src="/assets/video.png" />
+
+ </a>
+
+
+ 
+
+</div>
+
+<div class="arrowflash"><img src="/assets/arrow1.png"  /></div>
+<div class="openerp_coloumn"><img src="/assets/openERp.png" style="margin-right:20px; margin-top:" />
+
+<div class="quickbooktext" style="margin-top:25px;">Quickbooks To OpenERP 
+Data MigrationQuickbooks To OpenERP 
+Data MigrationQuickbooks To OpenERP 
+Data MigrationQuickbooks To OpenERP 
+Data Migration</div>
+ 
+</div>
+</div>
+</div>
+          
+
+
+</div>
+ 
+  </div>
 </div>
 
        <div id="main2">
 	 <div id="contaner">
-         
+         <div class="centerdiv">
            <%= yield %>
-          
+          </div>
         </div>
       </div>
        
@@ -66,21 +130,25 @@
         <div class="footer_menu">|</div>
         <div class="footer_menu"><a href="<%=feedbacks_aboutus_path%>">About Us</a></div>
         <div class="footer_menu">|</div>
-        <div class="footer_menu"><a href="#">Services</a></div>
+        <div class="footer_menu"><a href="/terms">Terms</a></div>
         <div class="footer_menu">|</div>
-        <div class="footer_menu"><a href="#">Products</a></div>
-        <div class="footer_menu">|</div>
-        <div class="footer_menu"><a href="#">Clients</a></div>
-        <div class="footer_menu">|</div>
-        <div class="footer_menu"><a href="#">Community </a></div>
-        <div class="footer_menu">|</div>
-        <div class="footer_menu"><a href="#">Blog</a></div>
+        <div class="footer_menu"><a href="/terms/features">Features</a></div>
         <div class="footer_menu">|</div>
         <div class="footer_menu"><a href="<%=feedbacks_contactus_path%>">Contact Us</a></div>
         <div class="footer_text">© Copyright 2010 Pragmatic Techsoft Pvt. Ltd. All rights reserved.</div>
     </div>
     </div>
 </div>
+  
+    
+         
+       
+        
+        
+
+
+
  
+   
 </body>
 </html>

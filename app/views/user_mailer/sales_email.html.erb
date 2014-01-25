@@ -6,9 +6,9 @@
   <body>
     <h1>The New User Registered And Following Are The Details Of This New User </h1>
     <p>
-       user first name is: <%= @user.first_name %>.<br/>
-       user middle name is: <%= @user.middle_name %>.<br/>
-       user last name is: <%= @user.last_name %>.<br/>
+       user first name is: <%= @user.useraddress.first_name %>.<br/>
+       user middle name is: <%= @user.useraddress.middle_name %>.<br/>
+       user last name is: <%= @user.useraddress.last_name %>.<br/>
        user country is: <%= @user.useraddress.country %>.<br/>
        user state is: <%= @user.useraddress.state %>.<br/>
        user zipcode is: <%= @user.useraddress.zip_code %>.<br/>

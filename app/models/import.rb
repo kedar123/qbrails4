@@ -37,6 +37,7 @@ class Import < ActiveRecord::Base
       custmr = Customer.all  
       #Customer.call_customer_save(custmr)
 		  logger.info "Customer Ended>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+  		  
 		  
 		  
 

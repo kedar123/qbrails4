@@ -1,8 +1,6 @@
 
 class ImportsController < ApplicationController
   
-  layout 'prof'
-  
   def home
 
    

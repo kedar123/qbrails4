@@ -2,7 +2,6 @@ class PaymentsController < ApplicationController
   
   include ActiveMerchant::Billing
   before_filter :authenticate_user! 
-  layout 'prof'
   def index
     
     current_user.user_payment_choice = params[:id]
@@ -164,6 +163,14 @@ class PaymentsController < ApplicationController
   
 private
 
+#  def gateway
+#        @gateway ||= PaypalExpressGateway.new(
+#           :login => 'kedar.pathak-facilitator_api1.pragtech.co.in',
+#          :password => '1364994877',
+#          :signature => 'ACLa8jsQN8TPFLDY57dLNb5-3qq.AgN5u20e33t3nrXP3uDzoZTGNERk'
+#        )
+#  end
+
   def gateway
         @gateway ||= PaypalExpressGateway.new(
            :login => 'kedar.pathak-facilitator_api1.pragtech.co.in',
@@ -171,14 +178,6 @@ private
           :signature => 'ACLa8jsQN8TPFLDY57dLNb5-3qq.AgN5u20e33t3nrXP3uDzoZTGNERk'
         )
   end
-
-  #def gateway
-  #      @gateway ||= PaypalExpressGateway.new(
-  #         :login => "kedar.pathak-facilitator_api1.pragtech.co.in",
-   #       :password => "1364994877",
-   #       :signature => "ACLa8jsQN8TPFLDY57dLNb5-3qq.AgN5u20e33t3nrXP3uDzoZTGNERk"
-   #     )
-  #end
   
  # def gateway
  #       @gateway ||= PaypalExpressGateway.new(

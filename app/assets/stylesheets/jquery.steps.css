@@ -29,7 +29,6 @@
 {
     display: block;
     padding: 0;
-    
 }
 
 /* Accessibility */
@@ -81,7 +80,6 @@
 .wizard > .actions > ul > li
 {
     float: left;
-    margin-left: -10px;
 }
 
 .wizard.vertical > .steps > ul > li
@@ -239,9 +237,6 @@
 {
     display: inline-block;
     text-align: right;
-    margin-right: 25px;
-    margin-top: 5px;
-    
 }
 
 .wizard > .actions > ul > li

@@ -1,8 +1,8 @@
-class PasswordsController < Devise::PasswordsController
+class PasswordsController < Devise::SessionsController
   prepend_before_filter :require_no_authentication
   # Render the #edit only if coming from a reset password email link
   append_before_filter :assert_reset_token_passed, :only => :edit
-  layout 'prof'
+
   # GET /resource/password/new
   def new
     super

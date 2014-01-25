@@ -1,5 +1,7 @@
 class UserMailer < ActionMailer::Base
-  default from: "kedar.pathak@pragtech.co.in"
+   
+    default sender: 'kedar.pathak21@pragtech.co.in'
+    
    def welcome_email(user)
     @user = user
     @url  = 'http://178.63.19.197'

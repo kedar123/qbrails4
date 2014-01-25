@@ -2,7 +2,6 @@
 class ErpsController < ApplicationController
   # GET /erps
   # GET /erps.json
-  layout 'prof'
   def index
  
     @erps = Erp.all

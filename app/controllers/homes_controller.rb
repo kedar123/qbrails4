@@ -1,10 +1,10 @@
 class HomesController < ApplicationController
   before_action :set_home, only: [:show, :edit, :update, :destroy]
-layout 'prof'
+
   # GET /homes
   # GET /homes.json
   def index
-    
+     
        # p Database.connection
   #here i need to write a code just for a test a test is like to check 
 # p Database.connection
@@ -25,13 +25,6 @@ layout 'prof'
    end
   end
 
-  
-  def index2
-    render :layout=>"prof"
-  end
-  
-  
-  
   # GET /homes/1
   # GET /homes/1.json
   def show

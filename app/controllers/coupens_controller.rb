@@ -1,7 +1,7 @@
 class CoupensController < ApplicationController
   before_action :set_coupen, only: [:show, :edit, :update, :destroy]
   before_filter :check_admin
-  layout 'prof'
+
   # GET /coupens
   # GET /coupens.json
   def index

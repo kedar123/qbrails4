@@ -67,9 +67,10 @@
         </div>        
         <div class="right2">
                  <div style="padding-top: 20px;">
-                 <%=image_tag 'reach-us.png'%>  
+                 <%=image_tag 'reach-us.png' ,:style=>"float:left;"%>  
+<h1 class="h1style" >Reach us</h1>
                  </div>
-                <h1 class="h1style" >Reach us</h1>
+                
                  
             <table width="100%" cellpadding="2" cellspacing="2" border="0">
             	<tr>
@@ -87,9 +88,12 @@
             </table>
                 <div style="height: 20px; clear: both;"></div>
        
-        	<div class="icon" style="padding-top: 20px;"><img src="/assets/feed-back.png" /></div><h1 class="h1style">Feedback</h1>
+        	<div class="icon" style="padding-top: 20px;"><img src="/assets/feed-back.png" style="float:left"/>
+
+<h1 class="h1style">Feedback</h1>
+</div>
             	 
-                   
+                   <br/><br/><br/>
               <form accept-charset="UTF-8" action="/feedback" method="post" onsubmit="return check_validation();">
                   <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
             		<table width="100%" cellpadding="2" cellspacing="2" border="0" style="padding-left:10px">
@@ -149,4 +153,4 @@
   return regex.test(email);
 }
    
-   </script>
+ </script>

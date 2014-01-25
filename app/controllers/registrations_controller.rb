@@ -1,16 +1,16 @@
 class RegistrationsController < Devise::RegistrationsController
-  layout 'prof'
   def new
-     
     super
-      
   end
 
   def create
     # add custom create logic here
     super
     #but need to send an email
+    p "after logged in"
+    p current_user
      
+    p user_signed_in?
     #there are some issues with rails 4 devise that is why i have creaated this new model. 
     if current_user
     usd = Useraddress.new

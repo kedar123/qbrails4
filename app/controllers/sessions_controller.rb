@@ -1,6 +1,6 @@
 class SessionsController < Devise::SessionsController
   
-   layout 'prof'
+  
   
   def new
     super

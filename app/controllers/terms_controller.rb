@@ -1,6 +1,6 @@
 class TermsController < ApplicationController
   before_action :set_term, only: [:show, :edit, :update, :destroy]
-  layout 'prof'
+   
   # GET /terms
   # GET /terms.json
   def index
@@ -10,6 +10,10 @@ class TermsController < ApplicationController
   def legal
     
   end
+
+  def features
+   
+  end 
   
   # GET /terms/1
   # GET /terms/1.json
