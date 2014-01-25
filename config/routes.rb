@@ -1,5 +1,7 @@
 Quickbook42::Application.routes.draw do
   get "terms/legal"
+  get "terms/features"
+
   resources :terms
 
   resources :coupens

@@ -291,8 +291,10 @@ a:hover {
 {
 	width:800px;
 	height:auto;
-	 margin: 22px 206px 0 345px;
+	margin: 22px 206px 0 345px;
 	overflow:hidden;
+        padding-left: 73px;
+        
 }
 .footer_text
 {
@@ -301,7 +303,7 @@ a:hover {
 	color:#CCCCCC;
 	font-weight:normal;
 	text-align:center;
-	padding: 44px 432px 0 0;
+	padding: 44px 374px 0 0;
 }
 .footer_menu
 {
