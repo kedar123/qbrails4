@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Quickbook42</title>
+  <title>Quickbook To Open Erp</title>
   
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application" %>
   
  
   
@@ -26,7 +26,9 @@
          </div>
     </div>
     <div class="serchbar">
-      <%=image_tag "serch_bar.png"%>
+      <a href="http://pragtech.co.in/" target="_blank">
+           <%=image_tag "serch_bar.png"%>
+      </a>
          <div style="color:#FF0000;margin-left: 18px;">
       <% if user_signed_in?%>
               <span style="float:right;margin-right:55px;font-size: 10pt;margin-top: 00px;">
@@ -45,9 +47,11 @@
       <div class="menu">|</div>
       <div class="menu"> <a href="/terms">Terms</a></div>
       <div class="menu">|</div>
-      <div class="menu"><a href="/terms/features">Features</a></div>
-      <div class="menu">|</div>
+       
       <div class="menu"> <a href="<%=feedbacks_contactus_path%>">Contact Us</a></div>
+      <div class="menu">|</div>
+      <div class="menu"> <a href="<%=helps_path%>">Help</a></div>
+      
     </div>
   </div>
 </div>
@@ -58,11 +62,10 @@
 <div class="banner_container">
 
 <div class=" quickbook_coloumn">
-<img src="/assets/Quickbook_logo.png" style="margin-left:15px;" />
+<img src="/assets/Quickbook_logo.png" style="margin-left:15px;margin-top:107px;" />
 
 <div class="quickbooktext">
-  Quickbooks To OpenERP 
-  Data Migration   
+   
 </div>
 
 
@@ -85,10 +88,9 @@
 </div>
 
  
-<div class="openerp_coloumn"><img src="/assets/openERp.png" style="margin-right:20px; margin-top:" />
+<div class="openerp_coloumn"><img src="/assets/openERp.png" style="margin-right:20px; margin-top:107px;" />
 
-<div class="quickbooktext" style="margin-top:25px;">Quickbooks To OpenERP 
-  Data Migration   
+<div class="quickbooktext" style="margin-top:25px;"> 
  </div>
  
 </div>

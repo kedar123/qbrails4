@@ -2,16 +2,16 @@
   <div class="text1">
      <ul>
           <%=form_tag('/databases')%>
-          <li>Charts Of Accounts</li>
-          <li>Customer</li>
-          <li>Supplier</li>
-          <li>Employee</li>
+          <li>Charts Of Accounts(10)</li>
+          <li>Customer(10)</li>
+          <li>Supplier(10)</li>
+          <li>Employees(10)</li>
       
     </ul>
     
-    <div class="btn" style="margin-left:-50px;margin-top:80px">
+    <div class="btn" style="margin-left:-50px;margin-top:92px">
      <%#= link_to image_tag('mg.png'), url_for(:action => 'create', :controller => 'databases',:id=>"basic"),:method=>"post"%> 
-     <%= link_to image_tag('mg.png'), url_for(:action => 'index', :controller => 'payments',:id=>"free")%> 
+     <%= link_to  "Migrate", url_for(:action => 'index', :controller => 'payments',:id=>"free"),:class=>"newbtn_orange" ,:style=>"font-size:13px;margin-left:23px;"%> 
     <%#suppose its a free then on payments index page create a database %>  
    </div>
   <%#=url_for(:action => 'index', :controller => 'home') %>
@@ -29,17 +29,17 @@
           <li>Charts Of Accounts</li>
           <li>Customer</li>
           <li>Supplier</li>
-          <li>Employee</li>
-          <li>Products</li>
+          <li>Employees</li>
+          <li>Products(50)</li>
         
     </ul>
     </div>
-    <div style="padding-top:94px;margin-left: 43px;">
+    <div style="padding-top:94px;margin-left: 32px;">
            <%=image_tag "z.png",:size=>"140x25"%>
       </div>
     <div class="btn" style="padding-top:-3px;">
     <%#= link_to image_tag('mg.png'), url_for(:action => 'create', :controller => 'databases',:id=>"basic"),:method=>"post"%> 
-    <%= link_to image_tag('mg.png'), url_for(:action => 'index', :controller => 'payments',:id=>"standard") %>   
+    <%= link_to  "Migrate", url_for(:action => 'index', :controller => 'payments',:id=>"standard"),:class=>"newbtn_orange"  %>   
     </div>
          </form>
          
@@ -53,18 +53,18 @@
           <li>Charts Of Accounts</li>
           <li>Customer</li>
           <li>Supplier</li>
-          <li>Employee</li>
+          <li>Employees</li>
           <li>Products</li>
          <li>Inventory</li>
   </ul>
   </div>
-   <div style="padding-top:9px;margin-left: 25px;">
+   <div style="padding-top:9px;margin-left: 30px;">
            <%=image_tag "za.png",:size=>"140x25"%>
       </div>
      <div class="btn">
     <%#= link_to image_tag('/images/mg.png'), url_for(:action => 'create', :controller => 'databases',:id=>"premium"),:method=>"post"%>
   <%#= link_to image_tag('mg.png'),url_for(:action => 'create', :controller => 'databases',:id=>"standard"),:method=>"post"%>  
-  <%= link_to image_tag('mg.png'),url_for(:action => 'index', :controller => 'payments',:id=>"premium") %>       
+  <%= link_to "Migrate",url_for(:action => 'index', :controller => 'payments',:id=>"premium" ),:class=>"newbtn_orange"  %>       
     </div>
   </form>
 </div>

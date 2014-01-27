@@ -1,4 +1,4 @@
- 
+<div style="text-align: justify;font-size: 14px;"> 
 <h4>Sign in</h4>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name) ,:html=>{:onsubmit=>"return sign_in_email()"} ) do |f| %>
@@ -28,6 +28,7 @@
   <%#= render "devise/shared/links" %>
   
 </div>
+    </div>
 <script>
       
       function sign_in_email(){
