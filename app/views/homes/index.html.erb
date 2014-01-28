@@ -174,7 +174,10 @@ named as payment_status boolean . after a payment is complete make this field tr
                . In The Database <span style="color:#2184BE">'<%=current_user.database.name if current_user.database%>'
                </span> <span>See manual for AccessBooks 
                RealTime installation Here</span>
-               <a href="http://synergration.com/software/accessbooks-realtime/" target="_blank"  id = "migration_button_link">Download Access Book</a>
+                
+               <%= link_to "Download Access Book",imports_download_accessbook_path,:id=>"migration_button_link_here"%> 
+              
+               
 </strong></p>
                       
                     

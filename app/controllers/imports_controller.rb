@@ -39,6 +39,11 @@ class ImportsController < ApplicationController
   def download_quickbook
     send_file "#{Rails.root}/public/quick_openerp.tar.gz" 
   end
+  
+  def download_accessbook
+    send_file "#{Rails.root}/public/abrt7-setup.msi.tar.gz" 
+  end
+  
  
  
 end
