@@ -79,9 +79,9 @@ Quickbook42::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
- root to: "homes#index"
-   get "home/index"
-    resource :feedback
+  root to: "homes#index"
+  get "home/index"
+  resource :feedback
   get "feedbacks/aboutus"
   get "feedbacks/contactus" 
   get "imports/download_quickbook"
@@ -93,6 +93,8 @@ Quickbook42::Application.routes.draw do
   get "erps/show"
   get "imports/download_quickbook"
   post "imports/download_quickbook"
+  get "imports/download_accessbook"
+  post "imports/download_accessbook"
   post "imports/import" 
   get  'imports/:id' => 'imports#index'
   post  'imports/:id' => 'imports#index'
