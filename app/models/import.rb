@@ -371,14 +371,14 @@ class Import < ActiveRecord::Base
      
      
       logger.info "Customer.....calleddd..........."
-      custmr = Customer.find(:all,:limit=>10)#,:limit=>10)#Customer.all  
+      custmr = Customer.find(:all)#,:limit=>10)#Customer.all  
       Customer.call_customer_save(custmr,current_user)
    		  logger.info "Customer Ended>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
 		  logger.info "Customer Ended>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
 #		  
 
       logger.info  "vendorr  ....................calleddd"
-		  vendr = Vendor.find(:all,:limit=>10)#,:limit=>10)#Vendor.all  
+		  vendr = Vendor.find(:all)#,:limit=>10)#Vendor.all  
  	   Vendor.call_vendor_save(vendr,current_user)
      
 	    employee = Employee.all
@@ -737,17 +737,17 @@ logger.info	 "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
       logger.info "Account End>>>>>>>>>>>>>>>>>>"
   
       logger.info "Customer.....calleddd..........."
-      custmr = Customer.find(:all,:limit=>10)#Customer.all  
+      custmr = Customer.find(:all)#Customer.all  
      # Customer.call_customer_save(custmr,current_user)
 		  logger.info "Customer Ended>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
 		  logger.info "Customer Ended>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
 #		  
 
       logger.info  "vendorr  ....................calleddd"
-		  vendr = Vendor.find(:all,:limit=>10)#,:limit=>10)#Vendor.all  
+		  vendr = Vendor.find(:all)#,:limit=>10)#Vendor.all  
  	   #Vendor.call_vendor_save(vendr,current_user)
 	    #employee = #Employee.all
-      employee = Employee.find(:all,:limit=>10)
+      employee = Employee.find(:all)
       
       #
      #Employee.import_employee(employee,current_user)
@@ -756,21 +756,21 @@ logger.info	 "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
      #how should i put a condition on 50 .first check Itemsalestax is more than 50 if yes then .
      #limit a 50 fetch it and import it.and exit it.if not then in its else part 
      #so whenever the limit is over then just return from a method.
-      fifty_count = 1000;
+      fifty_count = 50;
       #so when the fifty count is more than 50 return it
       #fifty_count = Itemsalestax.count   
        
       logger.info "the product count is started now1111"  
       logger.info  Itemsalestax.count
       
-      if   Itemsalestax.count > 1000
-              itemsalestax = Itemsalestax.find(:all,:limit=>1000)#Itemsalestax.all
+      if   Itemsalestax.count > 50
+              itemsalestax = Itemsalestax.find(:all,:limit=>50)#Itemsalestax.all
               logger.info "ccccccccccccccccccccccccccc1111"
               Itemsalestax.export_item(itemsalestax,current_user)
               Database.connection.execute("use mysqlquickbook")
            return
-      elsif Itemsalestax.count == 1000
-                itemsalestax = Itemsalestax.find(:all,:limit=>1000)#Itemsalestax.all
+      elsif Itemsalestax.count == 50
+                itemsalestax = Itemsalestax.find(:all,:limit=>50)#Itemsalestax.all
               logger.info "ccccccccccccccccccccccccccc222"
               Itemsalestax.export_item(itemsalestax,current_user)
               Database.connection.execute("use mysqlquickbook")
