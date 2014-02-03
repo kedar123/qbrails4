@@ -371,14 +371,14 @@ class Import < ActiveRecord::Base
      
      
       logger.info "Customer.....calleddd..........."
-      custmr = Customer.find(:all)#,:limit=>10)#Customer.all  
+      custmr = Customer.find(:all,:limit=>10)#,:limit=>10)#Customer.all  
       Customer.call_customer_save(custmr,current_user)
    		  logger.info "Customer Ended>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
 		  logger.info "Customer Ended>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
 #		  
 
       logger.info  "vendorr  ....................calleddd"
-		  vendr = Vendor.find(:all)#,:limit=>10)#Vendor.all  
+		  vendr = Vendor.find(:all,:limit=>10)#,:limit=>10)#Vendor.all  
  	   Vendor.call_vendor_save(vendr,current_user)
      
 	    employee = Employee.all
@@ -444,6 +444,11 @@ logger.info	 "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
 
 # 			
 #       
+
+      iteminventoryassembly = Iteminventoryassembly.find(:all)
+      Iteminventoryassembly.export_iteminventoryaseemblies(iteminventoryassembly,current_user)
+	  
+      
  			itemothercharge = Itemothercharge.find(:all)#Itemothercharge.all
 			Itemothercharge.export_itemothercharge(itemothercharge,current_user)
     	logger.info "Itempaymentt.................. calleddd"
