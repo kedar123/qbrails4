@@ -9,10 +9,12 @@ class Itemdiscount < ActiveRecord::Base
   oldac = eval(current_user.database.name.upcase.to_s)::ProductTemplate.search([["quickbook_id","=",item.ListID]])[0] 
   
         
-      
+  logger.info "the product template of item disc is need to called"    
   if oldac.blank?
+    logger.info "yes i am blankkkkkkkkkk"
         self.create_item_disc(item,current_user,var)
   else
+    
     logger.info "this should not happen at first time item discount"
         self.create_item_disc_update(item,current_user,var,oldac)
     #this should not happen at first time
@@ -165,7 +167,12 @@ end
  #    
  #    
     #propro.product_tmpl_id = protemp.id
-    propro.save
+    logger.info "before saveeeeeeee"
+    logger.info propro
+    logger.info propro.save
+    logger.info "afterrrrrrr saveeeeeeee"
+    logger.info propro
+    
     #ProductUom.search([['category_id', '=', "Hour"]])[0]  
 #    
 #     

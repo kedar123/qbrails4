@@ -732,277 +732,268 @@ logger.info	 "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
       logger.info "Account End>>>>>>>>>>>>>>>>>>"
   
       logger.info "Customer.....calleddd..........."
-      custmr = Customer.find(:all)#Customer.all  
-      Customer.call_customer_save(custmr,current_user)
+      custmr = Customer.find(:all,:limit=>10)#Customer.all  
+     # Customer.call_customer_save(custmr,current_user)
 		  logger.info "Customer Ended>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
 		  logger.info "Customer Ended>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
 #		  
 
       logger.info  "vendorr  ....................calleddd"
-		  vendr = Vendor.find(:all)#,:limit=>10)#Vendor.all  
- 	   Vendor.call_vendor_save(vendr,current_user)
-	    employee = Employee.all
-     Employee.import_employee(employee,current_user)
+		  vendr = Vendor.find(:all,:limit=>10)#,:limit=>10)#Vendor.all  
+ 	   #Vendor.call_vendor_save(vendr,current_user)
+	    #employee = #Employee.all
+      employee = Employee.find(:all,:limit=>10)
+      
+      #
+     #Employee.import_employee(employee,current_user)
 
    	 #what i need to here is keep an count whenever the count is greater than 50 then stop the migration.
      #how should i put a condition on 50 .first check Itemsalestax is more than 50 if yes then .
      #limit a 50 fetch it and import it.and exit it.if not then in its else part 
      #so whenever the limit is over then just return from a method.
-      fifty_count = 0;
+      fifty_count = 1000;
       #so when the fifty count is more than 50 return it
-      fifty_count = Itemsalestax.count   
+      #fifty_count = Itemsalestax.count   
+       
+      logger.info "the product count is started now1111"  
+      logger.info  Itemsalestax.count
       
-      #if the count is greater than 50 then then limit the itemsalestax if its exactly 50 then
-      #fetch 50 and return it.
-      
-      if  fifty_count > 50
-           logger.info "zzzzzzzzzzzzzzzzzzif11111111"
-           itemsalestax = Itemsalestax.find(:all,:limit=>50)#Itemsalestax.all
-           logger.info "ccccccccccccccccccccccccccc"
-           Itemsalestax.export_item(itemsalestax,current_user)
+      if   Itemsalestax.count > 1000
+              itemsalestax = Itemsalestax.find(:all,:limit=>1000)#Itemsalestax.all
+              logger.info "ccccccccccccccccccccccccccc1111"
+              Itemsalestax.export_item(itemsalestax,current_user)
+              Database.connection.execute("use mysqlquickbook")
            return
-      elsif fifty_count == 50
-           logger.info "zzzzzzzzzzzzzzzzzzielseifffff"
-           itemsalestax = Itemsalestax.find(:all,:limit=>50)#Itemsalestax.all
-           logger.info "ccccccccccccccccccccccccccc"
-           Itemsalestax.export_item(itemsalestax,current_user)
-           return
-      else
-        #else its assume here that its less than 50
-           logger.info "zzzzzzzzzzzzzzzzzzif11111111"
-           itemsalestax = Itemsalestax.find(:all)#Itemsalestax.all
-           logger.info "ccccccccccccccccccccccccccc"
-           Itemsalestax.export_item(itemsalestax,current_user)
-      end 
-      
-        
-      #if its come here then its sure that its less than 50 and need to contine.here only one condition will be 
-      #added and that is if its less than 50 then need to find out by how much its less than 50 and fire a query
-      #to the next model with that much qty.if its  
-      remaining_count = 50 - fifty_count
-      #suppose remaining count might be 1 , 25 , 50.
-      # and the down model will have a records as 0,1,25,50 
-      #so now first check is on remaining count.  
-      #so it should continue till the remaining count is 50
-      
-      #remaining_count = remaining_count + Itemsalestaxgroup.count
-        
-        
-      #lets say remaining count is 150 so 150 - 50 is 100 that is not right. what i need to do is 
-      #suppose the above fifty_count is 5 . then 
-      #so actually what i need to do here is 
-      if  Itemsalestaxgroup.count > remaining_count
-           #here i need to check if remaining count is greater than 50 then get how much query i required to fire
-           limit_query =   50 - remaining_count      
-            
-           itemsalestg = Itemsalestaxgroup.find(:all,:limit=>limit_query)
-           Itemsalestaxgroup.export_itemsalestgr(itemsalestg,current_user) 
-           return
-      elsif Itemsalestaxgroup.count == remaining_count
-           logger.info "zzzzzzzzzzzzzzzzzzielseifffff"
-           itemsalestg = Itemsalestaxgroup.find(:all)
-           Itemsalestaxgroup.export_itemsalestgr(itemsalestg,current_user) 
- 
+      elsif Itemsalestax.count == 1000
+                itemsalestax = Itemsalestax.find(:all,:limit=>1000)#Itemsalestax.all
+              logger.info "ccccccccccccccccccccccccccc222"
+              Itemsalestax.export_item(itemsalestax,current_user)
+              Database.connection.execute("use mysqlquickbook")
            return
       else
-        #else its assume here that its less than 50
-        #if its come here then the remaining count is still less . so fire all the queries and then add the count to 
-        #a model.
-            itemsalestg = Itemsalestaxgroup.find(:all)
-            Itemsalestaxgroup.export_itemsalestgr(itemsalestg,current_user) 
-
-            remaining_count = remaining_count + Itemsalestaxgroup.count
+              itemsalestax = Itemsalestax.find(:all)#Itemsalestax.all
+              logger.info "ccccccccccccccccccccccccccc333"
+              Itemsalestax.export_item(itemsalestax,current_user)
+              #Database.connection.execute("use mysqlquickbook")
+           
       end
       
+      logger.info "this is item sales tax import count"  
+      logger.info Itemsalestax.count
+      logger.info 
+       
         
         
+      fifty_count = fifty_count - Itemsalestax.count
+      logger.info "this is itemsalestaxgroup"
+      logger.info fifty_count
+      logger.info Itemsalestaxgroup.count
         
-      if  Itemsalestaxgroup.count > remaining_count
-           #here i need to check if remaining count is greater than 50 then get how much query i required to fire
-           limit_query =   50 - remaining_count      
-           logger.info "zzzzzzzzzzzzzzzzzzif11111111"
-            
-            logger.info "item sales tax group"
-      itemsalestg = Itemsalestaxgroup.find(:all,:limit=>limit_query)
-      Itemsalestaxgroup.export_itemsalestgr(itemsalestg,current_user) 
-
-          
-           return
-      elsif Itemsalestaxgroup.count == remaining_count
-           logger.info "zzzzzzzzzzzzzzzzzzielseifffff"
-            
-           itemsalestg = Itemsalestaxgroup.find(:all,:limit=>50)
+      if   Itemsalestaxgroup.count > fifty_count
+           itemsalestg = Itemsalestaxgroup.find(:all,:limit=>fifty_count)
            Itemsalestaxgroup.export_itemsalestgr(itemsalestg,current_user) 
-
+           Database.connection.execute("use mysqlquickbook")
+           return
+      elsif Itemsalestaxgroup.count == fifty_count
+           itemsalestg = Itemsalestaxgroup.find(:all,:limit=>fifty_count)
+           Itemsalestaxgroup.export_itemsalestgr(itemsalestg,current_user) 
+           Database.connection.execute("use mysqlquickbook")
            return
       else
-        #else its assume here that its less than 50
-        #if its come here then the remaining count is still less . so fire all the queries and then add the count to 
-        #a model.
-            logger.info "zzzzzzzzzzzzzzzzzzif11111111"
-             
-            logger.info "ccccccccccccccccccccccccccc"
-               itemsalestg = Itemsalestaxgroup.find(:all)
-               Itemsalestaxgroup.export_itemsalestgr(itemsalestg,current_user) 
-  
-            remaining_count = remaining_count + Itemsalestaxgroup.count
-      end  
+           itemsalestg = Itemsalestaxgroup.find(:all)
+           Itemsalestaxgroup.export_itemsalestgr(itemsalestg,current_user) 
+           #Database.connection.execute("use mysqlquickbook")
+           
+      end
+      
+      fifty_count = fifty_count - Itemsalestaxgroup.count
         
- 
- 	        
+      logger.info "this is itemsalestaxgroup"
+      logger.info fifty_count
+      logger.info Itemservice.count  
         
-      if  Itemservice.count > remaining_count
-           #here i need to check if remaining count is greater than 50 then get how much query i required to fire
-           limit_query =   50 - remaining_count      
-           logger.info "zzzzzzzzzzzzzzzzzzif11111111"
-            itemserv = Itemservice.find(:all,:limit=>limit_query)#Itemservice.all 
+        
+        
+      if   Itemservice.count > fifty_count
+               itemserv = Itemservice.find(:all,:limit=>fifty_count)#Itemservice.all 
   	       Itemservice.export_itemservices(itemserv,current_user)
+           Database.connection.execute("use mysqlquickbook")
             return
-      elsif Itemservice.count == remaining_count
-           logger.info "zzzzzzzzzzzzzzzzzzielseifffff"
-            itemserv = Itemservice.find(:all,:limit=>50)#Itemservice.all 
+      elsif Itemservice.count == fifty_count
+        itemserv = Itemservice.find(:all,:limit=>fifty_count)#Itemservice.all 
   	       Itemservice.export_itemservices(itemserv,current_user)
-           return
+           Database.connection.execute("use mysqlquickbook")
+            return
       else
-        #else its assume here that its less than 50
-        #if its come here then the remaining count is still less . so fire all the queries and then add the count to 
-        #a model.
-            logger.info "zzzzzzzzzzzzzzzzzzif11111111"
-           itemserv = Itemservice.find(:all,:limit=>50)#Itemservice.all 
-  	      Itemservice.export_itemservices(itemserv,current_user)
-          remaining_count = remaining_count + Itemservice.count
-      end 
+        itemserv = Itemservice.find(:all)#Itemservice.all 
+  	       Itemservice.export_itemservices(itemserv,current_user)
+           #Database.connection.execute("use mysqlquickbook")
              
-		  logger.info "Itemservice calleddd"
-logger.info "Itemservice calleddd"
- 	   
- 			logger.info "Itemdiscountttt......... calleddd"
-# 		
-logger.info	"Itemdiscountttt......... calleddd"
+      end
+         
+      fifty_count = fifty_count - Itemservice.count
 
+      
+      logger.info "this is itemsalestaxgroup"
+      logger.info fifty_count
+      logger.info Itemdiscount.count  
+        
+        
+        
+      if   Itemdiscount.count > fifty_count
+         itemdiscnt = Itemdiscount.find(:all,:limit=>fifty_count)#Itemdiscount.all
+			    Itemdiscount.export_itemdiscounts(itemdiscnt,current_user)
+          Database.connection.execute("use mysqlquickbook")
+	           return
+      elsif Itemdiscount.count == fifty_count
+         itemdiscnt = Itemdiscount.find(:all,:limit=>fifty_count)#Itemdiscount.all
+			    Itemdiscount.export_itemdiscounts(itemdiscnt,current_user)
+          Database.connection.execute("use mysqlquickbook")
+	           return
+      else
+         itemdiscnt = Itemdiscount.find(:all)#Itemdiscount.all
+			    Itemdiscount.export_itemdiscounts(itemdiscnt,current_user)
+          #Database.connection.execute("use mysqlquickbook")
+	          
+      end
+         
+      fifty_count = fifty_count - Itemdiscount.count
+      
+     logger.info "this is itemsalestaxgroup"
+      logger.info fifty_count
+      logger.info Itemfixedasset.count 
+        
+        
+     if   Itemfixedasset.count > fifty_count
+             	itemfixasset = Itemfixedasset.find(:all,:limit=>fifty_count)#Itemfixedasset.all 
+       		    Itemfixedasset.export_itemfixassets(itemfixasset,current_user)
+              Database.connection.execute("use mysqlquickbook")
+ 	           return
+      elsif Itemfixedasset.count == fifty_count
+              	itemfixasset = Itemfixedasset.find(:all,:limit=>fifty_count)#Itemfixedasset.all 
+       		      Itemfixedasset.export_itemfixassets(itemfixasset,current_user)
+                Database.connection.execute("use mysqlquickbook")
+ 	           return
+      else
+              	itemfixasset = Itemfixedasset.find(:all)#Itemfixedasset.all 
+       		      Itemfixedasset.export_itemfixassets(itemfixasset,current_user)
+             #   Database.connection.execute("use mysqlquickbook")
+ 	           
+      end
+        
+			fifty_count = fifty_count - Itemfixedasset.count
+      
+  
+        
+     logger.info "this is itemsalestaxgroup"
+      logger.info fifty_count
+      logger.info Iteminventory.count
+        
+        
+        
+       if  Iteminventory.count > fifty_count
+            			iteminventory = Iteminventory.find(:all,:limit=>fifty_count)#Iteminventory.all
+	              Iteminventory.export_iteminventories(iteminventory,current_user)
+                Database.connection.execute("use mysqlquickbook")
+  	           return
+       elsif Iteminventory.count == fifty_count
+            			iteminventory = Iteminventory.find(:all,:limit=>fifty_count)#Iteminventory.all
+	              Iteminventory.export_iteminventories(iteminventory,current_user)
+                Database.connection.execute("use mysqlquickbook")
+  	           return
+       else
+         iteminventory = Iteminventory.find(:all)#Iteminventory.all
+	              Iteminventory.export_iteminventories(iteminventory,current_user)
+              #  Database.connection.execute("use mysqlquickbook")
+  	           
+       end
+        
+ 	fifty_count = fifty_count - Iteminventory.count
       
         
         
         
-      if  Itemdiscount.count > remaining_count
+     logger.info "this is itemsalestaxgroup"
+      logger.info fifty_count
+      logger.info Itemnoninventory.count
+        
+        
+          if  Itemnoninventory.count > fifty_count
            #here i need to check if remaining count is greater than 50 then get how much query i required to fire
-           limit_query =   50 - remaining_count      
-           logger.info "zzzzzzzzzzzzzzzzzzif11111111"
-           itemdiscnt = Itemdiscount.find(:all,:limit=>limit_query)#Itemdiscount.all
-			    Itemdiscount.export_itemdiscounts(itemdiscnt,current_user)
-#	           return
-      elsif Itemdiscount.count == remaining_count
-           logger.info "zzzzzzzzzzzzzzzzzzielseifffff"
-             itemdiscnt = Itemdiscount.find(:all,:limit=>50)#Itemdiscount.all
-			    Itemdiscount.export_itemdiscounts(itemdiscnt,current_user)
-#           return
-      else
-        #else its assume here that its less than 50
-        #if its come here then the remaining count is still less . so fire all the queries and then add the count to 
-        #a model.
-            logger.info "zzzzzzzzzzzzzzzzzzif11111111"
-           itemdiscnt = Itemdiscount.find(:all)#Itemdiscount.all
-		 	    Itemdiscount.export_itemdiscounts(itemdiscnt,current_user)
-           remaining_count = remaining_count + Itemdiscount.count
-      end  
-        
-        
-			
-   		logger.info "Itemfixedasset................. calleddd"
-logger.info	"Itemfixedasset................. calleddd"
-
-       if  Itemfixedasset.count > remaining_count
-           #here i need to check if remaining count is greater than 50 then get how much query i required to fire
-           limit_query =   50 - remaining_count      
-           logger.info "zzzzzzzzzzzzzzzzzzif11111111"
-          	itemfixasset = Itemfixedasset.find(:all,:limit=>limit_query)#Itemfixedasset.all 
-       		  Itemfixedasset.export_itemfixassets(itemfixasset,current_user)
- 	           return
-      elsif Itemfixedasset.count == remaining_count
-           logger.info "zzzzzzzzzzzzzzzzzzielseifffff"
-            itemfixasset = Itemfixedasset.find(:all,:limit=>50)#Itemfixedasset.all 
-       		  Itemfixedasset.export_itemfixassets(itemfixasset,current_user)
-            return
-      else
-        #else its assume here that its less than 50
-        #if its come here then the remaining count is still less . so fire all the queries and then add the count to 
-        #a model.
-           itemfixasset = Itemfixedasset.find(:all)#Itemfixedasset.all 
-       		  Itemfixedasset.export_itemfixassets(itemfixasset,current_user)
-           remaining_count = remaining_count + Itemfixedasset.count
-      end 
-        
-        
-        
-        
-        
- 	
-       if  Iteminventory.count > remaining_count
-           #here i need to check if remaining count is greater than 50 then get how much query i required to fire
-           limit_query =   50 - remaining_count      
-           logger.info "zzzzzzzzzzzzzzzzzzif11111111"
-          			iteminventory = Iteminventory.find(:all,:limit=>limit_query)#Iteminventory.all
-	              Iteminventory.export_iteminventories(iteminventory,current_user)
-  	           return
-      elsif Iteminventory.count == remaining_count
-           logger.info "zzzzzzzzzzzzzzzzzzielseifffff"
-             
-           			iteminventory = Iteminventory.find(:all,:limit=>50)#Iteminventory.all
-	              Iteminventory.export_iteminventories(iteminventory,current_user)
-             return
-      else
-        #else its assume here that its less than 50
-        #if its come here then the remaining count is still less . so fire all the queries and then add the count to 
-        #a model. 
-          	  	iteminventory = Iteminventory.find(:all)#Iteminventory.all
-	               Iteminventory.export_iteminventories(iteminventory,current_user)
-                remaining_count = remaining_count + Iteminventory.count
-       end
-    		
-# 
-logger.info	"Iteminventry.............. calleddd"
-			logger.info "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
-#			
-logger.info	 "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
-			logger.info "Iteminventoryassembly................... calleddd"
-# 			
-# 
-
-         if  Itemnoninventory.count > remaining_count
-           #here i need to check if remaining count is greater than 50 then get how much query i required to fire
-           limit_query =   50 - remaining_count      
-           logger.info "zzzzzzzzzzzzzzzzzzif11111111"
-           	itemnoninventory = Itemnoninventory.find(:all,:limit=>limit_query)#Itemnoninventory.all
+            	itemnoninventory = Itemnoninventory.find(:all,:limit=>fifty_count)#Itemnoninventory.all
 			      Itemnoninventory.export_itemnoninventory(itemnoninventory,current_user)
+            Database.connection.execute("use mysqlquickbook")
 		            return
-      elsif Itemnoninventory.count == remaining_count
-           logger.info "zzzzzzzzzzzzzzzzzzielseifffff"
-                	itemnoninventory = Itemnoninventory.find(:all,:limit=>50)#Itemnoninventory.all
+          elsif Itemnoninventory.count == fifty_count
+              logger.info "zzzzzzzzzzzzzzz656565zzzielseifffff"
+                	itemnoninventory = Itemnoninventory.find(:all,:limit=>fifty_count)#Itemnoninventory.all
 			         Itemnoninventory.export_itemnoninventory(itemnoninventory,current_user)
+               Database.connection.execute("use mysqlquickbook")
 	            return
-      else
-        #else its assume here that its less than 50
-        #if its come here then the remaining count is still less . so fire all the queries and then add the count to 
-        #a model. 
+          else
+              #else its assume here that its less than 50
+              #if its come here then the remaining count is still less . so fire all the queries and then add the count to 
+              #a model. 
                 	itemnoninventory = Itemnoninventory.find(:all)#Itemnoninventory.all
 			         Itemnoninventory.export_itemnoninventory(itemnoninventory,current_user)
-                 remaining_count = remaining_count + Itemnoninventory.count
-       end
+                   logger.info "165165165161615"
+          end
+          
+        
+        
+      
+ 	fifty_count = fifty_count - Itemnoninventory.count
+        
+        logger.info "this is itemsalestaxgroup"
+      logger.info fifty_count
+      logger.info Itemothercharge.count
+      
+        
+         
+        
+        
+        
+         if Iteminventoryassembly.count > fifty_count
+           iteminventoryassembly = Iteminventoryassembly.find(:all,:limit=>fifty_count)#Iteminventoryassembly.all    
+              Iteminventoryassembly.export_iteminventoryaseemblies(iteminventoryassembly,current_user)
+              Database.connection.execute("use mysqlquickbook")
+	             return
+         elsif Iteminventoryassembly.count == fifty_count
+           iteminventoryassembly = Iteminventoryassembly.find(:all,:limit=>fifty_count)
+                Iteminventoryassembly.export_iteminventoryaseemblies(iteminventoryassembly,current_user)
+                Database.connection.execute("use mysqlquickbook")
+	              return
+         else
+           iteminventoryassembly = Iteminventoryassembly.find(:all)
+                Iteminventoryassembly.export_iteminventoryaseemblies(iteminventoryassembly,current_user)
+	         
+         end
+        
+        
+        
+ 	fifty_count = fifty_count - Iteminventoryassembly.count
+        
+        logger.info "this is itemsalestaxgroup"
+      logger.info fifty_count
+      logger.info Iteminventoryassembly.count
       
         
         
         
-        if  Itemothercharge.count > remaining_count
+        
+        
+        
+       if  Itemothercharge.count > fifty_count
            #here i need to check if remaining count is greater than 50 then get how much query i required to fire
-           limit_query =   50 - remaining_count      
-           logger.info "zzzzzzzzzzzzzzzzzzif11111111"
-           	itemothercharge = Itemothercharge.find(:all,:limit=>limit_query)#Itemothercharge.all
+            	itemothercharge = Itemothercharge.find(:all,:limit=>fifty_count)#Itemothercharge.all
 			Itemothercharge.export_itemothercharge(itemothercharge,current_user)  
+      Database.connection.execute("use mysqlquickbook")
                  return
-      elsif Itemothercharge.count == remaining_count
-           logger.info "zzzzzzzzzzzzzzzzzzielseifffff"
-           itemothercharge = Itemothercharge.find(:all,:limit=>50)#Itemothercharge.all
+      elsif Itemothercharge.count == fifty_count
+           logger.info "zzzzzzzzzzzzzzzz5651651651zzielseifffff"
+           itemothercharge = Itemothercharge.find(:all,:limit=>fifty_count)#Itemothercharge.all
 			    Itemothercharge.export_itemothercharge(itemothercharge,current_user)  
+          Database.connection.execute("use mysqlquickbook")
                return
       else
         #else its assume here that its less than 50
@@ -1010,36 +1001,62 @@ logger.info	 "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
         #a model. 
             itemothercharge = Itemothercharge.find(:all)#Itemothercharge.all
 			    Itemothercharge.export_itemothercharge(itemothercharge,current_user)  
-                  remaining_count = remaining_count + Itemothercharge.count
+                  
        end
+         
         
-			logger.info "Itemmothercharge.................. calleddd"
-# 			
-#      
- 		
-    	logger.info "Itempaymentt.................. calleddd"
-#  		
-#   
-#      
-  	 	logger.info "ItemService................... calleddd"
-			logger.info "ItemService................... calleddd"
+        	fifty_count = fifty_count - Itemnoninventory.count
  
-        if  Itemsubtotal.count > remaining_count
+        logger.info "this is itemsalestaxgroup"
+      logger.info fifty_count
+      logger.info Itemsubtotal.count
+ 
+        
+        	
+
+        if Itempayment.count > fifty_count
+                itempayment = Itempayment.find(:all,:limit=>fifty_count)#Itempayment.all 
+ 	            	Itempayment.export_itempayment(itempayment,current_user)
+                Database.connection.execute("use mysqlquickbook")
+                return
+ 
+        elsif Itempayment.count == fifty_count
+                itempayment = Itempayment.find(:all,:limit=>fifty_count)#Itempayment.all 
+ 	            	Itempayment.export_itempayment(itempayment,current_user)
+                Database.connection.execute("use mysqlquickbook")
+                return
+ 
+        else
+            itempayment = Itempayment.find(:all,:limit=>fifty_count)#Itempayment.all 
+ 	            	Itempayment.export_itempayment(itempayment,current_user)
+  
+        end
+        
+        
+        	fifty_count = fifty_count - Itempayment.count
+          
+           logger.info fifty_count
+           logger.info Itempayment.count
+           logger.info "888888888887452102"
+ 
+        
+        
+        
+        
+       if  Itemsubtotal.count > fifty_count
            #here i need to check if remaining count is greater than 50 then get how much query i required to fire
-           limit_query =   50 - remaining_count      
-           logger.info "zzzzzzzzzzzzzzzzzzif11111111"
-            
-       itemsubtotal = Itemsubtotal.find(:all,:limit=>limit_query)#Itemsubtotal.all
+             
+       itemsubtotal = Itemsubtotal.find(:all,:limit=>fifty_count)#Itemsubtotal.all
       Itemsubtotal.export_itemsubtotal(itemsubtotal,current_user) 
-    
+    Database.connection.execute("use mysqlquickbook")
           
                  return
-      elsif Itemsubtotal.count == remaining_count
-           logger.info "zzzzzzzzzzzzzzzzzzielseifffff"
+      elsif Itemsubtotal.count == fifty_count
+           logger.info "zzzzzzzzzzzzzzzzzz6516161ielseifffff"
             
-         itemsubtotal = Itemsubtotal.find(:all,:limit=>50)#Itemsubtotal.all
+         itemsubtotal = Itemsubtotal.find(:all,:limit=>fifty_count)#Itemsubtotal.all
          Itemsubtotal.export_itemsubtotal(itemsubtotal,current_user) 
-    
+    Database.connection.execute("use mysqlquickbook")
                return
       else
         #else its assume here that its less than 50
@@ -1047,13 +1064,12 @@ logger.info	 "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
         #a model. 
           itemsubtotal = Itemsubtotal.find(:all)#Itemsubtotal.all
          Itemsubtotal.export_itemsubtotal(itemsubtotal,current_user) 
-      
+         logger.info "651616165161"
                    
        end
         
         
-        
-        
+         
         
        
       

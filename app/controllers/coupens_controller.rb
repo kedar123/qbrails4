@@ -78,7 +78,7 @@ class CoupensController < ApplicationController
     
     def check_admin
         if current_user
-          if current_user.email == "kedar.pathak@pragtech.co.in"
+          if current_user.email == "madhav@gmaill.com"
           else
             redirect_to root_path ,:notice=>"Admin Can Generate A Coupon"
           end

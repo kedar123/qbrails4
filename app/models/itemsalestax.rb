@@ -12,12 +12,16 @@ class Itemsalestax < ActiveRecord::Base
       name_array << eval(current_user.database.name.upcase.to_s)::AccountTax.find(idtofetch).name
     end
     logger.info "wwwwwwwwwwwwwwwwwww"
+    countsat = 0
     itemsalestax.each do |item|
      # begin
       logger.info "itemmmmmmmmmmmmmmmmmmm"
       logger.info eval(current_user.database.name.upcase.to_s)::AccountTax.search([["name","=", item.Name]])
       oldact = eval(current_user.database.name.upcase.to_s)::AccountTax.search([["quickbook_id","=", item.ListID]])[0] 
       if oldact.blank?
+        logger.info "it should always come here"
+        logger.info countsat
+        countsat = countsat + 1
           self.export_common_salestax(item,current_user,name_array)
        else
         logger.info "tax name is already therererereritst"
@@ -71,6 +75,9 @@ class Itemsalestax < ActiveRecord::Base
   
   def self.export_common_salestax(item,current_user,name_array)
         logger.info "i am blankkkkkk"
+        logger.info name_array.inspect
+        logger.info "ssssssssssss"
+        logger.info item.Name
       if !name_array.include?(item.Name)
       ac = eval(current_user.database.name.upcase.to_s)::AccountTax.new
       ac.name = item.Name
