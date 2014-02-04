@@ -786,7 +786,7 @@ logger.info	 "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
       logger.info Itemsalestax.count
       logger.info 
        
-        
+    
         
       fifty_count = fifty_count - Itemsalestax.count
       logger.info "this is itemsalestaxgroup"
@@ -862,7 +862,7 @@ logger.info	 "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
       end
          
       fifty_count = fifty_count - Itemdiscount.count
-      
+   
      logger.info "this is itemsalestaxgroup"
       logger.info fifty_count
       logger.info Itemfixedasset.count 
@@ -889,7 +889,7 @@ logger.info	 "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
         
 			fifty_count = fifty_count - Itemfixedasset.count
       
-  
+   
         
         if   Itemgroup.count > fifty_count
              	itemgroup = Itemgroup.find(:all,:limit=>fifty_count)#Itemfixedasset.all 
@@ -912,7 +912,7 @@ logger.info	 "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
         
         
         
-        
+      
         
         
      logger.info "this is itemsalestaxgroup"
