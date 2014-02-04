@@ -445,8 +445,7 @@ logger.info	 "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
 # 			
 #       
 
-      iteminventoryassembly = Iteminventoryassembly.find(:all)
-      Iteminventoryassembly.export_iteminventoryaseemblies(iteminventoryassembly,current_user)
+ 
 	  
       
  			itemothercharge = Itemothercharge.find(:all)#Itemothercharge.all
@@ -762,7 +761,7 @@ logger.info	 "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
        
       logger.info "the product count is started now1111"  
       logger.info  Itemsalestax.count
-      
+      #            7  
       if   Itemsalestax.count > 50
               itemsalestax = Itemsalestax.find(:all,:limit=>50)#Itemsalestax.all
               logger.info "ccccccccccccccccccccccccccc1111"
@@ -881,6 +880,8 @@ logger.info	 "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
  	           return
       else
               	itemfixasset = Itemfixedasset.find(:all)#Itemfixedasset.all 
+                #here i need to add one more condition and that is suppose my fifty_count is 3 and model count is 7 
+                #then it will come here.
        		      Itemfixedasset.export_itemfixassets(itemfixasset,current_user)
              #   Database.connection.execute("use mysqlquickbook")
  	           
@@ -889,6 +890,30 @@ logger.info	 "Itemsnoninventory,,,,,,,,,,,,,,,,,,,, calleddd"
 			fifty_count = fifty_count - Itemfixedasset.count
       
   
+        
+        if   Itemgroup.count > fifty_count
+             	itemgroup = Itemgroup.find(:all,:limit=>fifty_count)#Itemfixedasset.all 
+       		    Itemgroup.export_itemgroups(itemgroup,current_user)
+              Database.connection.execute("use mysqlquickbook")
+ 	           return
+      elsif Itemgroup.count == fifty_count
+             	itemgroup = Itemgroup.find(:all,:limit=>fifty_count)#Itemfixedasset.all 
+       		    Itemgroup.export_itemgroups(itemgroup,current_user)
+                Database.connection.execute("use mysqlquickbook")
+ 	           return
+      else
+             	itemgroup = Itemgroup.find(:all)#Itemfixedasset.all 
+       		    Itemgroup.export_itemgroups(itemgroup,current_user)
+             #   Database.connection.execute("use mysqlquickbook")
+ 	           
+      end
+        
+			fifty_count = fifty_count - Itemgroup.count
+        
+        
+        
+        
+        
         
      logger.info "this is itemsalestaxgroup"
       logger.info fifty_count
