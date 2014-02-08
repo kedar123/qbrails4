@@ -107,11 +107,7 @@
        <div id="main2">
 	 <div id="contaner">
          <div class="centerdiv">
-              <div class="Messages"><p class="notice"> 
-                  <%if user_signed_in?%>
-                  <%else%>
-                  <%=notice%>
-                  <%end%>
+              <div class="Messages"><p class="notice"> <%=notice%>
       <%if params[:controller] == "registrations" and resource and resource.errors and resource.errors.has_key? :email%>
              <%="Email Has Already Been Taken"%>
         <%end%>
@@ -125,7 +121,6 @@
        <%end%>
        </p>
   </div> 
-           </div>
            <%= yield %>
           </div>
         </div>

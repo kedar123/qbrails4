@@ -1,4 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
+  layout 'user'
   def new
     super
   end
@@ -7,10 +8,7 @@ class RegistrationsController < Devise::RegistrationsController
     # add custom create logic here
     super
     #but need to send an email
-    p "after logged in"
-    p current_user
-     
-    p user_signed_in?
+    
     #there are some issues with rails 4 devise that is why i have creaated this new model. 
     if current_user
     usd = Useraddress.new
@@ -26,16 +24,10 @@ class RegistrationsController < Devise::RegistrationsController
     usd.last_name = params[:last_name]
     usd.save
     else
-       
-      
-      
-       
-      
     end
     begin
     UserMailer.welcome_email(current_user).deliver
     UserMailer.sales_email(current_user).deliver
-    
     rescue=>e
       logger.info "there are some errors while sending an email"
       logger.info e.inspect

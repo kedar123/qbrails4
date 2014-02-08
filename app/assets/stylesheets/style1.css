@@ -72,6 +72,10 @@ a:hover {
 .Messages{
     height:30px;
 }
+
+.Messagesmiddle{
+    margin: auto;
+}
 .topbar
 {
 	width:800px;
@@ -227,7 +231,7 @@ a:hover {
     margin: 0;
 	text-align:center;
 	padding:50px 10px 0px 40px ;
-        height:82px;
+        height:180px;
 }
 .text12 {
 	font-family:Arial, Helvetica, sans-serif;
@@ -236,7 +240,8 @@ a:hover {
     margin: 0;
 	text-align:center;
 	padding:50px 10px 0px 60px ;
-        height:170px;
+       
+         height:180px;
 }
 
 .right2
@@ -257,10 +262,7 @@ a:hover {
 	float:left;
          
 }
-.btn
-{
-	margin:8px 0px 0px 41px ;
-}
+
 .icon
 {
     margin:0px 15px 0px 0px ;
@@ -362,6 +364,17 @@ a:hover {
     text-align: center;
     
 }
+
+
+.notice_middle {
+    color: #008000;
+     
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: -1px;
+    text-align: center;
+}
+
 
 .lable
 {
@@ -717,20 +730,20 @@ inputs-moz-placeholder {
 } 
  
  .inputs  { 
- width:270px; 
-padding: 15px 25px; 
+ width:143px; 
+padding: 7px 1px; 
 font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 font-weight: 400; 
-font-size: 14px; 
+font-size: 11px; 
 color: #9D9E9E; 
 text-shadow: 1px 1px 0 #256; 
 background: #FFF; 
 border: 1px solid #FFF; 
-border-radius: 5px; 
-border-radius: 5px; 
-box-shadow: inset 0 1px 3px #000; 
--moz-box-shadow: inset 0 1px 3px #0000; 
--webkit-box-shadow: inset 0 1px 3px #000; 
+border-radius: 1px; 
+  
+box-shadow: inset 0 1px 1px #000; 
+-moz-box-shadow: inset 0 1px 1px #0000; 
+-webkit-box-shadow: inset 0 1px 1px #000; 
 } 
 .inputs:focus { 
    background: #DFE9EC; 
@@ -745,6 +758,38 @@ box-shadow: inset 0 1px 2px #000;
 background: #DFE9EC; 
 color: #414848; 
 } 
+
+.inputsr  { 
+ width:270px;
+padding: 15px 25px;
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+font-weight: 400;
+font-size: 14px;
+color: #9D9E9E;
+text-shadow: 1px 1px 0 #256;
+background: #FFF;
+border: 1px solid #FFF;
+border-radius: 5px;
+border-radius: 5px;
+box-shadow: inset 0 1px 3px #000;
+-moz-box-shadow: inset 0 1px 3px #0000;
+-webkit-box-shadow: inset 0 1px 3px #000; 
+} 
+.inputsr:focus { 
+   background: #DFE9EC; 
+color: #414848; 
+color: #414848; 
+box-shadow: inset 0 1px 2px #000; 
+-moz-box-shadow: inset 0 1px 2px #000; 
+-webkit-box-shadow: inset 0 1px 2px #000; 
+    outline:0; 
+} 
+  .inputsr:hover   { 
+background: #DFE9EC; 
+color: #414848; 
+} 
+
+
 
 .form_class{
     margin:0px;
@@ -772,7 +817,7 @@ color: #414848;
     font-family: Arial,Helvetica,sans-serif;
     font-size: 13px;
     line-height: 24px;
-    margin-top: 10px;
+    margin-top: 6px;
     margin-right: 10px;
 
     min-width: 57px;
@@ -884,6 +929,7 @@ margin-left:50px;
 	box-shadow: inset 0px 0px 2px #255;
 	border-radius: 20px;
 	border: 1px solid #9ccb3d;
+        margin-left: 13px;
 	
 	display: inline-block;
 	vertical-align: middle;
@@ -894,3 +940,12 @@ margin-left:50px;
 }
 .newbtn_orange:hover { color:white; background: #669900 !important; }
 
+.imageclass{
+    margin-left: 40px;
+}
+    
+
+.btn
+{
+	margin:8px 0px 0px 41px ;
+}

@@ -12,7 +12,7 @@ class ImportsController < ApplicationController
   def index
     #begin
     #@ooor = Ooor.new(:url => "http://"+current_user.erp.url+":8069/xmlrpc", :database => current_user.erp.database, :username => current_user.erp.username, :password => current_user.erp.password,:scope_prefix => current_user.database.name.upcase.to_s)
-    flash[:Migration] = "Migration is started , you will shortly get an Email after Comletion of migration"   
+    flash[:notice] = "Migration is started , you will shortly get an Email after Comletion of migration"   
        #Import.export_all_migration(current_user.database.name,current_user )
     logger.info "starting background job"
     #this i need to change it to delayed job
@@ -33,6 +33,7 @@ class ImportsController < ApplicationController
        logger.info "started background job" 
       #redirect_to home_index_path
       #instead of redirecting to a new path. im showing this same page. 
+      redirect_to homes_path,:notice=>notice
   end   
  
  
@@ -44,8 +45,54 @@ class ImportsController < ApplicationController
     send_file "#{Rails.root}/public/abrt7-setup.msi.tar.gz" 
   end
   
+  # what here i need to check is weather a current user has the 
+  #here i am checking following modules;
+  def accessbook_success
+        begin
+         Database.connection.execute("use #{current_user.database.name}")
+       if Company.count == 0
+         render :text=>"incomplete",:layout=>false 
+        Database.connection.execute("use mysqlquickbook")
+        return
+       end
+       if Account.count == 0
+         render :text=>"incomplete",:layout=>false 
+        Database.connection.execute("use mysqlquickbook")
+        return
+       end
+       if Customer.count == 0
+         render :text=>"incomplete",:layout=>false 
+        Database.connection.execute("use mysqlquickbook")
+        return
+       end
+       if Vendor.count == 0
+        render :text=>"incomplete",:layout=>false 
+        Database.connection.execute("use mysqlquickbook")
+        return
+       end
+       if Employee.count == 0
+         render :text=>"incomplete",:layout=>false 
+        Database.connection.execute("use mysqlquickbook")
+        return
+       end
+       #for products i am assuming that at least 5 products are there.
+      if((Itemsalestax.count + Itemsalestaxgroup.count + Itemservice.count + Itemdiscount.count + Itemfixedasset.count + Itemgroup.count + Iteminventory.count + Itemnoninventory.count + Iteminventoryassembly.count + Iteminventoryassembly.count + Itemothercharge.count + Itempayment.count + Itemsubtotal.count ) < 6    )
+        render :text=>"incomplete",:layout=>false 
+        Database.connection.execute("use mysqlquickbook")
+        return
+       end
+       rescue => e
+        logger.info "the error messageggegegege"
+        logger.info e.inspect
+        Database.connection.execute("use mysqlquickbook")
+       end
+    #if its come out from begin rescue then i need to send a response as complete
+      Database.connection.execute("use mysqlquickbook")
+       render :text=>"complete",:layout=>false
+       #incomplete
+  end 
  
- 
+  
 end
 
 

@@ -64,7 +64,7 @@ class PaymentsController < ApplicationController
     currency: 'USD',
     locale: I18n.locale.to_s.sub(/-/, '_'), #you can put 'en' if you don't know what it means :)
     brand_name: 'Pragmatic', #The name of the company
-    header_image: 'http://http://pragtech.co.in/images/logo.png',
+    header_image: 'http://pragtech.co.in/images/logo.png',
     allow_guest_checkout: false,   #payment with credit card for non PayPal users
     items: [{:name => "Quick Book Migration", :description => "All Modules",:amount=> @amount}] #array of hashes, amount is a price in cents
   )

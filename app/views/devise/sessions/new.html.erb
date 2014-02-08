@@ -5,13 +5,13 @@
   <div style="margin:0px;padding:0px;"><%= f.label :email ,:style=>"margin-botton:12px;"%>
     <br/><br/>
     
-  <%= f.email_field :email, :autofocus => true,:size=>25,:class=>"inputs",:placeholder=>"Email" %></div>
+  <%= f.email_field :email, :autofocus => true,:size=>25,:class=>"inputsr",:placeholder=>"Email" %></div>
 
   <div style="float:none;clear:both;margin-left: 0px;">
 <br/>
   <%= f.label :password ,:style=>"margin-botton:12px;"%><br />
     <br/>
-  <%= f.password_field :password ,:size=>25,:class=>"inputs",:placeholder=>"Password"%></div>
+  <%= f.password_field :password ,:size=>25,:class=>"inputsr",:placeholder=>"Password"%></div>
  
   <% if devise_mapping.rememberable? -%>
     <div style="margin-top:12px;margin-left:0px;"><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>

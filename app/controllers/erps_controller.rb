@@ -78,10 +78,10 @@ class ErpsController < ApplicationController
           notice = 'Can not connect to OpenERP please check details again'
         end  
        if current_user.save  and notice == 'OpenERP Connection established successfully'
-         format.html { redirect_to  erp_path(current_user.erp), :notice=> notice }
+         format.html { redirect_to  homes_path, :notice=> notice }
          format.json { render :json=> @erp, :status=> :created, :location=> @erp }
        else
-        format.html { render :action=> "new",:notice=>notice }
+        format.html { redirect_to  homes_path, :notice=> notice }
         format.json { render :json=> @erp.errors, :status=> :unprocessable_entity }
       end
     end
@@ -109,14 +109,14 @@ class ErpsController < ApplicationController
         
         if notice == 'Can not connect to OpenERP please check details again'
             @notice = 'Can not connect to OpenERP please check details again'
-           format.html { render :action=> "edit" , :notice=> notice}
+           format.html { redirect_to homes_path, :notice=> notice}
         else
-         format.html { redirect_to @erp, :notice=> notice }
+         format.html { redirect_to homes_path, :notice=> notice }
         end
          format.json {render  :head =>:no_content }
       else
         #
-        format.html { render :action=> "edit" }
+        format.html { redirect_to homes_path, :notice=> notice }
         format.json { render :json=> @erp.errors, :status=> :unprocessable_entity }
       end
     end
