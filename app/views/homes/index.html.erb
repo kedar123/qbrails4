@@ -447,7 +447,23 @@ named as payment_status boolean . after a payment is complete make this field tr
  
               </script>
  <%end%>             
-              
+       
+        <%if notice == "Database was successfully created."%>
+              <script>
+ $(function ()
+                {
+       var aTag = $(".notice_middle");
+    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+ 
+
+     
+ });       
+ 
+ 
+ 
+ 
+              </script>
+ <%end%> 
               
  </div>
 
