@@ -29,17 +29,28 @@ Quickbook42::Application.configure do
   config.after_initialize do
             ActiveMerchant::Billing::Base.mode = :test
   end
-    config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-   config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
+   
   
   config.action_mailer.smtp_settings = {
     :address        =>  "smtp.gmail.com",
     :port           =>  587,
     :domain         =>  "gmail.com",
     :authentication =>  :login ,
-    :user_name      =>  "demo.pragmatic@gmail.com",
+    :user_name      =>  "openerp.datamigration@pragtech.co.in",
     :password       =>  "pragmatic"
     
   } 
+  
+   config.after_initialize do
+   paypal_options = {
+    login: "kedar.pathak-facilitator_api1.pragtech.co.in",
+    password: "1364994877",
+    signature: "ACLa8jsQN8TPFLDY57dLNb5-3qq.AgN5u20e33t3nrXP3uDzoZTGNERk"
+  }
+   
+  ::EXPRESS_GATEWAY = ActiveMerchant::Billing::PaypalExpressGateway.new(paypal_options)
+end
 end

@@ -86,7 +86,7 @@ Quickbook42::Application.configure do
     :port           =>  587,
     :domain         =>  "gmail.com",
     :authentication =>  :login ,
-    :user_name      =>  "demo.pragmatic@gmail.com",
+    :user_name      =>  "openerp.datamigration@pragtech.co.in",
     :password       =>  "pragmatic"
     
   } 
