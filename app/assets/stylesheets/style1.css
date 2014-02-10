@@ -368,7 +368,7 @@ a:hover {
 
 .notice_middle {
     color: #008000;
-     
+    clear:both; 
     font-size: 12px;
     font-weight: bold;
     margin-bottom: -1px;

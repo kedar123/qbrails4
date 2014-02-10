@@ -360,9 +360,28 @@ named as payment_status boolean . after a payment is complete make this field tr
               }
           });
 }
-     
+ 
                 
             </script>
+            <!--
+            this script i am writing for selecting a steps dynamically this i requires for the purpose of when an 
+            notice is required to show like 1step create a database not required.here need to change a database name
+            2nd step is for creating an database there i put already an condition.third step not required but for fourth step
+            i require this for the purpose of showing an message openerp connection is not established.
+            and select an 4th step.
+            -->
+            <%if notice == "Can not connect to OpenERP please check details again" or notice == "OpenERP Connection established successfully"%>
+              <script>
+ $(function ()
+                {
+     $("#wizard").steps("next");
+     $("#wizard").steps("next");
+     $("#wizard").steps("next");
+     
+     
+ });               
+              </script>
+            <%end%>  
  </div>
 
       
