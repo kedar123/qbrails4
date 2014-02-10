@@ -8,7 +8,7 @@ class PaymentsController < ApplicationController
     current_user.save
     
     if current_user.user_payment_choice == "free"
-      redirect_to root_path #,:notice=>"Please Go Through Steps At Bottom"
+      redirect_to root_path ,:notice=>"Please Create Database"
     end 
     
     if current_user.user_payment_choice == "standard"
