@@ -97,7 +97,7 @@
                     
                        <p>
                          
-                            <strong>
+                            <strong style="font-size: 14px">
                              <!--
                              if user has sign up and come to home page then first step he should see a line which says to him that
                              select a migration type from above.this line he should not see when he has selected a 
@@ -125,10 +125,12 @@ and payment is blank then the text should appear for %>
                            
                         
                           <%if current_user.database%>
+                            <span style="font-size: 14px">
                               Name of Your Database:  
                              <span style="color:#2184BE"><%=current_user.database.name %></span>
                             
                             Now Click On Next 
+                            </span>
                           <%end%>
                           <%#what i have to do here is if the database is blank and a user has selected a migration then show
 him a link to create a database and also one more condition and that is if its a free migration type%>
@@ -143,21 +145,28 @@ named as payment_status boolean . after a payment is complete make this field tr
  <%if ((current_user.database.blank? and current_user.user_payment_choice == "free") or (current_user.payment_status == true and current_user.database.blank?)) %>
                      <table style="width:100%">
                        <tr><td valign="middle">
-                       <p class="firstclick"> <strong> 1st :- Click </strong></p>                          
+                       <p class="firstclick" style="font-size: 14px"> <strong>   Click </strong></p>                          
   <%#=link_to  " Here " ,url_for(:action => 'create', :controller => 'databases',:id=>current_user.user_payment_choice),method: "post"%>
-  <%=button_to " Here " ,url_for(:action => 'create', :controller => 'databases',:id=>current_user.user_payment_choice),:form_class=>"form_class",:id=>"migration_button"%>
-   <p>   <strong>
+  <%=button_to " Here " ,url_for(:action => 'create', :controller => 'databases',:id=>current_user.user_payment_choice),:form_class=>"form_class",:id=>"migration_button",:onclick=>"$('#progress').css('display','block')"%>
+   <p style="font-size: 14px">   <strong>
    To Create A Database Schema  
-</strong>   </p>
-   </td></tr></table>
+</strong>   
+   
+   </p>
+   </td></tr>
+                     <tr><td>
+                         <span id="progress" style="padding-left:13px;display:none">
+                              <%=image_tag "Progress.gif"%></span>
+                       </td></tr>
+                     </table>
    
    <%#one more condition i need to add is for a coupen based if a valid coupen is there and a database is blank then also 
    a link should appear%>
     
  <%elsif !current_user.coupenassigned.blank? and current_user.database.blank?%> 
- <p class="firstclick"> <strong>   1st :- Click</strong></p>
+ <p class="firstclick" style="font-size: 14px"> <strong>     Click</strong></p>
   <%=button_to " Here " ,url_for(:action => 'create', :controller => 'databases',:id=>current_user.user_payment_choice),:form_class=>"form_class",:id=>"migration_button"%>
-    <p>   <strong>
+    <p style="font-size: 14px">   <strong>
    To Create A Database Schema  
 </strong>  
      
@@ -177,16 +186,35 @@ named as payment_status boolean . after a payment is complete make this field tr
 
                 <h4>Second Step</h4>
                 <section>
-                     
-                       <p><strong>2nd :  Now Populate Your QuickBooks Data To Our Mysql Database Using AccessBooks RealTime
-                           On Our Server 
-      178.63.19.197. Port 3306. user  'rubyonrails' and password is 'IIEinstein'
-               . In The Database <span style="color:#2184BE">'<%=current_user.database.name if current_user.database%>'
-               </span> <span>See manual for AccessBooks 
-               RealTime installation Here</span>
-                
-               <%= link_to "Download Access Book",imports_download_accessbook_path,:id=>"migration_button_link_here"%> 
-               Click<%= link_to "Here","#",:id=>"migration_button_link_here",:onclick=>"return send_ajax_req();"%> 
+
+                  
+                      
+<!--
+in second step i need to show all the steps
+-->
+<div style="font-size: 14px;float:left;height:119px;">
+<p>
+  <%= link_to "Download Access Book",imports_download_accessbook_path,:id=>"migration_button_link_here"%> 
+</p>             
+<p>
+  <%= link_to "Download Access Book Installation Manual",imports_download_manual_path,:id=>"migration_button_link_here"%> 
+</p>
+
+</div>
+<div>
+  <p>
+   <strong>Configuration Details</strong>
+   <br/>
+   Server Name:- 178.63.19.197
+   <br/>
+   Database Name:-  <%=current_user.database.name if current_user.database%>
+   <br/>
+   Password:-  IIEinstein
+   <br/>
+   Port:-  3306
+   <br/>
+   
+   Click<%= link_to "Here","#",:id=>"migration_button_link_here",:onclick=>"return send_ajax_req();"%> 
                To Check Import Successfully Done Or Not
                
                <%if @databaseimport == "complete"%>
@@ -194,25 +222,25 @@ named as payment_status boolean . after a payment is complete make this field tr
                <%else%>
                <%=hidden_field_tag "success_data_import","0"%>
                <%end%>
-</strong></p>
-                      
+  </p>
+</div>
                     
                 </section>
 
                 <h4>Third Step</h4>
                 <section > 
                      
-                   <p><strong>3rd :-  Download and Install OpenERP Quickbook Module
+                   <p style="font-size: 14px">   Download and Install OpenERP Quickbook Module
  <%= link_to "Here",imports_download_quickbook_path,:id=>"migration_button_link_here"%>
-  </strong> 
+  
 
- <strong>Note: While installing this module OpenERP Prompt you for Charts of Accounts-COA selection please do not install any 
+ Note: While installing this module OpenERP Prompt you for Charts of Accounts-COA selection please do not install any 
     COA aand make sure you set your database currency as required before starting migration  
                  
                 After successful installation of OpenERP Qucikbook Module Click on Start Migration Button 
-             </strong> 
+              
                       
-                    
+                   </p> 
                 </section>
 
                 <h4>Forth Step</h4>

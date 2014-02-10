@@ -45,6 +45,10 @@ class ImportsController < ApplicationController
     send_file "#{Rails.root}/public/abrt7-setup.msi.tar.gz" 
   end
   
+  def download_manual
+    send_file "#{Rails.root}/public/installation.pdf" 
+  end
+  
   # what here i need to check is weather a current user has the 
   #here i am checking following modules;
   def accessbook_success
