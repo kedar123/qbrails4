@@ -12,6 +12,24 @@ class User < ActiveRecord::Base
   has_one :erp
   has_one :useraddress
    
-  
+  def first_confirmation?
+    previous_changes[:confirmed_at] && previous_changes[:confirmed_at].first.nil?
+  end
+
+  def confirm!
+    super
+    if first_confirmation?
+         begin
+    #UserMailer.welcome_email(current_user).deliver
+    
+    UserMailer.sales_email(self).deliver
+    rescue=>e
+      logger.info "there are some errors while sending an email"
+      logger.info e.inspect
+      logger.info e.message
+    end
+    #redirect_to root_path
+    end
+  end
   
 end

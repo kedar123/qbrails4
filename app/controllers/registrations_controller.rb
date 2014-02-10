@@ -10,9 +10,10 @@ class RegistrationsController < Devise::RegistrationsController
     #but need to send an email
     
     #there are some issues with rails 4 devise that is why i have creaated this new model. 
-    if current_user
+  
+    if resource
     usd = Useraddress.new
-    usd.user_id = current_user.id
+    usd.user_id = resource.id
     usd.country = params[:country]
     usd.state = params[:state]
     usd.zip_code = params[:zip_code]
@@ -25,18 +26,19 @@ class RegistrationsController < Devise::RegistrationsController
     usd.save
     else
     end
-    begin
-    UserMailer.welcome_email(current_user).deliver
-    UserMailer.sales_email(current_user).deliver
-    rescue=>e
-      logger.info "there are some errors while sending an email"
-      logger.info e.inspect
-      logger.info e.message
-    end
+    #begin
+    #UserMailer.welcome_email(current_user).deliver
+    #UserMailer.sales_email(current_user).deliver
+    #rescue=>e
+    #  logger.info "there are some errors while sending an email"
+    #  logger.info e.inspect
+    #  logger.info e.message
+    #end
     #redirect_to root_path
   end
 
   def update
     super
   end
+ 
 end 
