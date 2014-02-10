@@ -280,7 +280,7 @@ named as payment_status boolean . after a payment is complete make this field tr
                         bodyTag: "section",
                         transitionEffect: "slideLeft",
                         enableFinishButton: false,
-                        enableAllSteps: true,
+                        enableAllSteps: false,
                         // Allways allow previous action even if the current form is not valid!
                          onStepChanging: function (event, currentIndex, newIndex)
                         { 
@@ -288,7 +288,34 @@ named as payment_status boolean . after a payment is complete make this field tr
                             {
                                 return true;
                             }
-
+                            //adding a restriction on 3 and 4 steps
+                            
+                          if(currentIndex == 2 || currentIndex == 3)  
+                            {
+                               if($("#success_data_import").val()=="1")
+                                 {
+                                     return true
+                                 }
+                                 else
+                                   {
+                                      alert("You Have Not Imported Quickbooks Data Properly On Our Server Yet");
+                                      return false
+                                   }
+                                    if($("#success_data_create").val()=="1")
+                                 {
+                                     return true
+                                 }
+                                 else
+                                   {
+                                     <%if current_user.user_payment_choice.blank?%>
+                                      alert("You Have Not Selected Migration Type");
+                                     <%else%>        
+                                      alert("You Have Not Created A Database");
+                                      <%end%>
+                                      return false
+                                   }
+                            }
+                            
                           if(currentIndex == 1)
                             {
                                
@@ -318,7 +345,11 @@ named as payment_status boolean . after a payment is complete make this field tr
                                  }
                                  else
                                    {
+                                     <%if current_user.user_payment_choice.blank?%>
+                                      alert("You Have Not Selected Migration Type");
+                                     <%else%>        
                                       alert("You Have Not Created A Database");
+                                      <%end%>
                                       return false
                                    }
                              }
@@ -359,6 +390,7 @@ named as payment_status boolean . after a payment is complete make this field tr
                      }
               }
           });
+          return false;
 }
  
                 
@@ -382,6 +414,22 @@ named as payment_status boolean . after a payment is complete make this field tr
  });               
               </script>
             <%end%>  
+            <%if notice == "Signed in successfully."%>
+              <script>
+ $(function ()
+                {
+       var aTag = $(".notice_middle");
+    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+ 
+
+     
+ });               
+              </script>
+            <%end%>  
+              
+              
+              
+              
  </div>
 
       
