@@ -20,7 +20,7 @@ Quickbook42::Application.routes.draw do
   
   
   resource "payments"
-  devise_for :users, :controllers => {:registrations => "registrations",:sessions => "sessions",:passwords=>"passwords"}
+  devise_for :users, :controllers => {:registrations => "registrations",:sessions => "sessions",:passwords=>"passwords",:confirmations=> 'confirmations'}
 
   #devise_for :users
   resources :homes
@@ -37,6 +37,7 @@ Quickbook42::Application.routes.draw do
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
+   
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
@@ -98,6 +99,9 @@ Quickbook42::Application.routes.draw do
   post "imports/import" 
   get  'imports/:id' => 'imports#index'
   post  'imports/:id' => 'imports#index'
+  
+  get '/accessbook_success' => "imports#accessbook_success"
+  
   
   resources :imports
 
