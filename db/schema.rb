@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140102133822) do
+ActiveRecord::Schema.define(version: 20140122110959) do
+
+  create_table "coupens", force: true do |t|
+    t.string   "coupen"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "databases", force: true do |t|
     t.string   "name"
@@ -89,6 +95,22 @@ ActiveRecord::Schema.define(version: 20140102133822) do
     t.datetime "updated_at"
   end
 
+  create_table "useraddresses", force: true do |t|
+    t.string   "country"
+    t.string   "state"
+    t.string   "zip_code"
+    t.string   "mobile"
+    t.string   "phone"
+    t.string   "street"
+    t.string   "address"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "first_name"
+    t.string   "middle_name"
+    t.string   "last_name"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -100,10 +122,13 @@ ActiveRecord::Schema.define(version: 20140102133822) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
     t.string   "user_payment_choice"
     t.boolean  "payment_status"
+    t.string   "coupenassigned"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
