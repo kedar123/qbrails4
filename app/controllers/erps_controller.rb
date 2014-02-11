@@ -67,15 +67,21 @@ class ErpsController < ApplicationController
      respond_to do |format|
        notice = 'OpenERP Connection established successfully'
         begin
+          logger.info "nnnnnnnnn"
+          logger.info notice
            @ooor = Ooor.new(:url => "http://"+current_user.erp.url+":#{current_user.erp.port}/xmlrpc", :database => current_user.erp.database, :username => current_user.erp.username, :password => current_user.erp.password,:scope_prefix => current_user.database.name.upcase.to_s)
+           logger.info @ooor
            pc=eval(current_user.database.name.upcase.to_s)::ResCompany.first
            logger.info pc.name
            logger.info "this is to see a connection can be established"
            #the above line is for make sure that connection established successfully
-        rescue=>e
+        rescue Exception => e
           logger.info "the connection was unsuccessful"
           logger.info 
           notice = 'Can not connect to OpenERP please check details again'
+        ensure
+          notice = 'Can not connect to OpenERP please check details again'
+          
         end  
        if current_user.save  and notice == 'OpenERP Connection established successfully'
          format.html { redirect_to  homes_path, :notice=> notice }
@@ -101,10 +107,12 @@ class ErpsController < ApplicationController
            logger.info pc.name
            logger.info "this is to see a connection can be established"
            #the above line is for make sure that connection established successfully
-        rescue=>e
+        rescue Exception => e
           logger.info "the connection was unsuccessful"
           logger.info 
           notice = 'Can not connect to OpenERP please check details again'
+         ensure 
+           notice = 'Can not connect to OpenERP please check details again'
         end
         
         if notice == 'Can not connect to OpenERP please check details again'
