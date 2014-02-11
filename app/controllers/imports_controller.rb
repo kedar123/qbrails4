@@ -42,7 +42,7 @@ class ImportsController < ApplicationController
   end
   
   def download_accessbook
-    send_file "#{Rails.root}/public/abrt7-setup.msi.tar.gz" 
+    send_file "#{Rails.root}/public/abrt7-setup.exe" 
   end
   
   def download_manual
