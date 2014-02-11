@@ -73,7 +73,7 @@ class ErpsController < ApplicationController
           format.html { redirect_to  homes_path, :notice=> "Your Server Details Were Incorrect" }
         end
         
-    end
+    else
      
       
      respond_to do |format|
@@ -102,6 +102,7 @@ class ErpsController < ApplicationController
         format.html { redirect_to  homes_path, :notice=> notice }
         format.json { render :json=> @erp.errors, :status=> :unprocessable_entity }
       end
+    end
     end
     
   end
