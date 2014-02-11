@@ -4,26 +4,26 @@ class UserMailer < ActionMailer::Base
     
    def welcome_email(user)
     @user = user
-    @url  = 'http://178.63.19.197'
+    @url  = 'http://openerp-data-migration.com'
     mail(to: @user.email , subject: 'Welcome to QuickBooks To OpenERP Data Migration')
    end
   
    def sales_email(user)
      @user = user
-     @url  = 'http://178.63.19.197'
+     @url  = 'http://openerp-data-migration.com'
      mail(to: 'kedar.pathak@pragtech.co.in'  , subject: 'New User Registered To QuickBook Site')
    end
    
   
    def migration_done(user)
     @user = user
-    @url  = 'http://178.63.19.197'
+    @url  = 'http://openerp-data-migration.com'
     mail(to: @user.email , subject: 'Quickbook Migration')
    end 
    
    def feedback_sent(paramssubject,paramsbody,paramsemail)
     @user = User.find_by_email("kedar.pathak@pragtech.co.in")
-    @url  = 'http://178.63.19.197'
+    @url  = 'http://openerp-data-migration.com'
     @paramssubject = paramssubject
     @paramsbody = paramsbody
     @paramsemail = paramsemail
