@@ -952,7 +952,7 @@ margin-left:50px;
 	background-image: -o-linear-gradient(bottom, #77b200) 0%, #669900 100%);
 	background-image: -ms-linear-gradient(top, #77b200 0%, #669900 100%);
 	background-image: linear-gradient(bottom, #77b200) 0%, #669900 100%);
-	-image background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, #77b200), color-stop(1, #669900) );
+	-image background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, #77b200), color-stop(1, #669900 100%) );
 	background-image: linear-gradient(to bottom, #77b300 0%, #669900 100%);
 	text-transform: uppercase;
 	text-align: center;
