@@ -424,7 +424,7 @@ named as payment_status boolean . after a payment is complete make this field tr
             i require this for the purpose of showing an message openerp connection is not established.
             and select an 4th step.
             -->
-            <%if notice == "Can not connect to OpenERP please check details again" or notice == "OpenERP Connection established successfully"%>
+            <%if notice == "Can not connect to OpenERP please check details again" or notice == "OpenERP Connection established successfully" or notice == "Your Server Details Were Incorrect" %>
               <script>
  $(function ()
                 {
@@ -436,7 +436,7 @@ named as payment_status boolean . after a payment is complete make this field tr
  });               
               </script>
             <%end%>  
-            <%if notice == "Signed in successfully." or notice == "OpenERP Connection established successfully" or notice == "Please Create Database" or notice == "Database was successfully created."%>
+            <%if notice == "Signed in successfully." or notice == "OpenERP Connection established successfully" or notice == "Please Create Database" or notice == "Database was successfully created."  or notice == "Your Server Details Were Incorrect"              %>
               <script>
  $(function ()
                 {

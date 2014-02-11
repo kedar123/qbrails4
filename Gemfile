@@ -68,3 +68,4 @@ end
  gem 'watir' , :group => :test
  gem 'jquery-turbolinks'
 gem 'turbolinks-redirect'
+gem 'net-ping'

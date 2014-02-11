@@ -2,6 +2,7 @@
 class ErpsController < ApplicationController
   # GET /erps
   # GET /erps.json
+  require 'net/ping'
   def index
  
     @erps = Erp.all
@@ -63,7 +64,18 @@ class ErpsController < ApplicationController
   def create
     @erp = Erp.new(erp_params)
     current_user.erp = @erp
-
+    
+    good = current_user.erp.url
+    p1 = Net::Ping::External.new(good)
+    if !p1
+        #from here return by notice saying that server is not up
+        respond_to do |format|
+          format.html { redirect_to  homes_path, :notice=> "Your Server Details Were Incorrect" }
+        end
+        return
+    end
+     
+      
      respond_to do |format|
        notice = 'OpenERP Connection established successfully'
         begin
@@ -98,6 +110,23 @@ class ErpsController < ApplicationController
   # PUT /erps/1.json
   def update
      @erp = Erp.find(params.require(:id))
+     #here first i need to check weather the server is exist or not. if its not then return by a flash notice saying
+     #that server is not exist.
+         
+    good = current_user.erp.url
+    p1 = Net::Ping::External.new(good)
+ 
+    if !p1.ping?
+       
+        #from here return by notice saying that server is not up
+        respond_to do |format|
+          format.html { redirect_to  homes_path, :notice=> "Your Server Details Were Incorrect" }
+        end
+        
+         
+        return
+    end
+     
     respond_to do |format|
       if @erp.update_attributes(erp_params)
         notice = 'OpenERP Connection established successfully'
