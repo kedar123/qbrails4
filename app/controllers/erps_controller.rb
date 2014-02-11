@@ -72,7 +72,7 @@ class ErpsController < ApplicationController
         respond_to do |format|
           format.html { redirect_to  homes_path, :notice=> "Your Server Details Were Incorrect" }
         end
-        return
+        
     end
      
       
@@ -92,7 +92,7 @@ class ErpsController < ApplicationController
           logger.info 
           notice = 'Can not connect to OpenERP please check details again'
         ensure
-          notice = 'Can not connect to OpenERP please check details again'
+         # notice = 'Can not connect to OpenERP please check details again'
           
         end  
        if current_user.save  and notice == 'OpenERP Connection established successfully'
@@ -121,17 +121,18 @@ class ErpsController < ApplicationController
         good = current_user.erp.url
         p1 = Net::Ping::External.new(good)
  
-         if !p1.ping?
-       
-        #from here return by notice saying that server is not up
-           format.html { redirect_to  homes_path, :notice=> "Your Server Details Were Incorrect" }
-           return
-         end
+   
         
         
         
         
         notice = 'OpenERP Connection established successfully'
+              if !p1.ping?
+       
+        #from here return by notice saying that server is not up
+           notice =  "Your Server Details Were Incorrect" 
+           
+         else
          begin
            @ooor = Ooor.new(:url => "http://"+current_user.erp.url+":#{current_user.erp.port}/xmlrpc", :database => current_user.erp.database, :username => current_user.erp.username, :password => current_user.erp.password,:scope_prefix => current_user.database.name.upcase.to_s)
            pc=eval(current_user.database.name.upcase.to_s)::ResCompany.first
@@ -143,15 +144,22 @@ class ErpsController < ApplicationController
           logger.info 
           notice = 'Can not connect to OpenERP please check details again'
          ensure 
-           notice = 'Can not connect to OpenERP please check details again'
+          # notice = 'Can not connect to OpenERP please check details again'
         end
+              end
+        
+        
+        
         
         if notice == 'Can not connect to OpenERP please check details again'
             @notice = 'Can not connect to OpenERP please check details again'
            format.html { redirect_to homes_path, :notice=> notice}
+        elsif notice ==  "Your Server Details Were Incorrect" 
+              format.html { redirect_to homes_path, :notice=> notice}
         else
          format.html { redirect_to homes_path, :notice=> notice }
         end
+        
          format.json {render  :head =>:no_content }
       else
         #
