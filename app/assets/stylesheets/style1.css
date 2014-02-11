@@ -982,3 +982,17 @@ margin-left:50px;
 {
 	margin:8px 0px 0px 41px ;
 }
+
+.highlight {
+    background: rgba(255, 230, 0, 0.5);
+ 
+    line-height: 1.7;
+    border-radius: 5px;
+     
+    
+    clear:both; 
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: -1px;
+    text-align: center;
+}

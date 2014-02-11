@@ -441,10 +441,17 @@ named as payment_status boolean . after a payment is complete make this field tr
  $(function ()
                 {
        var aTag = $(".notice_middle");
-    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+    $('html,body').animate({scrollTop: aTag.offset().top},'slow',callback);
+    
   
  });       
-               </script>
+    function callback(){
+         var aTag = $(".notice_middle");
+    
+        aTag.addClass("highlight"); 
+      
+    }
+                </script>
             <%end%>  
               
         
