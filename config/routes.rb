@@ -86,6 +86,8 @@ Quickbook42::Application.routes.draw do
   get "feedbacks/aboutus"
   get "feedbacks/contactus" 
   get "imports/download_quickbook"
+  get "imports/download_manual"
+  
   resources :erps
   post "erps/new"
   get "erps/new"

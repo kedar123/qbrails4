@@ -43,7 +43,7 @@ Quickbook42::Application.configure do
   # config.force_ssl = true
 
   # Set to :debug to see everything in the log.
-  config.log_level = :info
+  config.log_level = :debug
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
@@ -77,8 +77,8 @@ Quickbook42::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
-   config.action_mailer.default_url_options = { :host => '178.63.19.197' }
-   config.action_mailer.raise_delivery_errors = true
+   config.action_mailer.default_url_options = { :host => 'openerp-data-migration.com' }
+   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.delivery_method = :smtp
   
   config.action_mailer.smtp_settings = {
