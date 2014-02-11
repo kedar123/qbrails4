@@ -113,22 +113,24 @@ class ErpsController < ApplicationController
      #here first i need to check weather the server is exist or not. if its not then return by a flash notice saying
      #that server is not exist.
          
-    good = current_user.erp.url
-    p1 = Net::Ping::External.new(good)
- 
-    if !p1.ping?
-       
-        #from here return by notice saying that server is not up
-        respond_to do |format|
-          format.html { redirect_to  homes_path, :notice=> "Your Server Details Were Incorrect" }
-        end
-        
-         
-        return
-    end
+    
+   
      
     respond_to do |format|
       if @erp.update_attributes(erp_params)
+        good = current_user.erp.url
+        p1 = Net::Ping::External.new(good)
+ 
+         if !p1.ping?
+       
+        #from here return by notice saying that server is not up
+           format.html { redirect_to  homes_path, :notice=> "Your Server Details Were Incorrect" }
+           return
+         end
+        
+        
+        
+        
         notice = 'OpenERP Connection established successfully'
          begin
            @ooor = Ooor.new(:url => "http://"+current_user.erp.url+":#{current_user.erp.port}/xmlrpc", :database => current_user.erp.database, :username => current_user.erp.username, :password => current_user.erp.password,:scope_prefix => current_user.database.name.upcase.to_s)
