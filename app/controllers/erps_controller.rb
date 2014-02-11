@@ -96,6 +96,19 @@ class ErpsController < ApplicationController
           
         end  
        if current_user.save  and notice == 'OpenERP Connection established successfully'
+         
+           import = Import.new
+            import.save
+           if current_user.user_payment_choice == "free" 
+              import.delay.export_free_migration(current_user)
+           elsif current_user.user_payment_choice == "standard" 
+             import.delay.export_standard_migration(current_user)
+           elsif current_user.user_payment_choice == "premium"
+             import.delay.export_premium_migration(current_user)
+           end
+          
+          notice = "Migration is started , you will shortly get an Email after Comletion of migration" 
+          
          format.html { redirect_to  homes_path, :notice=> notice }
          format.json { render :json=> @erp, :status=> :created, :location=> @erp }
        else
@@ -158,6 +171,17 @@ class ErpsController < ApplicationController
         elsif notice ==  "Your Server Details Were Incorrect" 
               format.html { redirect_to homes_path, :notice=> notice}
         else
+            import = Import.new
+            import.save
+           if current_user.user_payment_choice == "free" 
+              import.delay.export_free_migration(current_user)
+           elsif current_user.user_payment_choice == "standard" 
+             import.delay.export_standard_migration(current_user)
+           elsif current_user.user_payment_choice == "premium"
+             import.delay.export_premium_migration(current_user)
+           end
+          
+          notice = "Migration is started , you will shortly get an Email after Comletion of migration"  
          format.html { redirect_to homes_path, :notice=> notice }
         end
         

@@ -270,19 +270,19 @@ named as payment_status boolean . after a payment is complete make this field tr
   <div class="actions" >
     
     <div style="clear:both">
-    <%= f.submit "Submit",:id=>"start_migration_button" %>
+    <%= f.submit "Submit And Start Migration",:id=>"start_migration_button" %>
      </div> 
   </div>
 <% end %>
  
-           <%if notice == "OpenERP Connection established successfully"%>      
+           <%#if notice == "OpenERP Connection established successfully"%>      
              <%#= button_to "Start Migration",url_for(:action => 'index', :controller => 'imports' ), :id =>@erp.id  , :style=>"margin-top:-1px;",:id=>"start_migration_button"%>       
    
-   <%= link_to "Start Migration",url_for(:action => 'index', :controller => 'imports' ), :id =>@erp.id  , :style=>"margin-top:-1px;",:id=>"start_migration_button_blink",:method=>"post"%>       
+   <%#= link_to "Start Migration",url_for(:action => 'index', :controller => 'imports' ), :id =>@erp.id  , :style=>"margin-top:-1px;",:id=>"start_migration_button_blink",:method=>"post"%>       
    
  
    
-           <%end%>      
+           <%#end%>      
                 </section>
             </div>
             
@@ -436,7 +436,7 @@ named as payment_status boolean . after a payment is complete make this field tr
  });               
               </script>
             <%end%>  
-            <%if notice == "Signed in successfully." or notice == "OpenERP Connection established successfully" or notice == "Please Create Database" or notice == "Database was successfully created."  or notice == "Your Server Details Were Incorrect"              %>
+            <%if notice == "Signed in successfully." or notice == "OpenERP Connection established successfully" or notice == "Please Create Database" or notice == "Database was successfully created."  or notice == "Your Server Details Were Incorrect"    or notice == "Migration is started , you will shortly get an Email after Comletion of migration"          %>
               <script>
  $(function ()
                 {
