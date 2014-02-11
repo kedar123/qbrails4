@@ -184,12 +184,12 @@ named as payment_status boolean . after a payment is complete make this field tr
 
                 <h4>Second Step</h4>
                 <section>
-                  <div style="float:left;width:15%;margin-right:2%">
+                  <div style="float:left;width:15%;margin-right:2%;border-right: 1px dotted #cccccc;height: 88%;">
                     <strong>Download</strong>
                     <br/>
                     <%= link_to "Access Book",imports_download_accessbook_path,:id=>"migration_button_link_here"%> 
                   </div>
-                  <div style="float:left;width:50%;margin-right:2%">
+                  <div style="float:left;width:50%;margin-right:2%;border-right: 1px dotted #cccccc;height: 88%;">
                     <strong>Installation And Configuration And Data Migration</strong>
                     <br/>
                     <%= link_to "Installation Manual",imports_download_manual_path,:id=>"migration_button_link_here"%> 
@@ -268,6 +268,7 @@ named as payment_status boolean . after a payment is complete make this field tr
   </div>
 
   <div class="actions" >
+    
     <div style="clear:both">
     <%= f.submit "Submit",:id=>"start_migration_button" %>
      </div> 
@@ -277,7 +278,7 @@ named as payment_status boolean . after a payment is complete make this field tr
            <%if notice == "OpenERP Connection established successfully"%>      
              <%#= button_to "Start Migration",url_for(:action => 'index', :controller => 'imports' ), :id =>@erp.id  , :style=>"margin-top:-1px;",:id=>"start_migration_button"%>       
    
-   <%= link_to "Start Migration",url_for(:action => 'index', :controller => 'imports' ), :id =>@erp.id  , :style=>"margin-top:-1px;",:id=>"start_migration_button",:method=>"post"%>       
+   <%= link_to "Start Migration",url_for(:action => 'index', :controller => 'imports' ), :id =>@erp.id  , :style=>"margin-top:-1px;",:id=>"start_migration_button_blink",:method=>"post"%>       
    
  
    
@@ -435,57 +436,19 @@ named as payment_status boolean . after a payment is complete make this field tr
  });               
               </script>
             <%end%>  
-            <%if notice == "Signed in successfully."%>
+            <%if notice == "Signed in successfully." or notice == "OpenERP Connection established successfully" or notice == "Please Create Database" or notice == "Database was successfully created."%>
               <script>
  $(function ()
                 {
        var aTag = $(".notice_middle");
     $('html,body').animate({scrollTop: aTag.offset().top},'slow');
- 
-
-     
+  
  });       
- 
- 
- 
- 
-              </script>
+               </script>
             <%end%>  
               
- <%if notice == "Please Create Database"%>
-              <script>
- $(function ()
-                {
-       var aTag = $(".notice_middle");
-    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
- 
-
-     
- });       
- 
- 
- 
- 
-              </script>
- <%end%>             
-       
-        <%if notice == "Database was successfully created."%>
-              <script>
- $(function ()
-                {
-       var aTag = $(".notice_middle");
-    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
- 
-
-     
- });       
- 
- 
- 
- 
-              </script>
- <%end%> 
-              
+        
+               
  </div>
 
       
@@ -499,6 +462,7 @@ named as payment_status boolean . after a payment is complete make this field tr
   
 
 <%end%>
+ 
 </div>
   
   </div>
