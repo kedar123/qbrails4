@@ -1,4 +1,6 @@
- 
+  <%  if user_signed_in?%>
+ <div class="Messagesmiddle"><p class="notice_middle"><%= notice %></p></div>
+ <%end%>
 <div id="left">
   <div class="text">
 <h1>Purchase Quick Book To Openerp Migration</h1>
@@ -82,4 +84,20 @@
   </div>
  
   </div>
- 
+   <%if notice == "Invalid Coupen"  %>
+              <script>
+ $(function ()
+                {
+       var aTag = $(".notice_middle");
+    $('html,body').animate({scrollTop: aTag.offset().top},'slow',callback);
+    
+  
+ });       
+    function callback(){
+         var aTag = $(".notice_middle");
+    
+        aTag.addClass("highlight"); 
+      
+    }
+                </script>
+            <%end%> 
