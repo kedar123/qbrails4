@@ -229,12 +229,14 @@ class Import < ActiveRecord::Base
         logger.info "ccccccccccccccccccccccccccc1111"
         Itemsalestax.export_item(itemsalestax,current_user)
         Database.connection.execute("use mysqlquickbook")
+        UserMailer.migration_done(current_user).deliver
         return
       elsif Itemsalestax.count == 50
         itemsalestax = Itemsalestax.find(:all,:limit=>50)#Itemsalestax.all
         logger.info "ccccccccccccccccccccccccccc222"
         Itemsalestax.export_item(itemsalestax,current_user)
         Database.connection.execute("use mysqlquickbook")
+        UserMailer.migration_done(current_user).deliver
         return
       else
         itemsalestax = Itemsalestax.find(:all)#Itemsalestax.all
@@ -259,11 +261,13 @@ class Import < ActiveRecord::Base
         itemsalestg = Itemsalestaxgroup.find(:all,:limit=>fifty_count)
         Itemsalestaxgroup.export_itemsalestgr(itemsalestg,current_user) 
         Database.connection.execute("use mysqlquickbook")
+        UserMailer.migration_done(current_user).deliver
         return
       elsif Itemsalestaxgroup.count == fifty_count
         itemsalestg = Itemsalestaxgroup.find(:all,:limit=>fifty_count)
         Itemsalestaxgroup.export_itemsalestgr(itemsalestg,current_user) 
         Database.connection.execute("use mysqlquickbook")
+        UserMailer.migration_done(current_user).deliver
         return
       else
         itemsalestg = Itemsalestaxgroup.find(:all)
@@ -284,11 +288,13 @@ class Import < ActiveRecord::Base
         itemserv = Itemservice.find(:all,:limit=>fifty_count)#Itemservice.all 
         Itemservice.export_itemservices(itemserv,current_user)
         Database.connection.execute("use mysqlquickbook")
+        UserMailer.migration_done(current_user).deliver
         return
       elsif Itemservice.count == fifty_count
         itemserv = Itemservice.find(:all,:limit=>fifty_count)#Itemservice.all 
         Itemservice.export_itemservices(itemserv,current_user)
         Database.connection.execute("use mysqlquickbook")
+        UserMailer.migration_done(current_user).deliver
         return
       else
         itemserv = Itemservice.find(:all)#Itemservice.all 
@@ -310,11 +316,13 @@ class Import < ActiveRecord::Base
         itemdiscnt = Itemdiscount.find(:all,:limit=>fifty_count)#Itemdiscount.all
         Itemdiscount.export_itemdiscounts(itemdiscnt,current_user)
         Database.connection.execute("use mysqlquickbook")
+        UserMailer.migration_done(current_user).deliver
         return
       elsif Itemdiscount.count == fifty_count
         itemdiscnt = Itemdiscount.find(:all,:limit=>fifty_count)#Itemdiscount.all
         Itemdiscount.export_itemdiscounts(itemdiscnt,current_user)
         Database.connection.execute("use mysqlquickbook")
+        UserMailer.migration_done(current_user).deliver
         return
       else
         itemdiscnt = Itemdiscount.find(:all)#Itemdiscount.all
@@ -334,11 +342,13 @@ class Import < ActiveRecord::Base
         itemfixasset = Itemfixedasset.find(:all,:limit=>fifty_count)#Itemfixedasset.all 
         Itemfixedasset.export_itemfixassets(itemfixasset,current_user)
         Database.connection.execute("use mysqlquickbook")
+        UserMailer.migration_done(current_user).deliver
         return
       elsif Itemfixedasset.count == fifty_count
         itemfixasset = Itemfixedasset.find(:all,:limit=>fifty_count)#Itemfixedasset.all 
         Itemfixedasset.export_itemfixassets(itemfixasset,current_user)
         Database.connection.execute("use mysqlquickbook")
+        UserMailer.migration_done(current_user).deliver
         return
       else
         itemfixasset = Itemfixedasset.find(:all)#Itemfixedasset.all 
@@ -357,11 +367,13 @@ class Import < ActiveRecord::Base
         itemgroup = Itemgroup.find(:all,:limit=>fifty_count)#Itemfixedasset.all 
         Itemgroup.export_itemgroups(itemgroup,current_user)
         Database.connection.execute("use mysqlquickbook")
+        UserMailer.migration_done(current_user).deliver
         return
       elsif Itemgroup.count == fifty_count
         itemgroup = Itemgroup.find(:all,:limit=>fifty_count)#Itemfixedasset.all 
         Itemgroup.export_itemgroups(itemgroup,current_user)
         Database.connection.execute("use mysqlquickbook")
+        UserMailer.migration_done(current_user).deliver
         return
       else
         itemgroup = Itemgroup.find(:all)#Itemfixedasset.all 
@@ -387,11 +399,13 @@ class Import < ActiveRecord::Base
         iteminventory = Iteminventory.find(:all,:limit=>fifty_count)#Iteminventory.all
         Iteminventory.export_iteminventories(iteminventory,current_user)
         Database.connection.execute("use mysqlquickbook")
+        UserMailer.migration_done(current_user).deliver
         return
       elsif Iteminventory.count == fifty_count
         iteminventory = Iteminventory.find(:all,:limit=>fifty_count)#Iteminventory.all
         Iteminventory.export_iteminventories(iteminventory,current_user)
         Database.connection.execute("use mysqlquickbook")
+        UserMailer.migration_done(current_user).deliver
         return
       else
         iteminventory = Iteminventory.find(:all)#Iteminventory.all
@@ -415,12 +429,14 @@ class Import < ActiveRecord::Base
         itemnoninventory = Itemnoninventory.find(:all,:limit=>fifty_count)#Itemnoninventory.all
         Itemnoninventory.export_itemnoninventory(itemnoninventory,current_user)
         Database.connection.execute("use mysqlquickbook")
+        UserMailer.migration_done(current_user).deliver
         return
       elsif Itemnoninventory.count == fifty_count
         logger.info "zzzzzzzzzzzzzzz656565zzzielseifffff"
         itemnoninventory = Itemnoninventory.find(:all,:limit=>fifty_count)#Itemnoninventory.all
         Itemnoninventory.export_itemnoninventory(itemnoninventory,current_user)
         Database.connection.execute("use mysqlquickbook")
+        UserMailer.migration_done(current_user).deliver
         return
       else
         #else its assume here that its less than 50
@@ -449,11 +465,13 @@ class Import < ActiveRecord::Base
         iteminventoryassembly = Iteminventoryassembly.find(:all,:limit=>fifty_count)#Iteminventoryassembly.all    
         Iteminventoryassembly.export_iteminventoryaseemblies(iteminventoryassembly,current_user)
         Database.connection.execute("use mysqlquickbook")
+        UserMailer.migration_done(current_user).deliver
         return
       elsif Iteminventoryassembly.count == fifty_count
         iteminventoryassembly = Iteminventoryassembly.find(:all,:limit=>fifty_count)
         Iteminventoryassembly.export_iteminventoryaseemblies(iteminventoryassembly,current_user)
         Database.connection.execute("use mysqlquickbook")
+        UserMailer.migration_done(current_user).deliver
         return
       else
         iteminventoryassembly = Iteminventoryassembly.find(:all)
@@ -480,12 +498,14 @@ class Import < ActiveRecord::Base
         itemothercharge = Itemothercharge.find(:all,:limit=>fifty_count)#Itemothercharge.all
         Itemothercharge.export_itemothercharge(itemothercharge,current_user)  
         Database.connection.execute("use mysqlquickbook")
+        UserMailer.migration_done(current_user).deliver
         return
       elsif Itemothercharge.count == fifty_count
         logger.info "zzzzzzzzzzzzzzzz5651651651zzielseifffff"
         itemothercharge = Itemothercharge.find(:all,:limit=>fifty_count)#Itemothercharge.all
         Itemothercharge.export_itemothercharge(itemothercharge,current_user)  
         Database.connection.execute("use mysqlquickbook")
+        UserMailer.migration_done(current_user).deliver
         return
       else
         #else its assume here that its less than 50
@@ -510,12 +530,14 @@ class Import < ActiveRecord::Base
         itempayment = Itempayment.find(:all,:limit=>fifty_count)#Itempayment.all 
         Itempayment.export_itempayment(itempayment,current_user)
         Database.connection.execute("use mysqlquickbook")
+        UserMailer.migration_done(current_user).deliver
         return
  
       elsif Itempayment.count == fifty_count
         itempayment = Itempayment.find(:all,:limit=>fifty_count)#Itempayment.all 
         Itempayment.export_itempayment(itempayment,current_user)
         Database.connection.execute("use mysqlquickbook")
+        UserMailer.migration_done(current_user).deliver
         return
  
       else
@@ -541,6 +563,7 @@ class Import < ActiveRecord::Base
         itemsubtotal = Itemsubtotal.find(:all,:limit=>fifty_count)#Itemsubtotal.all
         Itemsubtotal.export_itemsubtotal(itemsubtotal,current_user) 
         Database.connection.execute("use mysqlquickbook")
+        UserMailer.migration_done(current_user).deliver
           
         return
       elsif Itemsubtotal.count == fifty_count
@@ -549,6 +572,7 @@ class Import < ActiveRecord::Base
         itemsubtotal = Itemsubtotal.find(:all,:limit=>fifty_count)#Itemsubtotal.all
         Itemsubtotal.export_itemsubtotal(itemsubtotal,current_user) 
         Database.connection.execute("use mysqlquickbook")
+        UserMailer.migration_done(current_user).deliver
         return
       else
         #else its assume here that its less than 50
