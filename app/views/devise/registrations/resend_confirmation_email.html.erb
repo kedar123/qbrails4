@@ -1,0 +1,29 @@
+<div class="Messagesmiddle"><p class="notice_middle"><%= notice %></p></div>
+<%=form_tag resend_confirmation_email_path%>
+   <div style="padding:10px;">
+     <h2 style="margin-left: 40px;">
+  Enter Your Email Address
+</h2>
+     <p>
+       <%=text_field_tag "email","",:placeholder=>:Email%>
+       </p>
+       <p>
+  <%=submit_tag "Submit",:class=>"newbtn_orange" ,:style=>"margin-left:0px;"%>
+         </p>
+     </div>
+</form>
+<script>
+ $(function ()
+                {
+       var aTag = $(".notice_middle");
+    $('html,body').animate({scrollTop: aTag.offset().top},'slow',callback);
+    
+  
+ });       
+    function callback(){
+         var aTag = $(".notice_middle");
+    
+        aTag.addClass("highlight"); 
+      
+    }
+                </script>
