@@ -111,7 +111,9 @@
               <div class="Messages"><p class="notice"> 
                   <%if user_signed_in?%>
                   <%else%>
-                  <%=notice%>
+                  <%if notice != "Confirmation Instruction Has Been Sent To Your Email Address"%>
+                    <%#=notice%>
+                  <%end%>
                   <%end%>
       <%if params[:controller] == "registrations" and resource and resource.errors and resource.errors.has_key? :email%>
              <%="Email Has Already Been Taken"%>
