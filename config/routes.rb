@@ -21,7 +21,15 @@ Quickbook42::Application.routes.draw do
   
   resource "payments"
   devise_for :users, :controllers => {:registrations => "registrations",:sessions => "sessions",:passwords=>"passwords",:confirmations=> 'confirmations'}
-
+ 
+  devise_scope :user do get "resend_confirmation_email" => "registrations"
+    
+  end
+  devise_scope :user do post "resend_confirmation_email" => "registrations"
+    
+  end
+    
+   
   #devise_for :users
   resources :homes
   resources :databases

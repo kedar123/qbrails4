@@ -21,7 +21,10 @@
 <br/> 
   <%= f.submit "Log In" ,:class=>"newbtn_orange" ,:style=>"margin-left:0px;"%>
   <%= link_to "Forgot password?", new_password_path(resource_name),:style=>"margin-left:10px;margin-top:5px;" %><br />
+   
+   <%= link_to "Resend Confirmation Email", resend_confirmation_email_path,:style=>"margin-left:10px;margin-top:5px;" %><br />
   </div>
+    
 <% end %>
  
 <div style="height:300px;margin-top:0px;padding-top:0px;">

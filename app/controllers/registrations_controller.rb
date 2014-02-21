@@ -41,4 +41,28 @@ class RegistrationsController < Devise::RegistrationsController
     super
   end
  
+  def resend_confirmation_email
+    
+    begin
+    if params[:email]
+       @user = User.find_by_email(params[:email])
+       p @user.methods
+    @user.send_reconfirmation_instructions
+        
+        
+       flash[:notice] = "Confirmation Instruction Has Been Sent To Your Email Address"
+       redirect_to :back   
+    end
+    rescue => e
+      logger.info "some error while sending an email"
+      logger.info e.inspect
+      logger.info e.message
+       
+      flash[:notice] = "The Email Is Not Valid"
+       
+    end
+    
+  end
+  
+  
 end 
