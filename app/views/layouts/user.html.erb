@@ -107,7 +107,10 @@
        <div id="main2">
 	 <div id="contaner">
          <div class="centerdiv">
-              <div class="Messages"><p class="notice"> <%=notice%>
+              <div class="Messages"><p class="notice"> 
+                  <%if params[:action] != "resend_confirmation_email"%>
+<%=notice%>
+                  <%end%>
       <%if params[:controller] == "registrations" and resource and resource.errors and resource.errors.has_key? :email%>
              <%="Email Has Already Been Taken"%>
         <%end%>
