@@ -42,7 +42,19 @@ class ImportsController < ApplicationController
   end
   
   def download_accessbook
-    send_file "#{Rails.root}/public/abrt7-setup.exe" 
+    #send_data "#{Rails.root}/public/abrt7-setup.rar", i
+#    file = "#{Rails.root}/public/abrt7-setup.rar"
+#    data = ""
+    #File.open(file, "w+"){ |f| f << data }
+    #send_file( data )
+    ######
+#    File.open(file, "w+"){ |f| f << data }
+#    send_file( file )
+#send_data("#{Rails.root}/public/abrt7-setup.rar",
+#    type: 'application/rar; charset=utf-8; header=present',
+#    disposition: 'attachment; filename=abrt7-setup.rar'
+#  )
+send_file "#{Rails.root}/public/abrt7-setup.msi.zip", :type=>"application/zip" 
   end
   
   def download_manual

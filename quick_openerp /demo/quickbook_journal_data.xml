@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+			 <!--
+        Account Journal
+        -->
+         <record id="quickbook_journal" model="account.journal">
+            <field name="name">Quickbook</field>
+            <field name="code">QJT</field>
+            <field name="type">general</field>
+            
+            
+        </record>
+        
+       
+    </data>
+</openerp>

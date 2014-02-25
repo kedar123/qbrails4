@@ -1,0 +1,2054 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <!--
+        Fiscal year
+        -->    
+        <record id="data_fiscalyear_1999" model="account.fiscalyear">
+            <field eval="'Fiscal Year 1999'" name="name"/>
+            <field eval="'FY 1999'" name="code"/>
+            <field eval="'1999-01-01'" name="date_start"/>
+            <field eval="'1999-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record> 
+        
+        <record id="data_fiscalyear_2000" model="account.fiscalyear">
+            <field eval="'Fiscal Year 2000'" name="name"/>
+            <field eval="'FY 2000'" name="code"/>
+            <field eval="'2000-01-01'" name="date_start"/>
+            <field eval="'2000-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        
+         <record id="data_fiscalyear_2001" model="account.fiscalyear">
+            <field eval="'Fiscal Year 2001'" name="name"/>
+            <field eval="'FY 2001'" name="code"/>
+            <field eval="'2001-01-01'" name="date_start"/>
+            <field eval="'2001-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+     
+        <record id="data_fiscalyear_2002" model="account.fiscalyear">
+            <field eval="'Fiscal Year 2002'" name="name"/>
+            <field eval="'FY 2002'" name="code"/>
+            <field eval="'2002-01-01'" name="date_start"/>
+            <field eval="'2002-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record> 
+        
+       <record id="data_fiscalyear_2003" model="account.fiscalyear">
+            <field eval="'Fiscal Year 2003'" name="name"/>
+            <field eval="'FY 2003'" name="code"/>
+            <field eval="'2003-01-01'" name="date_start"/>
+            <field eval="'2003-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        	
+        <record id="data_fiscalyear_2004" model="account.fiscalyear">
+            <field eval="'Fiscal Year 2004'" name="name"/>
+            <field eval="'FY 2004'" name="code"/>
+            <field eval="'2004-01-01'" name="date_start"/>
+            <field eval="'2004-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+	<record id="data_fiscalyear_2005" model="account.fiscalyear">
+            <field eval="'Fiscal Year 2005'" name="name"/>
+            <field eval="'FY 2005'" name="code"/>
+            <field eval="'2005-01-01'" name="date_start"/>
+            <field eval="'2005-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>	
+
+	<record id="data_fiscalyear_2006" model="account.fiscalyear">
+            <field eval="'Fiscal Year 2006'" name="name"/>
+            <field eval="'FY 2006'" name="code"/>
+            <field eval="'2006-01-01'" name="date_start"/>
+            <field eval="'2006-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+	<record id="data_fiscalyear_2007" model="account.fiscalyear">
+            <field eval="'Fiscal Year 2007'" name="name"/>
+            <field eval="'FY 2007'" name="code"/>
+            <field eval="'2007-01-01'" name="date_start"/>
+            <field eval="'2007-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        
+        <record id="data_fiscalyear_2008" model="account.fiscalyear">
+            <field eval="'Fiscal Year 2008'" name="name"/>
+            <field eval="'FY 2008'" name="code"/>
+            <field eval="'2008-01-01'" name="date_start"/>
+            <field eval="'2008-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        
+
+	<record id="data_fiscalyear_2009" model="account.fiscalyear">
+            <field eval="'Fiscal Year 2009'" name="name"/>
+            <field eval="'FY 2009'" name="code"/>
+            <field eval="'2009-01-01'" name="date_start"/>
+            <field eval="'2009-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>	
+
+	<record id="data_fiscalyear_2010" model="account.fiscalyear">
+            <field eval="'Fiscal Year 2010'" name="name"/>
+            <field eval="'FY 2010'" name="code"/>
+            <field eval="'2010-01-01'" name="date_start"/>
+            <field eval="'2010-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+	<record id="data_fiscalyear_2011" model="account.fiscalyear">
+            <field eval="'Fiscal Year 2011'" name="name"/>
+            <field eval="'FY 2011'" name="code"/>
+            <field eval="'2011-01-01'" name="date_start"/>
+            <field eval="'2011-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        
+	<record id="data_fiscalyear_2012" model="account.fiscalyear">
+            <field eval="'Fiscal Year 2012'" name="name"/>
+            <field eval="'FY 2012'" name="code"/>
+            <field eval="'2012-01-01'" name="date_start"/>
+            <field eval="'2012-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+        <record id="data_fiscalyear_2013" model="account.fiscalyear">
+            <field eval="'Fiscal Year 2013'" name="name"/>
+            <field eval="'FY 2013'" name="code"/>
+            <field eval="'2013-01-01'" name="date_start"/>
+            <field eval="'2013-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+        <record id="data_fiscalyear_2014" model="account.fiscalyear">
+            <field eval="'Fiscal Year 2014'" name="name"/>
+            <field eval="'FY 2014'" name="code"/>
+            <field eval="'2014-01-01'" name="date_start"/>
+            <field eval="'2014-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+
+        <record id="data_fiscalyear_2015" model="account.fiscalyear">
+            <field eval="'Fiscal Year 2015'" name="name"/>
+            <field eval="'FY 2015'" name="code"/>
+            <field eval="'2015-01-01'" name="date_start"/>
+            <field eval="'2015-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+
+        <record id="data_fiscalyear_2016" model="account.fiscalyear">
+            <field eval="'Fiscal Year 2016'" name="name"/>
+            <field eval="'FY 2016'" name="code"/>
+            <field eval="'2016-01-01'" name="date_start"/>
+            <field eval="'2016-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+	
+	
+
+        <!--
+        Fiscal Periods
+        -->    
+        
+        <record id="period_2008_1" model="account.period">
+            <field eval="'01/2008'" name="code"/>
+            <field eval="'01/2008'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2008"/>
+            <field eval="'2008-01-01'" name="date_start"/>
+            <field eval="'2008-01-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2008_2" model="account.period">
+            <field eval="'02/2008'" name="code"/>
+            <field eval="'02/2008'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2008"/>
+            <field eval="'2008-02-01'" name="date_start"/>
+            <!-- for the last day of February, we have to compute the day before March 1st -->
+            <field eval="'2008-02-29'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2008_3" model="account.period">
+            <field eval="'03/2008'" name="code"/>
+            <field eval="'03/2008'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2008"/>
+            <field eval="'2008-03-01'" name="date_start"/>
+            <field eval="'2008-03-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2008_4" model="account.period">
+            <field eval="'04/2008'" name="code"/>
+            <field eval="'04/2008'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2008"/>
+            <field eval="'2008-04-01'" name="date_start"/>
+            <field eval="'2008-04-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2008_5" model="account.period">
+            <field eval="'05/2008'" name="code"/>
+            <field eval="'05/2008'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2008"/>
+            <field eval="'2008-05-01'" name="date_start"/>
+            <field eval="'2008-05-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2008_6" model="account.period">
+            <field eval="'06/2008'" name="code"/>
+            <field eval="'06/2008'" name="name"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2008"/>
+            <field eval="True" name="special"/>
+            <field eval="'2008-06-01'" name="date_start"/>
+            <field eval="'2008-06-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2008_7" model="account.period">
+            <field eval="'07/2008'" name="code"/>
+            <field eval="'07/2008'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2008"/>
+            <field eval="'2008-07-01'" name="date_start"/>
+            <field eval="'2008-07-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2008_8" model="account.period">
+            <field eval="'08/2008'" name="code"/>
+            <field eval="'08/2008'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2008"/>
+            <field eval="'2008-08-01'" name="date_start"/>
+            <field eval="'2008-08-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2008_9" model="account.period">
+            <field eval="'09/2008'" name="code"/>
+            <field eval="'09/2008'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2008"/>
+            <field eval="'2008-09-01'" name="date_start"/>
+            <field eval="'2008-09-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2008_10" model="account.period">
+            <field eval="'10/2008'" name="code"/>
+            <field eval="'10/2008'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2008"/>
+            <field eval="'2008-10-01'" name="date_start"/>
+            <field eval="'2008-10-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2008_11" model="account.period">
+            <field eval="'11/2008'" name="code"/>
+            <field eval="'11/2008'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2008"/>
+            <field eval="'2008-11-01'" name="date_start"/>
+            <field eval="'2008-11-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2008_12" model="account.period">
+            <field eval="'12/2008'" name="code"/>
+            <field eval="'12/2008'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2008"/>
+            <field eval="'2008-12-01'" name="date_start"/>
+            <field eval="'2008-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+
+<!-- 2004 -->
+        <record id="period_2004_1" model="account.period">
+            <field eval="'01/2004'" name="code"/>
+            <field eval="'01/2004'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2004"/>
+            <field eval="'2004-01-01'" name="date_start"/>
+            <field eval="'2004-01-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2004_2" model="account.period">
+            <field eval="'02/2004'" name="code"/>
+            <field eval="'02/2004'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2004"/>
+            <field eval="'2004-02-01'" name="date_start"/>
+            <!-- for the last day of February, we have to compute the day before March 1st -->
+            <field eval="'2004-02-29'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2004_3" model="account.period">
+            <field eval="'03/2004'" name="code"/>
+            <field eval="'03/2004'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2004"/>
+            <field eval="'2004-03-01'" name="date_start"/>
+            <field eval="'2004-03-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2004_4" model="account.period">
+            <field eval="'04/2004'" name="code"/>
+            <field eval="'04/2004'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2004"/>
+            <field eval="'2004-04-01'" name="date_start"/>
+            <field eval="'2004-04-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2004_5" model="account.period">
+            <field eval="'05/2004'" name="code"/>
+            <field eval="'05/2004'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2004"/>
+            <field eval="'2004-05-01'" name="date_start"/>
+            <field eval="'2004-05-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2004_6" model="account.period">
+            <field eval="'06/2004'" name="code"/>
+            <field eval="'06/2004'" name="name"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2004"/>
+            <field eval="True" name="special"/>
+            <field eval="'2004-06-01'" name="date_start"/>
+            <field eval="'2004-06-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2004_7" model="account.period">
+            <field eval="'07/2004'" name="code"/>
+            <field eval="'07/2004'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2004"/>
+            <field eval="'2004-07-01'" name="date_start"/>
+            <field eval="'2004-07-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2004_8" model="account.period">
+            <field eval="'08/2004'" name="code"/>
+            <field eval="'08/2004'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2004"/>
+            <field eval="'2004-08-01'" name="date_start"/>
+            <field eval="'2004-08-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2004_9" model="account.period">
+            <field eval="'09/2004'" name="code"/>
+            <field eval="'09/2004'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2004"/>
+            <field eval="'2004-09-01'" name="date_start"/>
+            <field eval="'2004-09-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2004_10" model="account.period">
+            <field eval="'10/2004'" name="code"/>
+            <field eval="'10/2004'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2004"/>
+            <field eval="'2004-10-01'" name="date_start"/>
+            <field eval="'2004-10-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2004_11" model="account.period">
+            <field eval="'11/2004'" name="code"/>
+            <field eval="'11/2004'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2004"/>
+            <field eval="'2004-11-01'" name="date_start"/>
+            <field eval="'2004-11-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2004_12" model="account.period">
+            <field eval="'12/2004'" name="code"/>
+            <field eval="'12/2004'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2004"/>
+            <field eval="'2004-12-01'" name="date_start"/>
+            <field eval="'2004-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+
+
+<!--2005 -->
+        <record id="period_2005_1" model="account.period">
+            <field eval="'01/2005'" name="code"/>
+            <field eval="'01/2005'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2005"/>
+            <field eval="'2005-01-01'" name="date_start"/>
+            <field eval="'2005-01-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2005_2" model="account.period">
+            <field eval="'02/2005'" name="code"/>
+            <field eval="'02/2005'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2005"/>
+            <field eval="'2005-02-01'" name="date_start"/>
+            <!-- for the last day of February, we have to compute the day before March 1st -->
+            <field eval="'2005-02-28'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2005_3" model="account.period">
+            <field eval="'03/2005'" name="code"/>
+            <field eval="'03/2005'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2005"/>
+            <field eval="'2005-03-01'" name="date_start"/>
+            <field eval="'2005-03-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2005_4" model="account.period">
+            <field eval="'04/2005'" name="code"/>
+            <field eval="'04/2005'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2005"/>
+            <field eval="'2005-04-01'" name="date_start"/>
+            <field eval="'2005-04-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2005_5" model="account.period">
+            <field eval="'05/2005'" name="code"/>
+            <field eval="'05/2005'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2005"/>
+            <field eval="'2005-05-01'" name="date_start"/>
+            <field eval="'2005-05-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2005_6" model="account.period">
+            <field eval="'06/2005'" name="code"/>
+            <field eval="'06/2005'" name="name"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2005"/>
+            <field eval="True" name="special"/>
+            <field eval="'2005-06-01'" name="date_start"/>
+            <field eval="'2005-06-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2005_7" model="account.period">
+            <field eval="'07/2005'" name="code"/>
+            <field eval="'07/2005'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2005"/>
+            <field eval="'2005-07-01'" name="date_start"/>
+            <field eval="'2005-07-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2005_8" model="account.period">
+            <field eval="'08/2005'" name="code"/>
+            <field eval="'08/2005'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2005"/>
+            <field eval="'2005-08-01'" name="date_start"/>
+            <field eval="'2005-08-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2005_9" model="account.period">
+            <field eval="'09/2005'" name="code"/>
+            <field eval="'09/2005'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2005"/>
+            <field eval="'2005-09-01'" name="date_start"/>
+            <field eval="'2005-09-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2005_10" model="account.period">
+            <field eval="'10/2005'" name="code"/>
+            <field eval="'10/2005'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2005"/>
+            <field eval="'2005-10-01'" name="date_start"/>
+            <field eval="'2005-10-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2005_11" model="account.period">
+            <field eval="'11/2005'" name="code"/>
+            <field eval="'11/2005'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2005"/>
+            <field eval="'2005-11-01'" name="date_start"/>
+            <field eval="'2005-11-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2005_12" model="account.period">
+            <field eval="'12/2005'" name="code"/>
+            <field eval="'12/2005'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2005"/>
+            <field eval="'2005-12-01'" name="date_start"/>
+            <field eval="'2005-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+<!-- 2006 -->
+
+        <record id="period_2006_1" model="account.period">
+            <field eval="'01/2006'" name="code"/>
+            <field eval="'01/2006'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2006"/>
+            <field eval="'2006-01-01'" name="date_start"/>
+            <field eval="'2006-01-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2006_2" model="account.period">
+            <field eval="'02/2006'" name="code"/>
+            <field eval="'02/2006'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2006"/>
+            <field eval="'2006-02-01'" name="date_start"/>
+            <!-- for the last day of February, we have to compute the day before March 1st -->
+            <field eval="'2006-02-28'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2006_3" model="account.period">
+            <field eval="'03/2006'" name="code"/>
+            <field eval="'03/2006'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2006"/>
+            <field eval="'2006-03-01'" name="date_start"/>
+            <field eval="'2006-03-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2006_4" model="account.period">
+            <field eval="'04/2006'" name="code"/>
+            <field eval="'04/2006'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2006"/>
+            <field eval="'2006-04-01'" name="date_start"/>
+            <field eval="'2006-04-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2006_5" model="account.period">
+            <field eval="'05/2006'" name="code"/>
+            <field eval="'05/2006'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2006"/>
+            <field eval="'2006-05-01'" name="date_start"/>
+            <field eval="'2006-05-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2006_6" model="account.period">
+            <field eval="'06/2006'" name="code"/>
+            <field eval="'06/2006'" name="name"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2006"/>
+            <field eval="True" name="special"/>
+            <field eval="'2006-06-01'" name="date_start"/>
+            <field eval="'2006-06-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2006_7" model="account.period">
+            <field eval="'07/2006'" name="code"/>
+            <field eval="'07/2006'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2006"/>
+            <field eval="'2006-07-01'" name="date_start"/>
+            <field eval="'2006-07-31'" name="date_stop"/>
+            <!--<field name="company_id" ref="base.main_company"/> -->
+        </record>
+        <record id="period_2006_8" model="account.period">
+            <field eval="'08/2006'" name="code"/>
+            <field eval="'08/2006'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2006"/>
+            <field eval="'2006-08-01'" name="date_start"/>
+            <field eval="'2006-08-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2006_9" model="account.period">
+            <field eval="'09/2006'" name="code"/>
+            <field eval="'09/2006'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2006"/>
+            <field eval="'2006-09-01'" name="date_start"/>
+            <field eval="'2006-09-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2006_10" model="account.period">
+            <field eval="'10/2006'" name="code"/>
+            <field eval="'10/2006'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2006"/>
+            <field eval="'2006-10-01'" name="date_start"/>
+            <field eval="'2006-10-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2006_11" model="account.period">
+            <field eval="'11/2006'" name="code"/>
+            <field eval="'11/2006'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2006"/>
+            <field eval="'2006-11-01'" name="date_start"/>
+            <field eval="'2006-11-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2006_12" model="account.period">
+            <field eval="'12/2006'" name="code"/>
+            <field eval="'12/2006'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2006"/>
+            <field eval="'2006-12-01'" name="date_start"/>
+            <field eval="'2006-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+<!-- 2007 -->
+
+        <record id="period_2007_1" model="account.period">
+            <field eval="'01/2007'" name="code"/>
+            <field eval="'01/2007'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2007"/>
+            <field eval="'2007-01-01'" name="date_start"/>
+            <field eval="'2007-01-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2007_2" model="account.period">
+            <field eval="'02/2007'" name="code"/>
+            <field eval="'02/2007'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2007"/>
+            <field eval="'2007-02-01'" name="date_start"/>
+            <!-- for the last day of February, we have to compute the day before March 1st -->
+            <field eval="'2007-02-28'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2007_3" model="account.period">
+            <field eval="'03/2007'" name="code"/>
+            <field eval="'03/2007'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2007"/>
+            <field eval="'2007-03-01'" name="date_start"/>
+            <field eval="'2007-03-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2007_4" model="account.period">
+            <field eval="'04/2007'" name="code"/>
+            <field eval="'04/2007'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2007"/>
+            <field eval="'2007-04-01'" name="date_start"/>
+            <field eval="'2007-04-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2007_5" model="account.period">
+            <field eval="'05/2007'" name="code"/>
+            <field eval="'05/2007'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2007"/>
+            <field eval="'2007-05-01'" name="date_start"/>
+            <field eval="'2007-05-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2007_6" model="account.period">
+            <field eval="'06/2007'" name="code"/>
+            <field eval="'06/2007'" name="name"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2007"/>
+            <field eval="True" name="special"/>
+            <field eval="'2007-06-01'" name="date_start"/>
+            <field eval="'2007-06-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2007_7" model="account.period">
+            <field eval="'07/2007'" name="code"/>
+            <field eval="'07/2007'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2007"/>
+            <field eval="'2007-07-01'" name="date_start"/>
+            <field eval="'2007-07-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2007_8" model="account.period">
+            <field eval="'08/2007'" name="code"/>
+            <field eval="'08/2007'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2007"/>
+            <field eval="'2007-08-01'" name="date_start"/>
+            <field eval="'2007-08-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2007_9" model="account.period">
+            <field eval="'09/2007'" name="code"/>
+            <field eval="'09/2007'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2007"/>
+            <field eval="'2007-09-01'" name="date_start"/>
+            <field eval="'2007-09-30'" name="date_stop"/>
+           <!-- <field name="company_id" ref="base.main_company"/> -->
+        </record>
+        <record id="period_2007_10" model="account.period">
+            <field eval="'10/2007'" name="code"/>
+            <field eval="'10/2007'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2007"/>
+            <field eval="'2007-10-01'" name="date_start"/>
+            <field eval="'2007-10-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2007_11" model="account.period">
+            <field eval="'11/2007'" name="code"/>
+            <field eval="'11/2007'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2007"/>
+            <field eval="'2007-11-01'" name="date_start"/>
+            <field eval="'2007-11-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2007_12" model="account.period">
+            <field eval="'12/2007'" name="code"/>
+            <field eval="'12/2007'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2007"/>
+            <field eval="'2007-12-01'" name="date_start"/>
+            <field eval="'2007-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+<!-- 2009 -->
+        <record id="period_2009_1" model="account.period">
+            <field eval="'01/2009'" name="code"/>
+            <field eval="'01/2009'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2009"/>
+            <field eval="'2009-01-01'" name="date_start"/>
+            <field eval="'2009-01-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2009_2" model="account.period">
+            <field eval="'02/2009'" name="code"/>
+            <field eval="'02/2009'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2009"/>
+            <field eval="'2009-02-01'" name="date_start"/>
+            <!-- for the last day of February, we have to compute the day before March 1st -->
+            <field eval="'2009-02-28'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2009_3" model="account.period">
+            <field eval="'03/2009'" name="code"/>
+            <field eval="'03/2009'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2009"/>
+            <field eval="'2009-03-01'" name="date_start"/>
+            <field eval="'2009-03-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2009_4" model="account.period">
+            <field eval="'04/2009'" name="code"/>
+            <field eval="'04/2009'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2009"/>
+            <field eval="'2009-04-01'" name="date_start"/>
+            <field eval="'2009-04-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2009_5" model="account.period">
+            <field eval="'05/2009'" name="code"/>
+            <field eval="'05/2009'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2009"/>
+            <field eval="'2009-05-01'" name="date_start"/>
+            <field eval="'2009-05-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2009_6" model="account.period">
+            <field eval="'06/2009'" name="code"/>
+            <field eval="'06/2009'" name="name"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2009"/>
+            <field eval="True" name="special"/>
+            <field eval="'2009-06-01'" name="date_start"/>
+            <field eval="'2009-06-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2009_7" model="account.period">
+            <field eval="'07/2009'" name="code"/>
+            <field eval="'07/2009'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2009"/>
+            <field eval="'2009-07-01'" name="date_start"/>
+            <field eval="'2009-07-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2009_8" model="account.period">
+            <field eval="'08/2009'" name="code"/>
+            <field eval="'08/2009'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2009"/>
+            <field eval="'2009-08-01'" name="date_start"/>
+            <field eval="'2009-08-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2009_9" model="account.period">
+            <field eval="'09/2009'" name="code"/>
+            <field eval="'09/2009'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2009"/>
+            <field eval="'2009-09-01'" name="date_start"/>
+            <field eval="'2009-09-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2009_10" model="account.period">
+            <field eval="'10/2009'" name="code"/>
+            <field eval="'10/2009'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2009"/>
+            <field eval="'2009-10-01'" name="date_start"/>
+            <field eval="'2009-10-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2009_11" model="account.period">
+            <field eval="'11/2009'" name="code"/>
+            <field eval="'11/2009'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2009"/>
+            <field eval="'2009-11-01'" name="date_start"/>
+            <field eval="'2009-11-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2009_12" model="account.period">
+            <field eval="'12/2009'" name="code"/>
+            <field eval="'12/2009'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2009"/>
+            <field eval="'2009-12-01'" name="date_start"/>
+            <field eval="'2009-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+<!-- 2010 -->
+
+        <record id="period_2010_1" model="account.period">
+            <field eval="'01/2010'" name="code"/>
+            <field eval="'01/2010'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2010"/>
+            <field eval="'2010-01-01'" name="date_start"/>
+            <field eval="'2010-01-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2010_2" model="account.period">
+            <field eval="'02/2010'" name="code"/>
+            <field eval="'02/2010'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2010"/>
+            <field eval="'2010-02-01'" name="date_start"/>
+            <!-- for the last day of February, we have to compute the day before March 1st -->
+            <field eval="'2010-02-28'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2010_3" model="account.period">
+            <field eval="'03/2010'" name="code"/>
+            <field eval="'03/2010'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2010"/>
+            <field eval="'2010-03-01'" name="date_start"/>
+            <field eval="'2010-03-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2010_4" model="account.period">
+            <field eval="'04/2010'" name="code"/>
+            <field eval="'04/2010'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2010"/>
+            <field eval="'2010-04-01'" name="date_start"/>
+            <field eval="'2010-04-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2010_5" model="account.period">
+            <field eval="'05/2010'" name="code"/>
+            <field eval="'05/2010'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2010"/>
+            <field eval="'2010-05-01'" name="date_start"/>
+            <field eval="'2010-05-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2010_6" model="account.period">
+            <field eval="'06/2010'" name="code"/>
+            <field eval="'06/2010'" name="name"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2010"/>
+            <field eval="True" name="special"/>
+            <field eval="'2010-06-01'" name="date_start"/>
+            <field eval="'2010-06-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2010_7" model="account.period">
+            <field eval="'07/2010'" name="code"/>
+            <field eval="'07/2010'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2010"/>
+            <field eval="'2010-07-01'" name="date_start"/>
+            <field eval="'2010-07-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2010_8" model="account.period">
+            <field eval="'08/2010'" name="code"/>
+            <field eval="'08/2010'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2010"/>
+            <field eval="'2010-08-01'" name="date_start"/>
+            <field eval="'2010-08-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2010_9" model="account.period">
+            <field eval="'09/2010'" name="code"/>
+            <field eval="'09/2010'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2010"/>
+            <field eval="'2010-09-01'" name="date_start"/>
+            <field eval="'2010-09-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2010_10" model="account.period">
+            <field eval="'10/2010'" name="code"/>
+            <field eval="'10/2010'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2010"/>
+            <field eval="'2010-10-01'" name="date_start"/>
+            <field eval="'2010-10-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2010_11" model="account.period">
+            <field eval="'11/2010'" name="code"/>
+            <field eval="'11/2010'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2010"/>
+            <field eval="'2010-11-01'" name="date_start"/>
+            <field eval="'2010-11-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2010_12" model="account.period">
+            <field eval="'12/2010'" name="code"/>
+            <field eval="'12/2010'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2010"/>
+            <field eval="'2010-12-01'" name="date_start"/>
+            <field eval="'2010-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+<!-- 2011 -->
+
+        <record id="period_2011_1" model="account.period">
+            <field eval="'01/2011'" name="code"/>
+            <field eval="'01/2011'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2011"/>
+            <field eval="'2011-01-01'" name="date_start"/>
+            <field eval="'2011-01-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2011_2" model="account.period">
+            <field eval="'02/2011'" name="code"/>
+            <field eval="'02/2011'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2011"/>
+            <field eval="'2011-02-01'" name="date_start"/>
+            <!-- for the last day of February, we have to compute the day before March 1st -->
+            <field eval="'2011-02-28'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2011_3" model="account.period">
+            <field eval="'03/2011'" name="code"/>
+            <field eval="'03/2011'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2011"/>
+            <field eval="'2011-03-01'" name="date_start"/>
+            <field eval="'2011-03-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2011_4" model="account.period">
+            <field eval="'04/2011'" name="code"/>
+            <field eval="'04/2011'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2011"/>
+            <field eval="'2011-04-01'" name="date_start"/>
+            <field eval="'2011-04-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2011_5" model="account.period">
+            <field eval="'05/2011'" name="code"/>
+            <field eval="'05/2011'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2011"/>
+            <field eval="'2011-05-01'" name="date_start"/>
+            <field eval="'2011-05-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2011_6" model="account.period">
+            <field eval="'06/2011'" name="code"/>
+            <field eval="'06/2011'" name="name"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2011"/>
+            <field eval="True" name="special"/>
+            <field eval="'2011-06-01'" name="date_start"/>
+            <field eval="'2011-06-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2011_7" model="account.period">
+            <field eval="'07/2011'" name="code"/>
+            <field eval="'07/2011'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2011"/>
+            <field eval="'2011-07-01'" name="date_start"/>
+            <field eval="'2011-07-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2011_8" model="account.period">
+            <field eval="'08/2011'" name="code"/>
+            <field eval="'08/2011'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2011"/>
+            <field eval="'2011-08-01'" name="date_start"/>
+            <field eval="'2011-08-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2011_9" model="account.period">
+            <field eval="'09/2011'" name="code"/>
+            <field eval="'09/2011'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2011"/>
+            <field eval="'2011-09-01'" name="date_start"/>
+            <field eval="'2011-09-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2011_10" model="account.period">
+            <field eval="'10/2011'" name="code"/>
+            <field eval="'10/2011'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2011"/>
+            <field eval="'2011-10-01'" name="date_start"/>
+            <field eval="'2011-10-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2011_11" model="account.period">
+            <field eval="'11/2011'" name="code"/>
+            <field eval="'11/2011'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2011"/>
+            <field eval="'2011-11-01'" name="date_start"/>
+            <field eval="'2011-11-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2011_12" model="account.period">
+            <field eval="'12/2011'" name="code"/>
+            <field eval="'12/2011'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2011"/>
+            <field eval="'2011-12-01'" name="date_start"/>
+            <field eval="'2011-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+<!-- 2012 -->
+
+        <record id="period_2012_1" model="account.period">
+            <field eval="'01/2012'" name="code"/>
+            <field eval="'01/2012'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2012"/>
+            <field eval="'2012-01-01'" name="date_start"/>
+            <field eval="'2012-01-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2012_2" model="account.period">
+            <field eval="'02/2012'" name="code"/>
+            <field eval="'02/2012'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2012"/>
+            <field eval="'2012-02-01'" name="date_start"/>
+            <!-- for the last day of February, we have to compute the day before March 1st -->
+            <field eval="'2012-02-29'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2012_3" model="account.period">
+            <field eval="'03/2012'" name="code"/>
+            <field eval="'03/2012'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2012"/>
+            <field eval="'2012-03-01'" name="date_start"/>
+            <field eval="'2012-03-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2012_4" model="account.period">
+            <field eval="'04/2012'" name="code"/>
+            <field eval="'04/2012'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2012"/>
+            <field eval="'2012-04-01'" name="date_start"/>
+            <field eval="'2012-04-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2012_5" model="account.period">
+            <field eval="'05/2012'" name="code"/>
+            <field eval="'05/2012'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2012"/>
+            <field eval="'2012-05-01'" name="date_start"/>
+            <field eval="'2012-05-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2012_6" model="account.period">
+            <field eval="'06/2012'" name="code"/>
+            <field eval="'06/2012'" name="name"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2012"/>
+            <field eval="True" name="special"/>
+            <field eval="'2012-06-01'" name="date_start"/>
+            <field eval="'2012-06-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2012_7" model="account.period">
+            <field eval="'07/2012'" name="code"/>
+            <field eval="'07/2012'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2012"/>
+            <field eval="'2012-07-01'" name="date_start"/>
+            <field eval="'2012-07-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2012_8" model="account.period">
+            <field eval="'08/2012'" name="code"/>
+            <field eval="'08/2012'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2012"/>
+            <field eval="'2012-08-01'" name="date_start"/>
+            <field eval="'2012-08-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2012_9" model="account.period">
+            <field eval="'09/2012'" name="code"/>
+            <field eval="'09/2012'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2012"/>
+            <field eval="'2012-09-01'" name="date_start"/>
+            <field eval="'2012-09-30'" name="date_stop"/>
+        </record>
+        <record id="period_2012_10" model="account.period">
+            <field eval="'10/2012'" name="code"/>
+            <field eval="'10/2012'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2012"/>
+            <field eval="'2012-10-01'" name="date_start"/>
+            <field eval="'2012-10-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2012_11" model="account.period">
+            <field eval="'11/2012'" name="code"/>
+            <field eval="'11/2012'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2012"/>
+            <field eval="'2012-11-01'" name="date_start"/>
+            <field eval="'2012-11-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2012_12" model="account.period">
+            <field eval="'12/2012'" name="code"/>
+            <field eval="'12/2012'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2012"/>
+            <field eval="'2012-12-01'" name="date_start"/>
+            <field eval="'2012-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+<!-- 2013 -->
+
+        <record id="period_2013_1" model="account.period">
+            <field eval="'01/2013'" name="code"/>
+            <field eval="'01/2013'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2013"/>
+            <field eval="'2013-01-01'" name="date_start"/>
+            <field eval="'2013-01-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2013_2" model="account.period">
+            <field eval="'02/2013'" name="code"/>
+            <field eval="'02/2013'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2013"/>
+            <field eval="'2013-02-01'" name="date_start"/>
+            <!-- for the last day of February, we have to compute the day before March 1st -->
+            <field eval="'2013-02-28'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2013_3" model="account.period">
+            <field eval="'03/2013'" name="code"/>
+            <field eval="'03/2013'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2013"/>
+            <field eval="'2013-03-01'" name="date_start"/>
+            <field eval="'2013-03-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2013_4" model="account.period">
+            <field eval="'04/2013'" name="code"/>
+            <field eval="'04/2013'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2013"/>
+            <field eval="'2013-04-01'" name="date_start"/>
+            <field eval="'2013-04-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2013_5" model="account.period">
+            <field eval="'05/2013'" name="code"/>
+            <field eval="'05/2013'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2013"/>
+            <field eval="'2013-05-01'" name="date_start"/>
+            <field eval="'2013-05-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2013_6" model="account.period">
+            <field eval="'06/2013'" name="code"/>
+            <field eval="'06/2013'" name="name"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2013"/>
+            <field eval="True" name="special"/>
+            <field eval="'2013-06-01'" name="date_start"/>
+            <field eval="'2013-06-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2013_7" model="account.period">
+            <field eval="'07/2013'" name="code"/>
+            <field eval="'07/2013'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2013"/>
+            <field eval="'2013-07-01'" name="date_start"/>
+            <field eval="'2013-07-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2013_8" model="account.period">
+            <field eval="'08/2013'" name="code"/>
+            <field eval="'08/2013'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2013"/>
+            <field eval="'2013-08-01'" name="date_start"/>
+            <field eval="'2013-08-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2013_9" model="account.period">
+            <field eval="'09/2013'" name="code"/>
+            <field eval="'09/2013'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2013"/>
+            <field eval="'2013-09-01'" name="date_start"/>
+            <field eval="'2013-09-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2013_10" model="account.period">
+            <field eval="'10/2013'" name="code"/>
+            <field eval="'10/2013'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2013"/>
+            <field eval="'2013-10-01'" name="date_start"/>
+            <field eval="'2013-10-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2013_11" model="account.period">
+            <field eval="'11/2013'" name="code"/>
+            <field eval="'11/2013'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2013"/>
+            <field eval="'2013-11-01'" name="date_start"/>
+            <field eval="'2013-11-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2013_12" model="account.period">
+            <field eval="'12/2013'" name="code"/>
+            <field eval="'12/2013'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2013"/>
+            <field eval="'2013-12-01'" name="date_start"/>
+            <field eval="'2013-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+<!-- 2014 -->
+
+        <record id="period_2014_1" model="account.period">
+            <field eval="'01/2014'" name="code"/>
+            <field eval="'01/2014'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2014"/>
+            <field eval="'2014-01-01'" name="date_start"/>
+            <field eval="'2014-01-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2014_2" model="account.period">
+            <field eval="'02/2014'" name="code"/>
+            <field eval="'02/2014'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2014"/>
+            <field eval="'2014-02-01'" name="date_start"/>
+            <!-- for the last day of February, we have to compute the day before March 1st -->
+            <field eval="'2014-02-28'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2014_3" model="account.period">
+            <field eval="'03/2014'" name="code"/>
+            <field eval="'03/2014'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2014"/>
+            <field eval="'2014-03-01'" name="date_start"/>
+            <field eval="'2014-03-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2014_4" model="account.period">
+            <field eval="'04/2014'" name="code"/>
+            <field eval="'04/2014'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2014"/>
+            <field eval="'2014-04-01'" name="date_start"/>
+            <field eval="'2014-04-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2014_5" model="account.period">
+            <field eval="'05/2014'" name="code"/>
+            <field eval="'05/2014'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2014"/>
+            <field eval="'2014-05-01'" name="date_start"/>
+            <field eval="'2014-05-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2014_6" model="account.period">
+            <field eval="'06/2014'" name="code"/>
+            <field eval="'06/2014'" name="name"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2014"/>
+            <field eval="True" name="special"/>
+            <field eval="'2014-06-01'" name="date_start"/>
+            <field eval="'2014-06-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2014_7" model="account.period">
+            <field eval="'07/2014'" name="code"/>
+            <field eval="'07/2014'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2014"/>
+            <field eval="'2014-07-01'" name="date_start"/>
+            <field eval="'2014-07-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2014_8" model="account.period">
+            <field eval="'08/2014'" name="code"/>
+            <field eval="'08/2014'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2014"/>
+            <field eval="'2014-08-01'" name="date_start"/>
+            <field eval="'2014-08-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2014_9" model="account.period">
+            <field eval="'09/2014'" name="code"/>
+            <field eval="'09/2014'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2014"/>
+            <field eval="'2014-09-01'" name="date_start"/>
+            <field eval="'2014-09-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2014_10" model="account.period">
+            <field eval="'10/2014'" name="code"/>
+            <field eval="'10/2014'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2014"/>
+            <field eval="'2014-10-01'" name="date_start"/>
+            <field eval="'2014-10-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2014_11" model="account.period">
+            <field eval="'11/2014'" name="code"/>
+            <field eval="'11/2014'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2014"/>
+            <field eval="'2014-11-01'" name="date_start"/>
+            <field eval="'2014-11-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2014_12" model="account.period">
+            <field eval="'12/2014'" name="code"/>
+            <field eval="'12/2014'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2014"/>
+            <field eval="'2014-12-01'" name="date_start"/>
+            <field eval="'2014-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+
+<!-- 2015 -->
+
+        <record id="period_2015_1" model="account.period">
+            <field eval="'01/2015'" name="code"/>
+            <field eval="'01/2015'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2015"/>
+            <field eval="'2015-01-01'" name="date_start"/>
+            <field eval="'2015-01-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2015_2" model="account.period">
+            <field eval="'02/2015'" name="code"/>
+            <field eval="'02/2015'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2015"/>
+            <field eval="'2015-02-01'" name="date_start"/>
+            <!-- for the last day of February, we have to compute the day before March 1st -->
+            <field eval="'2015-02-28'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2015_3" model="account.period">
+            <field eval="'03/2015'" name="code"/>
+            <field eval="'03/2015'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2015"/>
+            <field eval="'2015-03-01'" name="date_start"/>
+            <field eval="'2015-03-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2015_4" model="account.period">
+            <field eval="'04/2015'" name="code"/>
+            <field eval="'04/2015'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2015"/>
+            <field eval="'2015-04-01'" name="date_start"/>
+            <field eval="'2015-04-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2015_5" model="account.period">
+            <field eval="'05/2015'" name="code"/>
+            <field eval="'05/2015'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2015"/>
+            <field eval="'2015-05-01'" name="date_start"/>
+            <field eval="'2015-05-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2015_6" model="account.period">
+            <field eval="'06/2015'" name="code"/>
+            <field eval="'06/2015'" name="name"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2015"/>
+            <field eval="True" name="special"/>
+            <field eval="'2015-06-01'" name="date_start"/>
+            <field eval="'2015-06-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2015_7" model="account.period">
+            <field eval="'07/2015'" name="code"/>
+            <field eval="'07/2015'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2015"/>
+            <field eval="'2015-07-01'" name="date_start"/>
+            <field eval="'2015-07-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2015_8" model="account.period">
+            <field eval="'08/2015'" name="code"/>
+            <field eval="'08/2015'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2015"/>
+            <field eval="'2015-08-01'" name="date_start"/>
+            <field eval="'2015-08-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2015_9" model="account.period">
+            <field eval="'09/2015'" name="code"/>
+            <field eval="'09/2015'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2015"/>
+            <field eval="'2015-09-01'" name="date_start"/>
+            <field eval="'2015-09-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2015_10" model="account.period">
+            <field eval="'10/2015'" name="code"/>
+            <field eval="'10/2015'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2015"/>
+            <field eval="'2015-10-01'" name="date_start"/>
+            <field eval="'2015-10-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2015_11" model="account.period">
+            <field eval="'11/2015'" name="code"/>
+            <field eval="'11/2015'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2015"/>
+            <field eval="'2015-11-01'" name="date_start"/>
+            <field eval="'2015-11-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2015_12" model="account.period">
+            <field eval="'12/2015'" name="code"/>
+            <field eval="'12/2015'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2015"/>
+            <field eval="'2015-12-01'" name="date_start"/>
+            <field eval="'2015-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_1999_1" model="account.period">
+            <field eval="'01/1999'" name="code"/>
+            <field eval="'01/1999'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_1999"/>
+            <field eval="'1999-01-01'" name="date_start"/>
+            <field eval="'1999-01-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_1999_2" model="account.period">
+            <field eval="'02/1999'" name="code"/>
+            <field eval="'02/1999'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_1999"/>
+            <field eval="'1999-02-01'" name="date_start"/>
+            <!-- for the last day of February, we have to compute the day before March 1st -->
+            <field eval="'1999-02-28'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_1999_3" model="account.period">
+            <field eval="'03/1999'" name="code"/>
+            <field eval="'03/1999'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_1999"/>
+            <field eval="'1999-03-01'" name="date_start"/>
+            <field eval="'1999-03-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_1999_4" model="account.period">
+            <field eval="'04/1999'" name="code"/>
+            <field eval="'04/1999'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_1999"/>
+            <field eval="'1999-04-01'" name="date_start"/>
+            <field eval="'1999-04-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_1999_5" model="account.period">
+            <field eval="'05/1999'" name="code"/>
+            <field eval="'05/1999'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_1999"/>
+            <field eval="'1999-05-01'" name="date_start"/>
+            <field eval="'1999-05-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_1999_6" model="account.period">
+            <field eval="'06/1999'" name="code"/>
+            <field eval="'06/1999'" name="name"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_1999"/>
+            <field eval="True" name="special"/>
+            <field eval="'1999-06-01'" name="date_start"/>
+            <field eval="'1999-06-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_1999_7" model="account.period">
+            <field eval="'07/1999'" name="code"/>
+            <field eval="'07/1999'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_1999"/>
+            <field eval="'1999-07-01'" name="date_start"/>
+            <field eval="'1999-07-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_1999_8" model="account.period">
+            <field eval="'08/1999'" name="code"/>
+            <field eval="'08/1999'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_1999"/>
+            <field eval="'1999-08-01'" name="date_start"/>
+            <field eval="'1999-08-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_1999_9" model="account.period">
+            <field eval="'09/1999'" name="code"/>
+            <field eval="'09/1999'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_1999"/>
+            <field eval="'1999-09-01'" name="date_start"/>
+            <field eval="'1999-09-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_1999_10" model="account.period">
+            <field eval="'10/1999'" name="code"/>
+            <field eval="'10/1999'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_1999"/>
+            <field eval="'1999-10-01'" name="date_start"/>
+            <field eval="'1999-10-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_1999_11" model="account.period">
+            <field eval="'11/1999'" name="code"/>
+            <field eval="'11/1999'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_1999"/>
+            <field eval="'1999-11-01'" name="date_start"/>
+            <field eval="'1999-11-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_1999_12" model="account.period">
+            <field eval="'12/1999'" name="code"/>
+            <field eval="'12/1999'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_1999"/>
+            <field eval="'1999-12-01'" name="date_start"/>
+            <field eval="'1999-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2000_1" model="account.period">
+            <field eval="'01/2000'" name="code"/>
+            <field eval="'01/2000'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2000"/>
+            <field eval="'2000-01-01'" name="date_start"/>
+            <field eval="'2000-01-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2000_2" model="account.period">
+            <field eval="'02/2000'" name="code"/>
+            <field eval="'02/2000'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2000"/>
+            <field eval="'2000-02-01'" name="date_start"/>
+            <!-- for the last day of February, we have to compute the day before March 1st -->
+            <field eval="'2000-02-29'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2000_3" model="account.period">
+            <field eval="'03/2000'" name="code"/>
+            <field eval="'03/2000'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2000"/>
+            <field eval="'2000-03-01'" name="date_start"/>
+            <field eval="'2000-03-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2000_4" model="account.period">
+            <field eval="'04/2000'" name="code"/>
+            <field eval="'04/2000'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2000"/>
+            <field eval="'2000-04-01'" name="date_start"/>
+            <field eval="'2000-04-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2000_5" model="account.period">
+            <field eval="'05/2000'" name="code"/>
+            <field eval="'05/2000'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2000"/>
+            <field eval="'2000-05-01'" name="date_start"/>
+            <field eval="'2000-05-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2000_6" model="account.period">
+            <field eval="'06/2000'" name="code"/>
+            <field eval="'06/2000'" name="name"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2000"/>
+            <field eval="True" name="special"/>
+            <field eval="'2000-06-01'" name="date_start"/>
+            <field eval="'2000-06-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2000_7" model="account.period">
+            <field eval="'07/2000'" name="code"/>
+            <field eval="'07/2000'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2000"/>
+            <field eval="'2000-07-01'" name="date_start"/>
+            <field eval="'2000-07-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2000_8" model="account.period">
+            <field eval="'08/2000'" name="code"/>
+            <field eval="'08/2000'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2000"/>
+            <field eval="'2000-08-01'" name="date_start"/>
+            <field eval="'2000-08-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2000_9" model="account.period">
+            <field eval="'09/2000'" name="code"/>
+            <field eval="'09/2000'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2000"/>
+            <field eval="'2000-09-01'" name="date_start"/>
+            <field eval="'2000-09-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2000_10" model="account.period">
+            <field eval="'10/2000'" name="code"/>
+            <field eval="'10/2000'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2000"/>
+            <field eval="'2000-10-01'" name="date_start"/>
+            <field eval="'2000-10-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2000_11" model="account.period">
+            <field eval="'11/2000'" name="code"/>
+            <field eval="'11/2000'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2000"/>
+            <field eval="'2000-11-01'" name="date_start"/>
+            <field eval="'2000-11-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2000_12" model="account.period">
+            <field eval="'12/2000'" name="code"/>
+            <field eval="'12/2000'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2000"/>
+            <field eval="'2000-12-01'" name="date_start"/>
+            <field eval="'2000-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+          <record id="period_2001_1" model="account.period">
+            <field eval="'01/2001'" name="code"/>
+            <field eval="'01/2001'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2001"/>
+            <field eval="'2001-01-01'" name="date_start"/>
+            <field eval="'2001-01-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2001_2" model="account.period">
+            <field eval="'02/2001'" name="code"/>
+            <field eval="'02/2001'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2001"/>
+            <field eval="'2001-02-01'" name="date_start"/>
+            <!-- for the last day of February, we have to compute the day before March 1st -->
+            <field eval="'2001-02-28'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2001_3" model="account.period">
+            <field eval="'03/2001'" name="code"/>
+            <field eval="'03/2001'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2001"/>
+            <field eval="'2001-03-01'" name="date_start"/>
+            <field eval="'2001-03-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2001_4" model="account.period">
+            <field eval="'04/2001'" name="code"/>
+            <field eval="'04/2001'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2001"/>
+            <field eval="'2001-04-01'" name="date_start"/>
+            <field eval="'2001-04-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2001_5" model="account.period">
+            <field eval="'05/2001'" name="code"/>
+            <field eval="'05/2001'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2001"/>
+            <field eval="'2001-05-01'" name="date_start"/>
+            <field eval="'2001-05-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2001_6" model="account.period">
+            <field eval="'06/2001'" name="code"/>
+            <field eval="'06/2001'" name="name"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2001"/>
+            <field eval="True" name="special"/>
+            <field eval="'2001-06-01'" name="date_start"/>
+            <field eval="'2001-06-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2001_7" model="account.period">
+            <field eval="'07/2001'" name="code"/>
+            <field eval="'07/2001'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2001"/>
+            <field eval="'2001-07-01'" name="date_start"/>
+            <field eval="'2001-07-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2001_8" model="account.period">
+            <field eval="'08/2001'" name="code"/>
+            <field eval="'08/2001'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2001"/>
+            <field eval="'2001-08-01'" name="date_start"/>
+            <field eval="'2001-08-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2001_9" model="account.period">
+            <field eval="'09/2001'" name="code"/>
+            <field eval="'09/2001'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2001"/>
+            <field eval="'2001-09-01'" name="date_start"/>
+            <field eval="'2001-09-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2001_10" model="account.period">
+            <field eval="'10/2001'" name="code"/>
+            <field eval="'10/2001'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2001"/>
+            <field eval="'2001-10-01'" name="date_start"/>
+            <field eval="'2001-10-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2001_11" model="account.period">
+            <field eval="'11/2001'" name="code"/>
+            <field eval="'11/2001'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2001"/>
+            <field eval="'2001-11-01'" name="date_start"/>
+            <field eval="'2001-11-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2001_12" model="account.period">
+            <field eval="'12/2001'" name="code"/>
+            <field eval="'12/2001'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2001"/>
+            <field eval="'2001-12-01'" name="date_start"/>
+            <field eval="'2001-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        
+       <record id="period_2002_1" model="account.period">
+            <field eval="'01/2002'" name="code"/>
+            <field eval="'01/2002'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2002"/>
+            <field eval="'2002-01-01'" name="date_start"/>
+            <field eval="'2002-01-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2002_2" model="account.period">
+            <field eval="'02/2002'" name="code"/>
+            <field eval="'02/2002'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2002"/>
+            <field eval="'2002-02-01'" name="date_start"/>
+            <!-- for the last day of February, we have to compute the day before March 1st -->
+            <field eval="'2002-02-28'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2002_3" model="account.period">
+            <field eval="'03/2002'" name="code"/>
+            <field eval="'03/2002'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2002"/>
+            <field eval="'2002-03-01'" name="date_start"/>
+            <field eval="'2002-03-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2002_4" model="account.period">
+            <field eval="'04/2002'" name="code"/>
+            <field eval="'04/2002'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2002"/>
+            <field eval="'2002-04-01'" name="date_start"/>
+            <field eval="'2002-04-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2002_5" model="account.period">
+            <field eval="'05/2002'" name="code"/>
+            <field eval="'05/2002'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2002"/>
+            <field eval="'2002-05-01'" name="date_start"/>
+            <field eval="'2002-05-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2002_6" model="account.period">
+            <field eval="'06/2002'" name="code"/>
+            <field eval="'06/2002'" name="name"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2002"/>
+            <field eval="True" name="special"/>
+            <field eval="'2002-06-01'" name="date_start"/>
+            <field eval="'2002-06-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2002_7" model="account.period">
+            <field eval="'07/2002'" name="code"/>
+            <field eval="'07/2002'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2002"/>
+            <field eval="'2002-07-01'" name="date_start"/>
+            <field eval="'2002-07-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2002_8" model="account.period">
+            <field eval="'08/2002'" name="code"/>
+            <field eval="'08/2002'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2002"/>
+            <field eval="'2002-08-01'" name="date_start"/>
+            <field eval="'2002-08-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2002_9" model="account.period">
+            <field eval="'09/2002'" name="code"/>
+            <field eval="'09/2002'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2002"/>
+            <field eval="'2002-09-01'" name="date_start"/>
+            <field eval="'2002-09-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2002_10" model="account.period">
+            <field eval="'10/2002'" name="code"/>
+            <field eval="'10/2002'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2002"/>
+            <field eval="'2002-10-01'" name="date_start"/>
+            <field eval="'2002-10-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2002_11" model="account.period">
+            <field eval="'11/2002'" name="code"/>
+            <field eval="'11/2002'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2002"/>
+            <field eval="'2002-11-01'" name="date_start"/>
+            <field eval="'2002-11-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2002_12" model="account.period">
+            <field eval="'12/2002'" name="code"/>
+            <field eval="'12/2002'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2002"/>
+            <field eval="'2002-12-01'" name="date_start"/>
+            <field eval="'2002-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+         <record id="period_2003_1" model="account.period">
+            <field eval="'01/2003'" name="code"/>
+            <field eval="'01/2003'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2003"/>
+            <field eval="'2003-01-01'" name="date_start"/>
+            <field eval="'2003-01-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2003_2" model="account.period">
+            <field eval="'02/2003'" name="code"/>
+            <field eval="'02/2003'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2003"/>
+            <field eval="'2003-02-01'" name="date_start"/>
+            <!-- for the last day of February, we have to compute the day before March 1st -->
+            <field eval="'2003-02-28'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2003_3" model="account.period">
+            <field eval="'03/2003'" name="code"/>
+            <field eval="'03/2003'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2003"/>
+            <field eval="'2003-03-01'" name="date_start"/>
+            <field eval="'2003-03-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2003_4" model="account.period">
+            <field eval="'04/2003'" name="code"/>
+            <field eval="'04/2003'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2003"/>
+            <field eval="'2003-04-01'" name="date_start"/>
+            <field eval="'2003-04-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2003_5" model="account.period">
+            <field eval="'05/2003'" name="code"/>
+            <field eval="'05/2003'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2003"/>
+            <field eval="'2003-05-01'" name="date_start"/>
+            <field eval="'2003-05-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2003_6" model="account.period">
+            <field eval="'06/2003'" name="code"/>
+            <field eval="'06/2003'" name="name"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2003"/>
+            <field eval="True" name="special"/>
+            <field eval="'2003-06-01'" name="date_start"/>
+            <field eval="'2003-06-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2003_7" model="account.period">
+            <field eval="'07/2003'" name="code"/>
+            <field eval="'07/2003'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2003"/>
+            <field eval="'2003-07-01'" name="date_start"/>
+            <field eval="'2003-07-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2003_8" model="account.period">
+            <field eval="'08/2003'" name="code"/>
+            <field eval="'08/2003'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2003"/>
+            <field eval="'2003-08-01'" name="date_start"/>
+            <field eval="'2003-08-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2003_9" model="account.period">
+            <field eval="'09/2003'" name="code"/>
+            <field eval="'09/2003'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2003"/>
+            <field eval="'2003-09-01'" name="date_start"/>
+            <field eval="'2003-09-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2003_10" model="account.period">
+            <field eval="'10/2003'" name="code"/>
+            <field eval="'10/2003'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2003"/>
+            <field eval="'2003-10-01'" name="date_start"/>
+            <field eval="'2003-10-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2003_11" model="account.period">
+            <field eval="'11/2003'" name="code"/>
+            <field eval="'11/2003'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2003"/>
+            <field eval="'2003-11-01'" name="date_start"/>
+            <field eval="'2003-11-30'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="period_2003_12" model="account.period">
+            <field eval="'12/2003'" name="code"/>
+            <field eval="'12/2003'" name="name"/>
+            <field eval="True" name="special"/>
+            <field name="fiscalyear_id" ref="data_fiscalyear_2003"/>
+            <field eval="'2003-12-01'" name="date_start"/>
+            <field eval="'2003-12-31'" name="date_stop"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        
+
+       <!--> <record id="base.user_demo" model="res.users">
+            <field name="groups_id" eval="[(4,ref('account.group_account_user'))]"/> 
+        </record> -->
+    </data>
+</openerp>
+

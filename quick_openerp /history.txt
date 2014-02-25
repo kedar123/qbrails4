@@ -1,0 +1,408 @@
+    1  ls
+    2  cd /home/
+    3  ls
+    4  adduser openerp
+    5  sudo nano /etc/sudoers
+    6  ls
+    7  wget http://nightly.openerp.com/7.0/nightly/src/openerp-7.0-latest.tar.gz
+    8  ls
+    9  rm openerp-7.0-latest.tar.gz 
+   10  ls
+   11  wget http://nightly.openerp.com/7.0/nightly/src/openerp-7.0-latest.tar.gz
+   12  rm openerp-7.0-latest.tar.gz 
+   13  ls
+   14  sudo wget http://nightly.openerp.com/7.0/nightly/src/openerp-7.0-latest.tar.gz
+   15  rm openerp-7.0-latest.tar.gz 
+   16  ls
+   17  cd ..
+   18  cd opt/
+   19  ls
+   20  cd openerp-7.0/
+   21  ls
+   22  cd ..
+   23  sudo su postgres
+   24  /opt/openerp-7.0/
+   25  cd /opt/openerp-7.0/
+   26  cd
+   27  ls
+   28  cd /
+   29  ls
+   30  cd home/
+   31  ls
+   32  cd /
+   33  ls
+   34  clear
+   35  cd home/
+   36  ls
+   37  cd /
+   38  cd
+   39  ls
+   40  unzip sale_order_mgmt.zip /opt/openerp-7.0/openerp/addons/
+   41  sudo apt-get install unzip 
+   42  unzip sale_order_mgmt.zip /opt/openerp-7.0/openerp/addons/
+   43  unzip sale_order_mgmt.zip 
+   44  cd sale_order_mgmt/
+   45  ls
+   46  cd ..
+   47  mv sale_order_mgmt /opt/openerp-7.0/openerp/addons/
+   48  cd
+   49  ls
+   50  cd
+   51  cd /opt/openerp-7.0/
+   52  cd openerp/addons/
+   53  cd sale_order_mgmt/
+   54  ls
+   55  cd ../../..
+   56  /etc/init.d/openerp-server restart
+   57  ls
+   58  sudo rm sale_order_mgmt.zip 
+   59  ls
+   60  unzip sale_order_mgmt.zip 
+   61  sudo rm /opt/openerp-7.0/openerp/addons/
+   62  cd /opt/openerp-7.0/openerp/addons/
+   63  sudo rmdir sale_order_mgmt/
+   64  sudo rm -rf sale_order_mgmt/
+   65  ls
+   66  cd sale_order_m
+   67  cd
+   68  cd /
+   69  ls
+   70  cd root/
+   71  ls
+   72  mv sale_order_mgmt /opt/openerp-7.0/openerp/addons/
+   73  cd /opt/openerp-7.0/openerp/addons/
+   74  cd sale_order_mgmt/
+   75  ls
+   76  cd /
+   77  /etc/init.d/openerp-server stop
+   78  /etc/init.d/openerp-server start
+   79  cd /
+   80  ls
+   81  cd root/
+   82  ls
+   83  rm sale_order_mgmt.zip 
+   84  ls
+   85  unzip sale_order_mgmt.zip 
+   86  cd /opt/openerp-7.0/openerp/addons/
+   87  rm -rf sale_order_mgmt/
+   88  cd /../root/
+   89  ls
+   90  mv sale_order_mgmt /opt/openerp-7.0/openerp/addons/
+   91  cd /opt/openerp-7.0/openerp/addons/
+   92  cd sale_order_mgmt/
+   93  ls
+   94  /etc/init.d/openerp-server restart
+   95  /etc/init.d/openerp-server start
+   96  ls
+   97  sudo rm sale_order_mgmt.zip 
+   98  sudo mv /opt/openerp-7.0/openerp/addons/sale_order_mgmt/ /opt/openerp-7.0/openerp/addons/sale_order_mgmt_23july
+   99  /etc/init.d/openerp-server stop
+  100  sudo tar -xvzf sale_order_mgmt.tar.gz 
+  101  sudo mv sale_order_mgmt /opt/openerp-7.0/openerp/addons/
+  102  cd /opt/openerp-7.0/openerp/addons/sale_order_mgmt
+  103  ls
+  104  cd
+  105  /etc/init.d/openerp-server start
+  106  cd /opt/openerp-7.0/
+  107  ./openerp-server -u sale_order_mgmt -d demo
+  108  su openerp
+  109  ls
+  110  pwd
+  111  ls
+  112  mysql 
+  113  who am i
+  114  ls
+  115  cd ..
+  116  ls
+  117  cd home/
+  118  ls
+  119  cd ..
+  120  ls
+  121  cd ..
+  122  ls
+  123  cd root/
+  124  ls
+  125  pwd
+  126  cd ..
+  127  ls
+  128  cd home/
+  129  ls
+  130  cd openerp/
+  131  ls
+  132  cd ..
+  133  ls
+  134  cd ..
+  135  ls
+  136  pwd
+  137  sudo adduser rubyonrails
+  138  sudo /usr/sbin/visudo
+  139  exit
+  140  ls
+  141  ./openerp-server
+  142  sudo ./openerp-server start
+  143  ls
+  144  vi openerp-server 
+  145  ps -aux | grep openerp
+  146  vi /etc/openerp-server.conf
+  147  python /opt/openerp-7.0/openerp-server restart
+  148  sudo  /opt/openerp-7.0/openerp-server restart
+  149  python /opt/openerp-7.0/openerp-server -c /etc/openerp-server.conf
+  150  cd 
+  151  cd /opt/
+  152  ls
+  153  cd openerp-7.0/
+  154  ls
+  155  ./openerp-server restart
+  156  vi /opt/openerp-7.0/openerp/addons/quick_openerp /quick_openerp.py
+  157  sudo vi /opt/openerp-7.0/openerp/addons/quick_openerp /quick_openerp.py
+  158  vi /opt/openerp-7.0/openerp/addons/quick_openerp\ /__init__.py
+  159  vi /opt/openerp-7.0/openerp/addons/quick_openerp\ /quick_openerp.py
+  160  ./openerp-server restart
+  161  vi /opt/openerp-7.0/openerp/addons/quick_openerp\ /quick_openerp.py
+  162  ./openerp-server restart
+  163  vi /opt/openerp-7.0/openerp/addons/quick_openerp\ /quick_openerp.py
+  164  ./openerp-server restart
+  165  vi /opt/openerp-7.0/openerp/addons/quick_openerp\ /quick_openerp.py
+  166  ./openerp-server restart
+  167  ls
+  168  ./openerp-server restart
+  169  ls
+  170  ./openerp-server stop
+  171  cd openerp
+  172  ls
+  173  cd addons/
+  174  ls
+  175  rm -rf quick_openerp\ /
+  176  ls
+  177  cd 
+  178  ls
+  179  cd ..
+  180  ls
+  181  cd /home/
+  182  ls
+  183  cd openerp/
+  184  ls
+  185  cd ..
+  186  cd rubyonrails/
+  187  ls
+  188  cp -r  quick_openerp\ / /opt/openerp-7.0/openerp/addons/
+  189  cd /opt/openerp-7.0/
+  190  ls
+  191  cd openerp/addons/
+  192  ls
+  193  cd ..
+  194  ls
+  195  cd ..
+  196  ls
+  197  ./openerp-server 
+  198  sudo ./openerp-server 
+  199  su openerp7
+  200  su rubyonrails
+  201  pwd
+  202  ls
+  203  cd 
+  204  ls
+  205  pwd
+  206  cd /opt/
+  207  ls
+  208  cd 
+  209  locate hba.conf
+  210  vi /etc/postgresql/9.1/main/pg_hba.conf 
+  211  sudo /etc/init.d/postgresql restart
+  212  vi /etc/postgresql/9.1/main/pg_hba.conf 
+  213  sudo /etc/init.d/postgresql restart
+  214  vi /etc/postgresql/9.1/main/pg_hba.conf 
+  215  sudo /etc/init.d/postgresql restart
+  216  pwd
+  217  ls
+  218  pwd
+  219  ls
+  220  cd ..
+  221  ls
+  222  cd home/
+  223  ls
+  224  cd 
+  225  pwd
+  226  history | grep pg
+  227  vi /etc/postgresql/9.1/main/pg_hba.conf
+  228  sudo /etc/init.d/postgresql restart
+  229  irb
+  230  ls
+  231  cd /opt/openerp-7.0/
+  232  ls
+  233  cd openerp
+  234  ls
+  235  cd addons/
+  236  ls
+  237  ping 122.169.92.176
+  238  ls
+  239  pwd
+  240  ls
+  241  cd ..
+  242  ls
+  243  cd home/
+  244  ls
+  245  cd rubyonrails/
+  246  ls
+  247  cd quick_openerp\ /
+  248  ls
+  249  cd ..
+  250  ls
+  251  cd qb/
+  252  ls
+  253  cd qbopenerpintegration/
+  254  ls
+  255  git status
+  256  ls
+  257  bundle exec rake log:clear
+  258  rvm list
+  259  ruby -v
+  260  ls
+  261  ls -al
+  262  git status
+  263  ls
+  264  git status
+  265  ls
+  266  vi alllog.rb 
+  267  cd script/
+  268  ls
+  269  cd ..
+  270  ls
+  271  vi unicorn.sock 
+  272  vi unicorn.pid 
+  273  locate nginx
+  274  cd 
+  275  cd /etc/
+  276  ls
+  277  cd nginx/
+  278  ls
+  279  vi nginx.conf 
+  280  ls
+  281  cd sites-available/
+  282  ls
+  283  vi quickbook.com 
+  284  cd ..
+  285  ls
+  286  cd sites-enabled/
+  287  ls
+  288  vi quickbook.com 
+  289  cd ..
+  290  ls
+  291  cd 
+  292  locate unicorn
+  293  vi /home/rubyonrails/qb/qbopenerpintegration/config/unicorn.rb
+  294  pwd
+  295  cd 
+  296  cd /home/rubyonrails/
+  297  ls
+  298  cd qb/
+  299  ls
+  300  cd qbopenerpintegration/
+  301  ls
+  302  gedit .
+  303  ls
+  304  cd config/
+  305  ls
+  306  vi unicorn.rb 
+  307  cd 
+  308  cd /home/rubyonrails/qb/qbopenerpintegration/
+  309  ls
+  310  vi Gemfile
+  311  ls
+  312  cd /etc/
+  313  ls
+  314  cd nginx/
+  315  ls
+  316  vi nginx.conf 
+  317  ls
+  318  cd sites-enabled/
+  319  ls
+  320  vi quickbook.com 
+  321  ls
+  322  cd ..
+  323  ls
+  324  cd conf.d/
+  325  ls
+  326  cd ..
+  327  ls
+  328  vi nginx.conf 
+  329  cd 
+  330  cd /home/rubyonrails/qb/
+  331  ls
+  332  cd qbopenerpintegration/
+  333  ls
+  334  cd public/
+  335  ls
+  336  ls -al
+  337  ls
+  338  ls a-l
+  339  ls -al
+  340  ruby -v
+  341  cd 
+  342  pwd
+  343  cd /home/rubyonrails/qb/
+  344  ls
+  345  cd qbopenerpintegration/
+  346  ls
+  347  cd config/
+  348  ls
+  349  vi unicorn.rb 
+  350  cd initializers/
+  351  ls
+  352  cd ..
+  353  ls
+  354  vi environment.rb 
+  355  cd environments/
+  356  ls
+  357  vi production.rb 
+  358  ls
+  359  cd ..
+  360  ls
+  361  vi application.rb 
+  362  cd ..
+  363  ls
+  364  vi Gemfile
+  365  cd script/
+  366  ls
+  367  vi rails 
+  368  cd ..
+  369  ls
+  370  pwd
+  371  ls
+  372  ruby -v
+  373  gem list
+  374  ruby -v
+  375  ls
+  376  ruby -v
+  377  ls
+  378  pwd
+  379  ls
+  380  cd ..
+  381  ls
+  382  cd /home/
+  383  ls
+  384  cd rubyonrails/
+  385  ls
+  386  cd qb
+  387  ls
+  388  cd qbopenerpintegration/
+  389  ls
+  390  git status
+  391  ls
+  392  git status
+  393  ls
+  394  cd ..
+  395  ls
+  396  cp qbopenerpintegration/config/database.yml .
+  397  ls
+  398  cd qbopenerpintegration/
+  399  ls
+  400  git pull
+  401  git 
+  402  git pull
+  403  git stash save
+  404  git pull
+  405  rm qst.sh 
+  406  git pull
+  407  ls
+  408  history > history.txt

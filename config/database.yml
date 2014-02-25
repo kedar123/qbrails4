@@ -1,5 +1,5 @@
 # MySQL.  Versions 4.1 and 5.0 are recommended.
-#
+# 
 # Install the MYSQL driver
 #   gem install mysql2
 #
@@ -11,35 +11,59 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: quickbook42_development
+  reconnect: false
+  #database: dbtest
+  #database: mysqlquickbook
+  database: mysqlquickbook
+  host: localhost
+  #host: my.pragmaticdemos.info
+  port: 3306
   pool: 5
-  username: root
-  password: '123456'
-  # JRuby doesn't support socket:
-  host: 127.0.0.1
-  #socket: /var/run/mysqld/mysqld.sock
+  username: rubyonrails
+  password: IIEinstein
+  ## JRuby doesn't support # JRuby doesn't support socket:
+                           #socket:
+   ## JRuby doesn't support socket:
+    #socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
+
+
+#cucumber:
+#  <<: *test
+
 test:
   adapter: mysql2
   encoding: utf8
-  database: quickbook42_test
+  reconnect: false
+  #database: dbtest
+  #database: mysqlquickbook
+  database: mysqlquickbooktest
+  host: localhost
+  #host: my.pragmaticdemos.info
+  port: 3306
   pool: 5
-  username: root
-  password: '123456'
-  # JRuby doesn't support socket:
-  host: 127.0.0.1
-  #socket: /var/run/mysqld/mysqld.sock
+  username: rubyonrails
+  password: IIEinstein
+
 
 production:
   adapter: mysql2
   encoding: utf8
-  database: quickbook42_production
+  reconnect: false
+  #database: dbtest
+
+  #database: mysqlquickbook
+
+
+  database: mysqlquickbook
+
+  host: localhost
+  #host: my.pragmaticdemos.info
+  port: 3306
   pool: 5
-  username: root
-  password: '123456'
-  # JRuby doesn't support socket:
-  host: 127.0.0.1
-  #socket: /var/run/mysqld/mysqld.sock
+  username: rubyonrails
+  password: IIEinstein
+
