@@ -11,7 +11,10 @@ class RegistrationsController < Devise::RegistrationsController
     
     #there are some issues with rails 4 devise that is why i have creaated this new model. 
   
-    if resource
+    if resource and resource.valid?
+     #in create if an email already taken error occures then this if should not get execured. that is why resource.valid?
+     #is get added here.
+     
     usd = Useraddress.new
     usd.user_id = resource.id
     usd.country = params[:country]

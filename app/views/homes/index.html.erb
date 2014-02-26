@@ -185,14 +185,14 @@ named as payment_status boolean . after a payment is complete make this field tr
                 <h4>Second Step</h4>
                 <section>
                   <div style="float:left;width:15%;margin-right:2%;border-right: 1px dotted #cccccc;height: 88%;">
-                    <strong>Download</strong>
+                    <strong>1) Download</strong>
                     <br/>
                     <%= link_to "Access Book",imports_download_accessbook_path,:id=>"migration_button_link_here"%> 
                     <br/>
 			<%= link_to "More Info","http://synergration.com/software/accessbooks-realtime/",:id=>"migration_button_link_here"%>
                   </div>
                   <div style="line-height:155%;float:left;width:50%;margin-right:2%;border-right: 1px dotted #cccccc;height: 88%;">
-                    <strong>Installation And Configuration And Data Migration</strong>
+                    <strong>2) Installation And Configuration And Data Migration</strong>
                     <br/>
                     <%= link_to "Installation Manual",imports_download_manual_path,:id=>"migration_button_link_here"%> 
                     <br/>
@@ -208,7 +208,7 @@ named as payment_status boolean . after a payment is complete make this field tr
                       <br/>
                   </div>
                   <div style="width:20%;float:left;margin-right:2%">
-                    <strong>Validation</strong>
+                    <strong>3) Validation</strong>
                     <br/>
                      
                       Make sure by clicking this <%= link_to "link","#",:id=>"migration_button_link_here",:onclick=>"return send_ajax_req();"%>   that data import was successfully done or not.
