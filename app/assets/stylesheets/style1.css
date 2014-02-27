@@ -375,6 +375,9 @@ a:hover {
     font-weight: bold;
     margin-bottom: -1px;
     text-align: center;
+    margin-left: 29px;
+    text-align: center;
+    width: 88%;
 }
 
 
@@ -824,7 +827,7 @@ color: #414848;
     font-family: Arial,Helvetica,sans-serif;
     font-size: 13px;
     line-height: 24px;
-    margin-top: 6px;
+    margin-top: 14px;
     margin-right: 10px;
 
     min-width: 57px;
