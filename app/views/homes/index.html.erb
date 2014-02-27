@@ -141,7 +141,7 @@ named as payment_status boolean . after a payment is complete make this field tr
 <%#payment is done%>                            
  
  <%if ((current_user.database.blank? and current_user.user_payment_choice == "free") or (current_user.payment_status == true and current_user.database.blank?)) %>
-                   <span id="progress" style="display: block;float: left;margin-top: -27px;padding-left: 221px;position: absolute;">
+                   <span id="progress" style="display: none;float: left;margin-top: -27px;padding-left: 221px;position: absolute;">
                        <%=image_tag "Progress.gif"%></span>
                      <table style="width:100%">
                        <tr><td valign="middle">
@@ -163,7 +163,7 @@ named as payment_status boolean . after a payment is complete make this field tr
    a link should appear%>
     
  <%elsif !current_user.coupenassigned.blank? and current_user.database.blank?%> 
- 	<span id="progress" style="display: block;float: left;margin-top: -27px;padding-left: 221px;position: absolute;">
+ 	<span id="progress" style="display: none;float: left;margin-top: -27px;padding-left: 221px;position: absolute;">
                               <%=image_tag "Progress.gif"%></span>
 
   <p class="firstclick" style="font-size: 14px;line-height:2px;"> <strong>     Click</strong></p>
