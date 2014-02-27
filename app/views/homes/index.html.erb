@@ -141,6 +141,8 @@ named as payment_status boolean . after a payment is complete make this field tr
 <%#payment is done%>                            
  
  <%if ((current_user.database.blank? and current_user.user_payment_choice == "free") or (current_user.payment_status == true and current_user.database.blank?)) %>
+                   <span id="progress" style="padding-left:13px;display:none">
+                              <%=image_tag "Progress.gif"%></span>
                      <table style="width:100%">
                        <tr><td valign="middle">
                        <p class="firstclick" style="font-size: 14px;line-height:2px;"> <strong>   Click </strong></p>                          
@@ -152,17 +154,19 @@ named as payment_status boolean . after a payment is complete make this field tr
    
    </p>
    </td></tr>
-                     <tr><td>
-                         <span id="progress" style="padding-left:13px;display:none">
-                              <%=image_tag "Progress.gif"%></span>
-                       </td></tr>
+             
                      </table>
+	
    
+
    <%#one more condition i need to add is for a coupen based if a valid coupen is there and a database is blank then also 
    a link should appear%>
     
  <%elsif !current_user.coupenassigned.blank? and current_user.database.blank?%> 
- <p class="firstclick" style="font-size: 14px;line-height:2px;"> <strong>     Click</strong></p>
+ 	<span id="progress" style="padding-left:13px;display:none">
+                              <%=image_tag "Progress.gif"%></span>
+
+  <p class="firstclick" style="font-size: 14px;line-height:2px;"> <strong>     Click</strong></p>
   <%=button_to " Here " ,url_for(:action => 'create', :controller => 'databases',:id=>current_user.user_payment_choice),:form_class=>"form_class",:id=>"migration_button"%>
     <p style="font-size: 14px;line-height:2px;">   <strong>
    To Create A Database Schema  
