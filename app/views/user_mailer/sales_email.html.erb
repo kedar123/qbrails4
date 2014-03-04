@@ -1,26 +1,91 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  </head>
-  <body>
+ 
+ 
+ 
     <h1>The New User Registered And Following Are The Details Of This New User </h1>
     <p>
-       user first name is: <%= @user.useraddress.first_name %>.<br/>
-       user middle name is: <%= @user.useraddress.middle_name %>.<br/>
-       user last name is: <%= @user.useraddress.last_name %>.<br/>
-       user country is: <%= @user.useraddress.country %>.<br/>
-       user state is: <%= @user.useraddress.state %>.<br/>
-       user zipcode is: <%= @user.useraddress.zip_code %>.<br/>
-       user mobile is: <%= @user.useraddress.mobile %>.<br/>
-       user phone is: <%= @user.useraddress.phone %>.<br/>
-       user address is: <%= @user.useraddress.address %>.<br/>
+      <table style="font-family: verdana,arial,sans-serif;font-size:11px;color:#333333;	border-width: 1px;border-color: #666666;border-collapse: collapse;background-color: #d3feda;width:500px;">
+        <tr>
+          <td style="border-width: 1px;	padding: 8px;	border-style: solid;	border-color: #666666;	background-color: #ffffff;">
+          <%=image_tag "client.png"%> &nbsp;&nbsp; Client
+            </td>
+            
+           <td style="border-width: 1px;	padding: 8px;	border-style: solid;	border-color: #666666;	background-color: #ffffff;">
+
+ <%= @user.useraddress.first_name %> &nbsp;&nbsp; <%= @user.useraddress.middle_name %> 
+            &nbsp;&nbsp;<%= @user.useraddress.last_name %>
+       </td>
+       </tr>
+       <tr>
+                    <td style="border-width: 1px;	padding: 8px;	border-style: solid;	border-color: #666666;	background-color: #ffffff;">
+<%=image_tag "company.png"%> &nbsp;&nbsp;
+            Company
+            </td>
+            
+           <td style="border-width: 1px;	padding: 8px;	border-style: solid;	border-color: #666666;	background-color: #ffffff;">
+
+ <%= @user.useraddress.company %> 
+       </td>
+       </tr>
+       <tr>
+                    <td style="border-width: 1px;	padding: 8px;	border-style: solid;	border-color: #666666;	background-color: #ffffff;">
+<%=image_tag "title.png"%> &nbsp;&nbsp;
+            Title
+            </td>
+            
+           <td style="border-width: 1px;	padding: 8px;	border-style: solid;	border-color: #666666;	background-color: #ffffff;">
+
+ <%= @user.useraddress.title %> 
+       </td>
+       </tr>
+       <tr>
+                    <td style="border-width: 1px;	padding: 8px;	border-style: solid;	border-color: #666666;	background-color: #ffffff;">
+<%=image_tag "phone.png"%> &nbsp;&nbsp;
+            Phone
+            </td>
+            
+           <td style="border-width: 1px;	padding: 8px;	border-style: solid;	border-color: #666666;	background-color: #ffffff;">
+
+ <%= @user.useraddress.phone %>
+       </td>
+       </tr>
+       <tr>
+                    <td style="border-width: 1px;	padding: 8px;	border-style: solid;	border-color: #666666;	background-color: #ffffff;">
+<%=image_tag "email.png"%> &nbsp;&nbsp;
+            Email
+            </td>
+            
+           <td style="border-width: 1px;	padding: 8px;	border-style: solid;	border-color: #666666;	background-color: #ffffff;">
+
+ <%= @user.email %>
+       </td>
+       </tr>
+       
+       <tr>
+                    <td style="border-width: 1px;	padding: 8px;	border-style: solid;	border-color: #666666;	background-color: #ffffff;">
+<%=image_tag "country.png"%> &nbsp;&nbsp;
+              Country
+            </td>
+            
+           <td style="border-width: 1px;	padding: 8px;	border-style: solid;	border-color: #666666;	background-color: #ffffff;">
+
+ <%= @user.useraddress.country %> 
+       </td>
+       </tr>
+       <tr>
+                    <td style="border-width: 1px;	padding: 8px;	border-style: solid;	border-color: #666666;	background-color: #ffffff;">
+<%=image_tag "ipaddress.png"%> &nbsp;&nbsp;
+              Ip Address
+            </td>
+            
+           <td style="border-width: 1px;	padding: 8px;	border-style: solid;	border-color: #666666;	background-color: #ffffff;">
+
+ 
+ <%= @user.useraddress.ip_address %> 
+       </td>
+       </tr>
+       </table> 
+        
     </p>
     
-    <p>
-      For login to site,just follow link :  <%= @url %>.
-    </p>
-    <p>Thanks for joining and have a great day !!!!!</p>
-  </body>
-</html>
+ 
  
