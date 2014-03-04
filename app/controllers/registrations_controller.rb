@@ -5,6 +5,8 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def create
+     
+     
     # add custom create logic here
     super
     #but need to send an email
@@ -14,18 +16,16 @@ class RegistrationsController < Devise::RegistrationsController
     if resource and resource.valid?
      #in create if an email already taken error occures then this if should not get execured. that is why resource.valid?
      #is get added here.
-     
     usd = Useraddress.new
-    usd.user_id = resource.id
-    usd.country = params[:country]
-    usd.state = params[:state]
-    usd.zip_code = params[:zip_code]
-    usd.mobile = params[:mobile]
-    usd.phone = params[:phone]
-    usd.address = params[:address]
     usd.first_name = params[:first_name]
-    usd.middle_name = params[:middle_name]
     usd.last_name = params[:last_name]
+    usd.company = params[:company]
+    usd.title = params[:title]
+    usd.phone = params[:phone]
+    usd.country = params[:country]
+    usd.ip_address =  request.remote_addr
+    usd.user_id =  resource.id
+    
     usd.save
     else
     end
@@ -49,8 +49,7 @@ class RegistrationsController < Devise::RegistrationsController
     begin
     if params[:email]
        @user = User.find_by_email(params[:email])
-       p @user.methods
-    @user.send_reconfirmation_instructions
+       @user.send_reconfirmation_instructions
         
         
        flash[:notice] = "Confirmation Instruction Has Been Sent To Your Email Address"
