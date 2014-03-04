@@ -11,7 +11,7 @@ class UserMailer < ActionMailer::Base
    def sales_email(user)
      @user = user
      @url  = 'http://openerp-data-migration.com'
-     mail(to: 'openerp.datamigration@pragtech.co.in'  , subject: 'New User Registered To QuickBook Site')
+     mail(to: 'sales@pragtech.co.in'  , subject: 'New User Registered To QuickBook Site')
    end
    
   
@@ -22,7 +22,7 @@ class UserMailer < ActionMailer::Base
    end 
    
    def feedback_sent(paramssubject,paramsbody,paramsemail)
-    @user = User.find_by_email("openerp.datamigration@pragtech.co.in")
+    @user = User.find_by_email("sales@pragtech.co.in")
     @url  = 'http://openerp-data-migration.com'
     @paramssubject = paramssubject
     @paramsbody = paramsbody
