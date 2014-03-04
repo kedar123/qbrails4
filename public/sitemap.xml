@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://www.openerp-data-migration.com/</loc>
+</url>
+<url>
+  <loc>http://www.openerp-data-migration.com/users/sign_up</loc>
+</url>
+<url>
+  <loc>http://www.openerp-data-migration.com/users/sign_in</loc>
+</url>
+<url>
+  <loc>http://www.openerp-data-migration.com/feedbacks/aboutus</loc>
+</url>
+<url>
+  <loc>http://www.openerp-data-migration.com/terms</loc>
+</url>
+<url>
+  <loc>http://www.openerp-data-migration.com/feedbacks/contactus</loc>
+</url>
+<url>
+  <loc>http://www.openerp-data-migration.com/helps</loc>
+</url>
+<url>
+  <loc>http://www.openerp-data-migration.com/terms/features</loc>
+</url>
+<url>
+  <loc>http://www.openerp-data-migration.com/users/password/new</loc>
+</url>
+<url>
+  <loc>http://www.openerp-data-migration.com/resend_confirmation_email</loc>
+</url>
+<url>
+  <loc>http://www.openerp-data-migration.com/terms/legal</loc>
+</url>
+</urlset>
