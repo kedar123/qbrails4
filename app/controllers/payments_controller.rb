@@ -163,13 +163,13 @@ class PaymentsController < ApplicationController
   
 private
 
-#  def gateway
-#        @gateway ||= PaypalExpressGateway.new(
-#           :login => 'kedar.pathak-facilitator_api1.pragtech.co.in',
-#          :password => '1364994877',
-#          :signature => 'ACLa8jsQN8TPFLDY57dLNb5-3qq.AgN5u20e33t3nrXP3uDzoZTGNERk'
-#        )
-#  end
+  def gateway
+        @gateway ||= PaypalExpressGateway.new(
+           :login => 'kedar.pathak-facilitator_api1.pragtech.co.in',
+          :password => '1364994877',
+          :signature => 'ACLa8jsQN8TPFLDY57dLNb5-3qq.AgN5u20e33t3nrXP3uDzoZTGNERk'
+        )
+  end
 
  # def gateway
  #       @gateway ||= PaypalExpressGateway.new(
@@ -178,13 +178,13 @@ private
  #         :signature => 'ACLa8jsQN8TPFLDY57dLNb5-3qq.AgN5u20e33t3nrXP3uDzoZTGNERk'
  #       )
  # end
-   def gateway
-        @gateway ||= PaypalExpressGateway.new(
-           :login => 'paypal_api1.pragtech.co.in',
-          :password => 'V996T2LW3QBLPZFB',
-          :signature => 'AFcWxV21C7fd0v3bYYYRCpSSRl31ATdQOOCe1m3eBpjpnp7dZ6rE22q5'
-        )
-  end
+ #def gateway
+ #       @gateway ||= PaypalExpressGateway.new(
+ #          :login => 'paypal_api1.pragtech.co.in',
+ #         :password => 'V996T2LW3QBLPZFB',
+ #         :signature => 'AFcWxV21C7fd0v3bYYYRCpSSRl31ATdQOOCe1m3eBpjpnp7dZ6rE22q5'
+ #       )
+ # end
   
  # def gateway
  #       @gateway ||= PaypalExpressGateway.new(

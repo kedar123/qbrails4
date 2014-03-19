@@ -71,6 +71,8 @@ class HomesController < ApplicationController
         logger.info "the error messageggegegege"
         logger.info e.inspect
         Database.connection.execute("use mysqlquickbook")
+      ensure
+        Database.connection.execute("use mysqlquickbook")
        end
     #if its come out from begin rescue then i need to send a response as complete
       Database.connection.execute("use mysqlquickbook")

@@ -143,6 +143,11 @@ class Import < ActiveRecord::Base
       logger.info "connectinggggg to oct_4" 
       Database.connection.execute("use mysqlquickbook")
       @error = true
+      
+      ensure
+        Database.connection.execute("use mysqlquickbook")
+        
+      
     end
     logger.info "connectinggggg to oct_4" 
     #if there is no error in begin rescue above then i should send an email otherwise database status is also need 
@@ -606,6 +611,10 @@ class Import < ActiveRecord::Base
       logger.info "connectinggggg to oct_4" 
       Database.connection.execute("use mysqlquickbook")
       @error = true
+      ensure
+        Database.connection.execute("use mysqlquickbook")
+       
+      
     end
     logger.info "connectinggggg to oct_4" 
     Database.connection.execute("use mysqlquickbook")
@@ -684,6 +693,11 @@ class Import < ActiveRecord::Base
       logger.info "connectinggggg to oct_4" 
       Database.connection.execute("use mysqlquickbook")
       @error = true
+      ensure
+        Database.connection.execute("use mysqlquickbook")
+       
+      
+      
     end
     logger.info "connectinggggg to oct_4" 
     Database.connection.execute("use mysqlquickbook")

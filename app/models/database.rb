@@ -3493,6 +3493,8 @@ CREATE TABLE earningsdetail (
       logger.info e.inspect
       logger.info "schema creation error"
       Database.connection.execute("use mysqlquickbook")
+      ensure
+        Database.connection.execute("use mysqlquickbook")
     end
     
     
