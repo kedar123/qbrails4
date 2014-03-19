@@ -57,9 +57,9 @@ class HomesController < ApplicationController
         return "incomplete"
        end
        if Employee.count == 0
-         return "incomplete"
-        Database.connection.execute("use mysqlquickbook")
          
+        Database.connection.execute("use mysqlquickbook")
+         return "incomplete"
        end
        #for products i am assuming that at least 5 products are there.
       if((Itemsalestax.count + Itemsalestaxgroup.count + Itemservice.count + Itemdiscount.count + Itemfixedasset.count + Itemgroup.count + Iteminventory.count + Itemnoninventory.count + Iteminventoryassembly.count + Iteminventoryassembly.count + Itemothercharge.count + Itempayment.count + Itemsubtotal.count ) < 6    )
