@@ -47,7 +47,9 @@
 <%logger.info e.inspect%>
 
 <%Database.connection.execute("use mysqlquickbook")%> 
-
+<%ensure%>
+<%Database.connection.execute("use mysqlquickbook")%> 
+  
 <%end%>
 </div>
 
