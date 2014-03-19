@@ -4,7 +4,8 @@ class Database < ActiveRecord::Base
   
   
   def self.create_default_schema(database)
-    
+    #here for sefty i need to add begin rescue so that if error occures then it should connect to original database
+    begin
     Database.connection.execute("create database #{database.name}")
     Database.connection.execute("use #{database.name}")
      Database.connection.execute(" DROP TABLE IF EXISTS account ")
@@ -3488,7 +3489,11 @@ CREATE TABLE earningsdetail (
     Database.connection.execute("use mysqlquickbook")
     #Database.connection.execute("use qbtooper_development_mysql")
  
-    
+    rescue => e
+      logger.info e.inspect
+      logger.info "schema creation error"
+      Database.connection.execute("use mysqlquickbook")
+    end
     
     
     
