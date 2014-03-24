@@ -674,7 +674,12 @@ class Import < ActiveRecord::Base
  	    Vendor.call_vendor_save(vendr,current_user)
 	    employee = Employee.find(:all,:limit=>10)
       Employee.import_employee(employee,current_user)
-
+      # if i delete all the data here then . 
+      
+      
+      
+      
+      
    	  Database.connection.execute("use mysqlquickbook")
  
  

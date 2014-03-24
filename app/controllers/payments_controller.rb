@@ -3,11 +3,12 @@ class PaymentsController < ApplicationController
   include ActiveMerchant::Billing
   before_filter :authenticate_user! 
   def index
-    
+     
     current_user.user_payment_choice = params[:id]
     current_user.save
-    
+ 
     if current_user.user_payment_choice == "free"
+       
       redirect_to root_path ,:notice=>"Please Create Database"
     end 
     
@@ -165,7 +166,7 @@ private
 
   def gateway
         @gateway ||= PaypalExpressGateway.new(
-           :login => 'kedar.pathak-facilitator_api1.pragtech.co.in',
+          :login => 'kedar.pathak-facilitator_api1.pragtech.co.in',
           :password => '1364994877',
           :signature => 'ACLa8jsQN8TPFLDY57dLNb5-3qq.AgN5u20e33t3nrXP3uDzoZTGNERk'
         )
