@@ -40,7 +40,7 @@
 
           <%end%>
           
-          <%if current_user.email == 'sales@pragtech.co.in'%>
+          <%if user_signed_in? and current_user.email == 'sales@pragtech.co.in'%>
               <%#actually here i need to put a link where an sales person can go to coupens link %>
               
                <a href="/coupens"   class="newbtn_orange"> Coupen</a> 
