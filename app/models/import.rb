@@ -1,5 +1,7 @@
 class Import < ActiveRecord::Base
   
+ 
+  
   #this is just a test method
   def export_testupdate_migration(current_user)
     @error = false
@@ -124,6 +126,28 @@ class Import < ActiveRecord::Base
  
       itemsubtotal = Itemsubtotal.find(:all)#Itemsubtotal.all
       Itemsubtotal.export_itemsubtotal(itemsubtotal,current_user) 
+      #after an import is done need to delete all the tables data as its not required
+      #and if user wanted to migrate an another quickbook file then he can so there is no conflict while importing an
+      #another database file.as for testing he can do it. so problem here is suppose he imports one file
+      #and immedietly imports an another file then there is conflict.but this will not happen as assumes.
+      #
+      Company.delete_all
+      Account.delete_all
+      Customer.delete_all
+      Vendor.delete_all
+      Employee.delete_all
+      Itemsalestax.delete_all
+      Itemsalestaxgroup.delete_all
+      Itemservice.delete_all
+      Itemdiscount.delete_all
+      Itemfixedasset.delete_all
+      Itemgroup.delete_all
+      Iteminventory.delete_all
+      Itemnoninventory.delete_all
+      Iteminventoryassembly.delete_all
+      Itemothercharge.delete_all
+      Itempayment.delete_all
+      Itemsubtotal.delete_all
       
        
       logger.info "sales receipt is done"
@@ -589,7 +613,29 @@ class Import < ActiveRecord::Base
                    
       end
         
-        
+      #after an import is done need to delete an all tables data as next time when user loges in 
+      #he need to import all the data again into mysql and he can not go to next step.
+      Company.delete_all
+      Account.delete_all
+      Customer.delete_all
+      Vendor.delete_all
+      Employee.delete_all
+      Itemsalestax.delete_all
+      Itemsalestaxgroup.delete_all
+      Itemservice.delete_all
+      Itemdiscount.delete_all
+      Itemfixedasset.delete_all
+      Itemgroup.delete_all
+      Iteminventory.delete_all
+      Itemnoninventory.delete_all
+      Iteminventoryassembly.delete_all
+      Itemothercharge.delete_all
+      Itempayment.delete_all
+      Itemsubtotal.delete_all
+      
+      
+      
+      
       Database.connection.execute("use mysqlquickbook")
       #this line is because in the above else there i did not written an connection back to original
       #database . and after this i am sending an email to user.
@@ -674,11 +720,26 @@ class Import < ActiveRecord::Base
  	    Vendor.call_vendor_save(vendr,current_user)
 	    employee = Employee.find(:all,:limit=>10)
       Employee.import_employee(employee,current_user)
-      # if i delete all the data here then . 
+      # from here i am going to delete all the data after a migration is done.so an user can not do the next step
+      # when he loges in second time. 
       
-      
-      
-      
+      Company.delete_all
+      Account.delete_all
+      Customer.delete_all
+      Vendor.delete_all
+      Employee.delete_all
+      Itemsalestax.delete_all
+      Itemsalestaxgroup.delete_all
+      Itemservice.delete_all
+      Itemdiscount.delete_all
+      Itemfixedasset.delete_all
+      Itemgroup.delete_all
+      Iteminventory.delete_all
+      Itemnoninventory.delete_all
+      Iteminventoryassembly.delete_all
+      Itemothercharge.delete_all
+      Itempayment.delete_all
+      Itemsubtotal.delete_all
       
    	  Database.connection.execute("use mysqlquickbook")
  

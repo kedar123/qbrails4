@@ -31,7 +31,7 @@
            <%=image_tag "serch_bar.png"%>
       </a>
          <div style="color:#FF0000;margin-left: 18px;">
-      <% if user_signed_in?%>
+          <% if user_signed_in?%>
               <span style="float:right;margin-right:55px;font-size: 10pt;margin-top: 00px;">
                 <a href="/users/sign_out" class="newbtn_orange"> Logout</a></span>
           <%else%>
@@ -39,6 +39,18 @@
              <span style="float:right;margin-right:10px;font-size: 10pt;margin-top: 00px;"><a href="/users/sign_in"   class="newbtn_orange"> Login</a></span>
 
           <%end%>
+          
+          <%if current_user.email == 'sales@pragtech.co.in'%>
+              <%#actually here i need to put a link where an sales person can go to coupens link %>
+              
+               <a href="/coupens"   class="newbtn_orange"> Coupen</a> 
+             
+               <a href="/reports"   class="newbtn_orange"> Report</a> 
+               
+               
+  
+          <%end%>
+             
         </div>
    </div>
    <div class="navibar">

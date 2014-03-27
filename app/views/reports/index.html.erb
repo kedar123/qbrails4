@@ -1,0 +1,99 @@
+<%#i am overriding the stylesheet here as my reports width might be long%>
+<style>
+  
+  
+    #contaner {
+    overflow: visible;
+    width: 100%;
+    margin-left: 0px;
+}
+     
+  table {
+  width: 100%;
+  border: 1px solid #000;
+}
+
+th, td {
+  width: 25%;
+  text-align: left; 
+  vertical-align: top; 
+  border: 1px solid #000;
+  border-collapse: collapse;
+  padding: 0.3em;
+  caption-side: bottom; 
+}
+
+caption {
+  padding: 0.3em;
+  color: #fff;
+  background: #000;
+}
+
+th {
+  background: #eee;
+}
+.odd th, .odd td {
+  background: #eee; 
+}
+#main2 {
+    height: auto;
+    margin: 0 auto;
+    overflow: scroll;
+    width: 100%;
+}
+  </style>
+
+
+<h1>Listing reports</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Migration Type</th>
+      <th>User Payment Choice</th>
+      <th>Payment Status</th>
+      <th>Coupen Assigned</th>
+      <th>Company</th>
+      <th>Title</th>
+      <th>Ip Address</th>
+      <th>Phone</th>
+      <th>Country</th>
+      
+      
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <%@allcrjb.each do |crjb|%>
+       <%dclass="even"%>
+    <%p crjb.to_key[0]%>
+    
+        <%dclass = "odd" if crjb.to_key[0] % 2 == 0%>
+    <tr class="<%=dclass%>">
+     <td><%=crjb.user.useraddress.first_name%></td>
+     <td><%=crjb.user.useraddress.last_name%></td>
+     <td><%=crjb.user.email%></td>
+     <td><%=crjb.migration_type%></td> 
+     <td><%=crjb.user.user_payment_choice%></td>
+     <td><%=crjb.user.payment_status%></td>
+     <td><%=crjb.user.coupenassigned%></td>
+      
+     <td><%=crjb.user.useraddress.company%></td>
+     <td><%=crjb.user.useraddress.title%></td>
+     <td><%=crjb.user.useraddress.ip_address%></td>
+     <td><%=crjb.user.useraddress.phone%></td>
+     <td><%=crjb.user.useraddress.country%></td>
+      
+    </tr>           
+      <%end%>
+    
+  </tbody>
+</table>
+
+ 
+ 

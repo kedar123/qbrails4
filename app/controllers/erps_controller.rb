@@ -101,10 +101,16 @@ class ErpsController < ApplicationController
             import.save
            if current_user.user_payment_choice == "free" 
               import.delay.export_free_migration(current_user)
+              del=import.delay.inspect
+              CreateJobs.create(:user_id=>current_user.id,:delayed_job_id=>del.id,:migration_type=>"free")
            elsif current_user.user_payment_choice == "standard" 
              import.delay.export_standard_migration(current_user)
+             del=import.delay.inspect
+             CreateJobs.create(:user_id=>current_user.id,:delayed_job_id=>del.id,:migration_type=>"standard")
            elsif current_user.user_payment_choice == "premium"
              import.delay.export_premium_migration(current_user)
+             del=import.delay.inspect
+             CreateJobs.create(:user_id=>current_user.id,:delayed_job_id=>del.id,:migration_type=>"premium")
            end
           
           notice = "Migration is started , you will shortly get an Email after Comletion of migration" 
@@ -158,11 +164,20 @@ class ErpsController < ApplicationController
             import = Import.new
             import.save
            if current_user.user_payment_choice == "free" 
+             
               import.delay.export_free_migration(current_user)
+              #here i am creating an one table row for the purpose of creating a report
+                 del=import.delay.inspect
+                
+              CreateJobs.create(:user_id=>current_user.id,:delayed_job_id=>del.id,:migration_type=>"free")
            elsif current_user.user_payment_choice == "standard" 
              import.delay.export_standard_migration(current_user)
+             del=import.delay.inspect
+             CreateJobs.create(:user_id=>current_user.id,:delayed_job_id=>del.id,:migration_type=>"standard")
            elsif current_user.user_payment_choice == "premium"
              import.delay.export_premium_migration(current_user)
+             del=import.delay.inspect
+             CreateJobs.create(:user_id=>current_user.id,:delayed_job_id=>del.id,:migration_type=>"premium")
            end
           
           notice = "Migration is started , you will shortly get an Email after Comletion of migration"  

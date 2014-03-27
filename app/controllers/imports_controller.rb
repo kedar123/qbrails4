@@ -23,7 +23,9 @@ class ImportsController < ApplicationController
     logger.info current_user.user_payment_choice
     #logger.info current_user.inspect
     if current_user.user_payment_choice == "free" 
+      
       import.delay.export_free_migration(current_user)
+      #here what i need to do create a seperate table where i am just keeping 2 values an user_id and 
     elsif current_user.user_payment_choice == "standard" 
       import.delay.export_standard_migration(current_user)
     elsif current_user.user_payment_choice == "premium"

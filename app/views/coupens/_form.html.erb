@@ -13,8 +13,10 @@
 
   <div class="field">
     <%= f.label :coupen %><br>
-    <%value = ""; 50.times{value  << (65 + rand(25)).chr}%>
-    <%= f.text_field :coupen,:value=>value.to_s %>
+    
+    <%= f.text_field :coupen,:value=>@coupenvalue %>
+    <%#in coupen i am keeping a hidden value here%>
+    <%=hidden_field_tag "coupenvalue",@coupenvalue%>
   </div>
 <br/><br/><br/>
   <div class="actions">

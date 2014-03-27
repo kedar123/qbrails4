@@ -150,14 +150,26 @@ class PaymentsController < ApplicationController
   def coupen_check
      
        cp = Coupen.find_by_coupen(params[:coupen])
+       
        if cp.blank?
          redirect_to :back ,:notice=>"Invalid Coupen"
        else
-         current_user.coupenassigned = params[:coupen]
-         current_user.save
-         
-         redirect_to root_path ,:notice=>"Your Coupen Is Valid Please See The Step To Create A Database"
+          #also here i need to check that a coupen is expired or not 
+          #current_user.coupenassigned = params[:coupen]
+          #current_user.cexpire_date = Date.today
+          #current_user.save
+         if cp.expire_date.blank?    
+           cp.user_id = current_user.id
+           cp.expire_date = Date.today
+           cp.save
+            redirect_to root_path ,:notice=>"Your Coupen Is Valid Please See The Step To Create A Database"
+         else
+            redirect_to :back ,:notice=>"Your Coupen Is Expired"
+         end
+      
        end
+       
+    
        
   end
   

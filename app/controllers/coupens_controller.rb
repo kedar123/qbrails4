@@ -14,9 +14,25 @@ class CoupensController < ApplicationController
   end
 
   # GET /coupens/new
+  #here i need to keep a coupen in a session because in browser an user can change a coupen which i dont want.
+  #so instead of session in view i am creating a hidden field and keeping a value in it.
   def new
-    @coupen = Coupen.new
+     @coupen = Coupen.new
+     value = "" 
+     50.times{value  << (65 + rand(25)).chr}
+     #here at value character i need to add at last a coupen id + 1 numeric value
+     #so that it will be always a unique also to make concurrent user uniqueness i am adding an user ipaddress at last
+     #
+     coupen_id = Coupen.last.id
+     #because of this coupen_id its always a unique thing.
+    
+     @coupenvalue = value.to_s + coupen_id.to_s + request.ip
   end
+  
+  def generate_a_uniq_coupen
+    
+  end
+  
 
   # GET /coupens/1/edit
   def edit
@@ -26,16 +42,23 @@ class CoupensController < ApplicationController
   # POST /coupens.json
   def create
     @coupen = Coupen.new(coupen_params)
-
     respond_to do |format|
-      if @coupen.save
-        format.html { redirect_to @coupen, notice: 'Coupen was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @coupen }
+      #as in model the coupen is unique so if its try to duplicate then it will redirect to new page again.
+      #the problem here is if 2 user demands it commonly then it might be a problem.so again in new for creating
+      #here first i need to test weather an user changed an coupen value or not or not.if its changed then 
+      #redirect to new again with saying coupen value is invalid
+       if params[:coupenvalue] == params[:coupen][:coupen]
+         if @coupen.save
+          format.html { redirect_to @coupen, notice: 'Coupen was successfully created.' }
+          format.json { render action: 'show', status: :created, location: @coupen }
+        else
+          format.html { render action: 'new' }
+          format.json { render json: @coupen.errors, status: :unprocessable_entity }
+        end
       else
-        format.html { render action: 'new' }
-        format.json { render json: @coupen.errors, status: :unprocessable_entity }
+          format.html { redirect_to new_coupen_path,notice: 'Coupen was Invalid' }
       end
-    end
+     end
   end
 
   # PATCH/PUT /coupens/1
