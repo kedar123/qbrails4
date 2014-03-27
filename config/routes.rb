@@ -1,4 +1,11 @@
 Quickbook42::Application.routes.draw do
+
+  
+ 
+
+
+  resources :reports
+
   resources :helps
 
   get "terms/legal"
