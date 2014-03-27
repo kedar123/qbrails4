@@ -8,6 +8,9 @@ class ReportsController < ApplicationController
   def index
     #@reports = Report.all
     @allcrjb = CreateJobs.all
+    # so my assumption is in create_job there is elayed_job_id so if its not there in dj then the process is finish
+    # else either there is error or its in process.so for that i am 
+    
     
   end
 
