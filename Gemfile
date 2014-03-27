@@ -69,3 +69,6 @@ end
  gem 'jquery-turbolinks'
 gem 'turbolinks-redirect'
 gem 'net-ping'
+gem 'rspec-rails'
+gem 'selenium-webdriver'  
+gem "recaptcha", :require => "recaptcha/rails"
